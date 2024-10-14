@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 영역별 css */
+@import url(header.css);
+@import url(introduction.css);
+@import url(review.css);
+@import url(footer.css);
+@import url(event.css);
+/* 폰트 */
+
+/* 초기화 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}

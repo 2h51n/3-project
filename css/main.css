@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* 영역별 css */
 @import url(header.css);
+@import url(main-banner.css);
 @import url(introduction.css);
 @import url(review.css);
 @import url(footer.css);

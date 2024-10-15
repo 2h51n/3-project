@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/* 섹션 전체 너비 100% */
+.rookie-brands {
+    width: 100%;
+  }
+  
+  /* 컨테이너 레이아웃 설정: 최대 너비 1300px */
+  .rookie_container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+h2.section-title {
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .title-section .more-link {
+    font-size: 14px;
+    text-decoration: none;
+    justify-content: right;
+    color: #000;
+  }
+  
+  /* 브랜드 그리드 레이아웃 설정 */
+  .brand-grid {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .brand-item {
+    flex: 1;
+  }
+  
+  /* 메인 이미지 스타일 */
+  .main-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 오버레이 텍스트 기본 숨김 */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* 호버 시 오버레이 텍스트 표시 */
+  .main-image:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* 서브 이미지 스타일 */
+  .sub-images {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .sub-images img {
+    width: calc(33.333% - 10px);
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  /* 브랜드 이름 스타일 */
+  .brand-name {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }

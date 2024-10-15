@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* 리뷰 섹션 너비 100% */
+.review-section {
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* 컨테이너 최대 너비 1300px */
+.review-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 섹션 타이틀 */
+h2.section-title {
+  text-align: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* 스와이퍼 슬라이더 */
+.swiper-container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* 리뷰 그리드 레이아웃 */
+.swiper-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* 각 리뷰 아이템 스타일 */
+.review-item {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  max-width: 300px;
+}
+.bold{
+    font-weight: 500;
+}
+
+.review-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* 텍스트 말줄임 처리 */
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* 하단 스크롤 라인 스타일 */
+.scroll-line {
+  margin-top: 20px;
+  width: 100%;
+  height: 4px;
+  background-color: #ccc;
+}
+

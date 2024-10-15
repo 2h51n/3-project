@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+.wrap{
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 5px 5px -5px #333;
+    /* background-color: antiquewhite; */
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+    
+    /* background-color: rgb(255, 128, 128); */
+}
+
+.head-navi{
+    /* position: relative; */
+    /* width: 100%; */
+    width: 40%;
+    max-width: 500px;
+    /* background-color: aquamarine; */
+    height: 70px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+.head-navi li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+}
+
+.head-logo{
+    /* width: auto; */
+    /* width: 20%; */
+    height: 70px;
+    /* margin-right: 40px; */
+    /* background-color: aqua; */
+}
+.head-logo a{
+    width: 100%;
+    height: 70px;
+    margin: auto 0;
+
+}
+
+.head-logo img{
+    width: auto;
+    height: 70px;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    /* background-color: ghostwhite; */
+}
+
+.header-right{
+    width: 40%;
+    display: flex;
+    justify-content: right;
+    gap: 12px;
+    /* background-color: bisque; */
+}
+.head-search{
+    width: 270px;
+    background-color: #f7f7f7;
+    border-radius: 25px;
+    height: 40px;
+    margin: auto 0;
+    padding: 0px 15px;
+    /* border: 1px solid #333; */
+    /* display: ; */
+}
+
+
+.head-search input{
+    width: 85%;
+    height: 85%;
+    border: none;
+    outline: none;
+    background-color: #f7f7f7;
+}
+.head-search a{
+    width: auto;
+}
+.head-search a img{
+    transform: translateY(7px);
+    width: auto;
+    margin: 0 auto;
+}
+
+.loginBt, .cartBt{
+    width: auto;
+    height: 55px;
+    /* background-color: azure; */
+    margin: 10px;
+}
+
+.loginBt a{
+    width: auto;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.loginBt a img{
+    width: 35px;
+    margin: 0 auto;
+}
+
+.cartBt a{
+    width: auto;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.cartBt a img{
+    width: 30px;
+    margin: 0 auto;
+}
+
+.loginBt a span, .cartBt a span{
+    margin-top: 5px;
+    font-size: 13px;
+    text-align: center;
+    color: #333;
+}
+
+/* 헤더 서브메뉴 (PC) */
+/* .navi-cate li a{
+    display: block;
+    width: 100%;
+} */
+
+.navi-cate{
+    width: 100%;
+    max-width: 1300px;
+    background-color: aquamarine;
+    /* height: 446px; */
+    position: absolute;
+    top: 70px;
+    display: flex;
+    /* align-items: center; */
+    /* margin: 0 auto; */
+}
+
+.cate-title{
+    display: block;
+    font-weight: bold;
+    /* width: 100px;
+    height: 50px; */
+    background-color: rgb(174, 174, 255);
+}
+
+.cate-left{
+    
+    /* width: 30%; */
+    /* max-width: 150px; */
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    /* float: right; */
+    /* justify-content: center; */
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+.cate-left img{
+    width: 50px;
+    margin: 0 auto;
+}
+.cate-left span{
+    text-align: center;
+}
+
+.cate-right{
+    /* width: 70%; */
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blueviolet; */
+    margin: 10px auto;
+    /* gap: 20px; */
+}
+
+hr{
+    width: 100%;
+    margin: 10px;
+    background-color: transparent;
+}
+
+/* 서브네비 상단 */
+.depth-top{
+    display: flex;
+    margin: 0 auto;
+}
+.depth-top li{
+    /* width: calc(100% / 5); */
+    background-color: aliceblue;
+    margin-right: 60px ;
+}
+.depth-top li a{
+    width: auto;
+}
+.depth-top li a img{
+    /* width: 50px; */
+    height: 45px;
+    padding: 2px;
+    margin: 0 auto;
+}
+.depth-top li a span{
+    font-size: 14px;
+    text-align: center;
+}
+
+.depth-top span{
+    display: block;
+}
+
+
+
+/* 서브네비 하단 */
+.depth-bottom {
+    display: flex;
+    margin: 0 auto;
+}
+
+.depth-bottom li{
+    /* width: calc(100% / 7); */
+    background-color: aliceblue;
+    margin-right: 60px ;
+}
+.depth-bottom li a{
+    width: 100%;
+}
+
+.depth-bottom li a img{
+    width: 30px;
+    margin: 0 auto;
+}
+.depth-bottom li a span{
+    font-size: 14px;
+    text-align: center;
+}
+
+.depth-bottom span{
+    display: block;
+}
+
+
+
+
+
+

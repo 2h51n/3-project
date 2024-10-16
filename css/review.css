@@ -20,17 +20,8 @@ h2.section-title {
   margin-bottom: 40px;
 }
 
-/* 스와이퍼 슬라이더 */
-.swiper-container {
-  width: 100%;
-  padding: 20px 0;
-}
 
-/* 리뷰 그리드 레이아웃 */
-.swiper-wrapper {
-  display: flex;
-  gap: 20px;
-}
+
 
 /* 각 리뷰 아이템 스타일 */
 .review-item {

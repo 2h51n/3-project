@@ -1,1 +1,46 @@
 @charset "utf-8";
+@charset "utf-8";
+
+/* 푸터 전체 너비 100% */
+.footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 40px 0;
+}
+/* 푸터 컨테이너 최대 너비 1300px */
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+/* 왼쪽 영역 스타일 */
+.footer-left {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.footer-left p {
+  margin: 5px 0;
+  font-weight: 300;
+}
+/* 오른쪽 영역 스타일 */
+.footer-right {
+  flex-direction: column;
+  display: flex;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.footer-right p {
+  margin: 5px 0;
+}
+.footer-right a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-right a:hover {
+  text-decoration: underline;
+}

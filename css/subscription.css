@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+.subscription {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.subscription-container {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.subscription-bg {
+  width: 100%;
+  height: auto;
+}
+
+.form-container {
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  transform: translateY(-50%);
+  padding: 20px;
+
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn {
+  width: 70%;
+  padding: 12px;
+  background-color: #f2b705;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #ffa500;
+}
+
+@media (max-width: 768px) {
+    .subscription-container img {
+      content: url("../images/A/event/768_event.png");
+    }
+  
+    .form-container {
+      top: 45%;
+      right: 5%;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .subscription-container img {
+      content: url("../images/A/event/360_event.png");
+    }
+  
+    .form-container {
+      width: 90%;
+      right: 5%;
+    }
+  }

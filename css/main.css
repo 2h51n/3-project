@@ -1,17 +1,14 @@
 @charset "utf-8";
 /* 영역별 css */
 @import url(header.css);
-
 @import url(main_banner.css);
 @import url(material.css);
 @import url(event_banner.css);
-@import url(best_item.css);
+@import url(popular_item.css);
 @import url(subscription.css);
 @import url(rookie_brand.css);
-
 @import url(main-banner.css);
 @import url(introduction.css);
-
 @import url(review.css);
 @import url(footer.css);
 /* 폰트 */
@@ -77,14 +74,14 @@ select {
   list-style: none;
 }
 /* 공통 타이틀 */
-.section-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.section-title h2{
-    font-size: 24px;
-    font-weight: 900;
+.section-title h2 {
+  font-size: 24px;
+  font-weight: bold;
 }

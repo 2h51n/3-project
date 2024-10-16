@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+
+
 .material-area{
     width: 100%;
     max-width: 1300px;
@@ -62,6 +64,12 @@
 
 /* 소재별 굿즈 영역 */
 .material-main{
+    display: block;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.material-goods{
     display: flex;
     gap: 10px;
     width: 100%;
@@ -145,7 +153,7 @@
 }
 
 
- .material-main {
+ .material-goods {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -186,5 +194,8 @@
     margin-bottom: 10px;
   } */
 
+  .clothes, .wood, .glass{
+    display: none;
+}
 
   

@@ -1,0 +1,20 @@
+@charset "utf-8";
+.event_banner{
+    width: 100%;
+}
+.event_banner img{
+    width: 100%;
+}
+
+.respon_768 {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .event_banner img:first-child {
+      display: none;
+    }
+    .respon_768 {
+      display: block;
+    }
+  }

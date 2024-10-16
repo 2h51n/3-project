@@ -132,3 +132,30 @@ h2.section-title {
   margin-top: 10px;
   font-weight: bold;
 }
+/* 1024px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 1024px) {
+  .main-image {
+    height: 250px; /* 중간 크기에서 높이 감소 */
+  }
+}
+
+/* 768px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 768px) {
+  .main-image {
+    height: 200px; /* 작은 화면에서 높이 감소 */
+  }
+}
+
+/* 480px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 480px) {
+  .main-image {
+    height: 150px; /* 모바일 화면에서 높이 감소 */
+  }
+}
+
+/* 360px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 360px) {
+  .main-image {
+    height: 120px; /* 매우 작은 화면에서 높이 감소 */
+  }
+}

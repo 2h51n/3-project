@@ -1,6 +1,7 @@
 window.onload = function () {
     // ===메인 배너 스와이퍼 슬라이드 영역 시작
   const swBanner = new Swiper(".swBanner", {
+    
         loop: true, // loop : 무한으로 도는 것.
         autoplay: {
           delay: 4000,

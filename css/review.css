@@ -3,6 +3,7 @@
 .review-section {
   width: 100%;
   padding: 40px 0;
+  /* background-color: aquamarine; */
 }
 
 /* 컨테이너 최대 너비 1300px */
@@ -32,9 +33,15 @@ h2.section-title {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  margin-bottom: 1%;
   text-align: center;
   flex: 1;
   max-width: 300px;
+  height: auto;
+}
+
+.review-item *{
+  margin: 3px;
 }
 
 .r_title {
@@ -48,10 +55,14 @@ h2.section-title {
 }
 
 .grey {
+  max-width: 100%;
   color: #736e6e;
   font-weight: bold;
   font-size: 13px;
   margin-bottom: 2%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .review-image {

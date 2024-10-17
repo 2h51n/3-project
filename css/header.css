@@ -7,8 +7,13 @@
 .header{
     width: 100%;
     height: 70px;
+    background-color: #fff;
     /* border-bottom: 1px solid #333; */
     box-shadow: 0 5px 5px -5px #333;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    /* padding-top: 1%; */
    
     /* background-color: antiquewhite; */
 }
@@ -146,10 +151,10 @@
 } */
 
 .navi-cate{
-    /* display: none; */
+    /* display: flex; */
+    display: none;
     width: 100%;
     max-width: 500px;
-    display: flex;
     position: absolute;
     top: 70px;
     left: 35px;
@@ -161,6 +166,11 @@
     /* height: 446px; */
     /* align-items: center; */
     /* margin: 0 auto; */
+    
+}
+
+.navi-cate.active{
+    display: flex;
 }
 
 .cate-title{
@@ -194,6 +204,7 @@ hr{
 /* 서브네비 상단 */
 .depth-top{
     display: flex;
+    /* display: none; */
     align-items: center;
     margin: 0 auto;
     gap: 40px;

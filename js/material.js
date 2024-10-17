@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 각 카테고리 버튼 및 관련 상품 영역
-  const categoryButtons = document.querySelectorAll(".swiper-slide a");
+  const categoryButtons = document.querySelectorAll(".swMaterial .swiper-slide a");
   const materialGoodsSections = document.querySelectorAll(".material-goods");
 
   // 모든 카테고리 상품 숨기기 함수

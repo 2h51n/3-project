@@ -9,7 +9,6 @@
 }
 
 /* 소재 슬라이드(아이콘) 영역 */
-
 .material-slide-area {
   display: block;
   width: 100%;
@@ -71,14 +70,11 @@
   /* background-color: darkcyan; */
   justify-content: center;
   align-items: center;
+  padding: 0 5%;
 }
 .material-goods-card {
   display: block;
-  /* width: 100%;
-    height: 100%; */
-  width: 305px;
-  height: 420px;
-  /* height: auto; */
+  width: 100%;
   /* background-color: antiquewhite; */
 }
 
@@ -86,25 +82,23 @@
 .material-goods-card {
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 20px;
+  padding: 5px;
+  margin: 5% 0;
   /* text-align: center; */
   position: relative;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .material-goods-card a > img {
   width: 100%;
-  height: 200px;
   object-fit: cover;
-  margin-bottom: 15px;
 }
 
 .material-goods-card a {
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
   width: 100%;
-  padding: 5px;
+  /* padding: 5px; */
   text-decoration: none;
   color: #333;
   font-size: 16px;
@@ -115,11 +109,11 @@
 }
 
 .materal-textbox * {
-  margin: 8px 0;
+  margin: 4px 0;
 }
 .materal-textbox > p:first-child,
 .materal-rating > span {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .price_bold {
@@ -131,20 +125,20 @@
     margin: 0 auto;
 } */
 .materal-rating {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
-/* .materal-rating span{
+.materal-rating span{
     font-weight: bold;
-} */
+}
 
 .materal-rating > img {
   width: auto;
   /* height: 100%; */
-  max-height: 20px;
+  /* max-height: 20px; */
   object-fit: contain;
   margin: 0;
-  /* width: 135px; */
 }
 
 /* .material-goods {
@@ -181,27 +175,32 @@
 .material-goods {
   display: flex;
   flex-wrap: wrap; /* 아이템이 다음 줄로 감싸지도록 허용 */
-  gap: 20px; /* 아이템 간의 간격 */
+  gap: 10px; /* 아이템 간의 간격 */
 }
 
 /* 카드 스타일 */
 .material-goods-card {
   flex: 1 1 calc(25% - 20px); /* 큰 화면에서 4개의 아이템 표시 */
   box-sizing: border-box; /* 패딩과 보더를 너비 계산에 포함 */
+  text-align: center;
+}
+
+.hidden {
+  display: block;
 }
 
 /* 더 보기 */
-.more-link_m {
+
+.show-more {
   text-align: center;
-  display: none;
-  font-size: 15px;
-  margin: 15px 0;
-  color: #000;
-  text-decoration: none;
+  margin: 20px 0;
 }
 
-.more-link_m:hover {
-  text-decoration: underline;
+#showMoreButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
 }
 
 /* 1024px 이하 화면을 위한 미디어 쿼리 */
@@ -220,23 +219,38 @@
 
 /* 768px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
-  .material-goods-card {
-    flex: 1 1 calc(50% - 20px); /* 2개의 아이템 표시 */
+  .materal-textbox {
+    text-align: center;
   }
 }
 
 /* 480px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 480px) {
-  .material-goods-card {
-    flex: 2 2 calc(50% - 20px);
-  }
   .swiper-slide img {
     width: 60%; /* 아이콘의 너비를 화면의 40%로 설정 */
-    height: auto; /* 비율에 맞춰 높이 자동 조정 */
+  }
+
+  .material-goods {
+    padding: 0 10%;
+  }
+  .materal-textbox p{
+    font-size: 14px;
   }
 
   .swiper-slide p {
     font-size: 0.8rem; /* 폰트 크기를 줄임 */
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  #showMoreButton {
+    margin: 0 auto;
+    display: block;
+    border: none;
+    color: #333;
+    background-color: #fdd835;
   }
 }
 

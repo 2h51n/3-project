@@ -57,16 +57,20 @@ window.onload = function () {
 // ===슬라이드 영역 끝
 
 // 헤더 카테고리 클릭 시 서브메뉴 나옴
-const cateIcon = document.querySelector("#category-icon")
-const cateTitle = document.querySelector("#category-title")
+// const cateIcon = document.querySelector("#category-icon")
+const cateTitle = document.querySelectorAll(".category-title")
 const naviCate = document.querySelector(".navi-cate")
-cateIcon.addEventListener("click", function(e){
-  e.preventDefault()
-  naviCate.classList.toggle("active")
+// cateIcon.addEventListener("click", function(e){
+//   e.preventDefault()
+//   naviCate.classList.toggle("active")
+// })
+cateTitle.forEach(function(item){
+  item.addEventListener("click", function(e){
+    e.preventDefault()
+    naviCate.classList.toggle("active")
 })
-cateTitle.addEventListener("click", function(e){
-  e.preventDefault()
-  naviCate.classList.toggle("active")
+
+
 })
 
 }

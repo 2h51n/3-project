@@ -23,6 +23,7 @@
 .header .header-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   /* max-width: 1300px; */
   padding: 0 20px;
@@ -45,6 +46,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  height: auto;
   /* max-width: 1300px; */
   padding: 0 20px;
   /* height: 60px; */
@@ -53,8 +55,12 @@
   position: relative;
 
 }
+.navi-bottom li{
+    height: 20px;
+}
 
 .navi-bottom li a {
+    height: 20px;
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -106,9 +112,11 @@
   width: 40%;
   display: flex;
   justify-content: right;
-  gap: 12px;
+  gap: 1.5%;
+  padding-top: 5px;
   /* background-color: bisque; */
 }
+
 .head-search {
     width: 100%;
   max-width: 270px;
@@ -127,6 +135,7 @@
   border: none;
   outline: none;
   background-color: #f7f7f7;
+  /* background-color: #e49999; */
 }
 
 .head-search a {
@@ -136,18 +145,35 @@
   transform: translateY(7px);
   width: auto;
   width: 10%;
-  min-width: 15px;
+  min-width: 20px;
   margin: 0 auto;
 }
 
-.loginBt,
-.cartBt {
-  width: auto;
-  height: 55px;
-  /* background-color: azure; */
-  margin: 10px;
+.header-icons{
+    display: flex;
+    align-items: ;
+    /* gap: 3%; */
+}
+.header-icons *{
+    margin: 5px;
+    width: auto;
+    height: 55px;
 }
 
+.searchMB{
+    scale: 0.95;
+    display: none;
+}
+
+.searchMB a {
+  width: auto;
+  text-decoration: none;
+}
+.searchMB a img {
+  width: 22px;
+  margin: 0 auto;
+  /* margin-top: 4px; */
+}
 .loginBt a {
   width: auto;
   text-decoration: none;
@@ -180,7 +206,9 @@
     display: block;
     width: 100%;
 } */
-
+#category-icon{
+    display: none;
+}
 .navi-cate {
   /* display: flex; */
   display: none;
@@ -215,8 +243,8 @@
   background-color: rgb(174, 174, 255);
 }
 
-#category-title{
-    display: none;
+.category-title{
+    display: block;
 }
 
 .cate-right {
@@ -299,18 +327,33 @@ hr {
   display: block;
 }
 
+/* 사이드 메뉴 */
+
+.sidemenu-area{
+    display: none;
+}
+
+
+
+
+
+
+
 /* 반응형 */
 
 @media (max-width: 1030px){
-    
-    .head-navi > li:nth-child(4), .head-navi > li:nth-child(5),
+    .header{
+        padding-bottom: 10px;
+    }
+
+    .head-navi > li:nth-child(3), .head-navi > li:nth-child(4), .head-navi > li:nth-child(5),
     .head-navi > li:nth-child(6), .head-navi > li:nth-child(7),
     .head-navi > li:nth-child(8), .head-navi > li:nth-child(9)
     {
         display: none;
     }
 
-    .head-navi #category-icon, #category-title{
+    .head-navi #category-icon{
         display: block !important;
     }
 
@@ -318,26 +361,39 @@ hr {
         display: block;
     }
     .banner{
-        margin-top: 90px;
+        margin-top: 110px;
     }
     .navi-cate{
         width: auto;
         padding: 10px;
+        top: 110px;
         left: 0;
         
     }
-    .depth-top{
+    /* .depth-top{
         flex-direction: column;
         gap: 25px;
 
-    }
-    .head-search input[placeholder]{
-        color: none;
+    } */
+    .head-search input::placeholder{
+        font-size: 0;
     }
     .head-search a{
         float: right;
     }
 }
+
+
+
+@media (max-width: 830px){
+    .head-search{
+        display: none;
+    }
+    .searchMB{
+        display: block;
+    }
+}
+
 
 @media (max-width: 768px){
     .banner{
@@ -345,5 +401,41 @@ hr {
     }
     .header .header-bottom{
         display: none;
+    }
+    .header{
+        padding-bottom: 0px;
+    }
+    #category-title{
+        display: none !important;
+    }
+    .header-icons *{
+        margin: 2px;
+        width: auto;
+        height: 25px;
+    }
+
+    /* .loginBt a img,
+.cartBt a img, .searchMB a img{
+    height: 25px;
+} */
+
+.header .container{
+    padding: 0 1%;
+}
+.header .header-top{
+    padding: 0 1%;
+}
+
+.header-right{
+    /* padding-top: 15px; */
+    gap: 0;
+}
+}
+
+@media (max-width: 400px){
+    .header-icons *{
+        margin: 0;
+        width: auto;
+        height: 21px;
     }
 }

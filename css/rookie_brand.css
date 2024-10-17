@@ -11,10 +11,8 @@
   padding: 20px;
 }
 
-h2.section-title {
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 40px;
+.section-title {
+  margin: 30px 0;
 }
 
 .more-link {
@@ -45,10 +43,11 @@ h2.section-title {
 .brand-grid {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
 }
 
 .brand-item {
-  flex: 1;
+  flex: 1 1 calc(33.333% - 20px); /* 기본적으로 3개의 아이템을 표시 */
 }
 
 /* 메인 이미지 스타일 */
@@ -111,26 +110,30 @@ h2.section-title {
   margin-top: 10px;
   justify-content: space-between;
   cursor: pointer; /* 클릭 가능함을 알리기 위한 커서 */
-  transition: transform 0.3s ease; /* 호버 시 변환 효과 추가 */
+  transition: transform 1s ease; /* 호버 시 변환 효과 추가 */
+  object-fit: contain;
+  overflow: hidden;
 }
 
 /* 서브 이미지 호버 효과 */
 .sub-images img:hover {
   transform: scale(1.05); /* 호버 시 이미지 크기 증가 */
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .sub-images img {
   width: calc(33.333% - 10px);
   height: 100px;
-  object-fit: cover;
   transition: transform 0.3s ease; /* 호버 시 변환 효과 추가 */
 }
 
 /* 브랜드 이름 스타일 */
 .brand-name {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: bold;
+  font-size: 20px;
 }
 /* 1024px 이하에서 메인 이미지 높이 조정 */
 @media (max-width: 1024px) {
@@ -144,16 +147,30 @@ h2.section-title {
     grid-template-columns: repeat(2, 1fr); /* 768px 이하에서는 2열 */
     height: 200px; /* 작은 화면에서 높이 감소 */
   }
+  .brand-item {
+    flex: 1 1 calc(50% - 20px); /* 2개의 아이템 표시 */
+  }
+  /* 2개 이후의 아이템 숨기기 */
+  .brand-item:nth-child(n + 3) {
+    display: none;
+  }
 }
 /* 480px 이하에서 메인 이미지 높이 조정 */
 @media (max-width: 480px) {
   .main-image {
-    height: 150px; /* 모바일 화면에서 높이 감소 */
+    height: 350px; /* 모바일 화면에서 높이 감소 */
+  }
+  .brand-item {
+    flex: 1 1 calc(100% - 20px); /* 1개의 아이템 표시 */
+  }
+  /* 1개 이후의 아이템 숨기기 */
+  .brand-item:nth-child(n + 2) {
+    display: none;
   }
 }
 /* 360px 이하에서 메인 이미지 높이 조정 */
 @media (max-width: 360px) {
   .main-image {
-    height: 120px; /* 매우 작은 화면에서 높이 감소 */
+    height: 300px; /* 매우 작은 화면에서 높이 감소 */
   }
 }

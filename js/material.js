@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 각 카테고리 버튼 및 관련 상품 영역
-  const categoryButtons = document.querySelectorAll(".swiper-slide a");
+  const categoryButtons = document.querySelectorAll(".swMaterial .swiper-slide a");
   const materialGoodsSections = document.querySelectorAll(".material-goods");
 
   // 모든 카테고리 상품 숨기기 함수
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedCategory.style.display = "flex"; // flex 또는 block으로 변경 가능
         activateIcon(button); // 클릭한 아이콘 활성화
       }
+      adjustGoodsVisibility(); // 카테고리가 변경될 때마다 굿즈 가시성 재조정
     });
   });
 
@@ -59,9 +60,4 @@ document.addEventListener("DOMContentLoaded", function () {
       activateIcon(relatedButton); // 무작위 카테고리와 관련된 아이콘 활성화
     }
   }
-  const moreLink = document.getElementById("hidden");
-
-  moreLink.addEventListener("click", function (event) {
-    event.preventDefault(); // 링크 기본 동작 방지
-  });
 });

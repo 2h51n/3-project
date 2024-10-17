@@ -47,6 +47,7 @@
 .swMaterial .swiper-slide img {
   height: 60px;
   margin: 0 auto;
+
 }
 
 .swMaterial .swiper-slide .scale {
@@ -56,11 +57,10 @@
 
 /* 소재별 굿즈 영역 */
 
-.material-main{
-    display: block;
-    width: 100%;
-    /* background-color: aquamarine; */
-
+.material-main {
+  display: block;
+  width: 100%;
+  /* background-color: aquamarine; */
 }
 
 .material-goods {
@@ -82,23 +82,22 @@
   /* background-color: antiquewhite; */
 }
 
+/* 각 상품 아이템 */
+.material-goods-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  /* text-align: center; */
+  position: relative;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
 
-  /* 각 상품 아이템 */
-  .material-goods-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    /* text-align: center; */
-    position: relative;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  }
-  
-  .material-goods-card a > img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
+.material-goods-card a > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
 
 .material-goods-card a {
   display: flex;
@@ -193,18 +192,17 @@
 
 /* 더 보기 */
 .more-link_m {
-    text-align: center;
-    display: none;
-    font-size: 15px;
-    margin: 15px 0;
-    color: #000;
-    text-decoration: none;
-  }
-  
-  .more-link_m:hover {
-    text-decoration: underline;
-  }
+  text-align: center;
+  display: none;
+  font-size: 15px;
+  margin: 15px 0;
+  color: #000;
+  text-decoration: none;
+}
 
+.more-link_m:hover {
+  text-decoration: underline;
+}
 
 /* 1024px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 1024px) {
@@ -213,87 +211,37 @@
   }
 }
 
-
 /* 880px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 880px) {
   .material-goods-card {
     flex: 1 1 calc(50% - 20px); /* 2개의 아이템 표시 */
-
   }
 }
-
 
 /* 768px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
   .material-goods-card {
     flex: 1 1 calc(50% - 20px); /* 2개의 아이템 표시 */
   }
-  .more-link_m{
-    display: none; 
-
-  
-  @media (max-width: 480px) {
-    .material-goods-card {
-        flex: 2 2 calc(50% - 20px); 
-        
-    }
-  }
-
-  @media (max-width: 360px) {
-    .product-image {
-        height: auto;
-      }      
-      .product-name {
-        font-size: 12px;
-        margin-bottom: 10px;
-      }
-      
-      .product-brand {
-        font-size: 12px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      
-      .product-price {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-    }
-
- 
-  .materal-textbox {
-    padding: 10px;
-    /* text-align: center; */
-
-  }
 }
 
 /* 480px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 480px) {
-  .material-goods {
-    display: grid; /* 그리드 레이아웃으로 전환 */
-    grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
-    gap: 10px; /* 그리드 아이템 간의 간격 */
-  }
-
-
   .material-goods-card {
-    flex: unset; /* Flex 속성 제거 */
-    width: 100%; /* 카드가 전체 너비를 차지하도록 설정 */
+    flex: 2 2 calc(50% - 20px);
   }
-  .more-link_m{
-    display: block; /* 더 보기 버튼 보이기 */
+  .swiper-slide img {
+    width: 60%; /* 아이콘의 너비를 화면의 40%로 설정 */
+    height: auto; /* 비율에 맞춰 높이 자동 조정 */
   }
 
-  .clothes, .wood, .glass{
-    display: none;
-    /* display: block; */
-
+  .swiper-slide p {
+    font-size: 0.8rem; /* 폰트 크기를 줄임 */
+  }
 }
 
 /* 360px 이하 화면을 위한 미디어 쿼리 */
-@media (max-width: 360px) {
+@media (max-width: 385px) {
   .material-goods {
     display: grid; /* 그리드 레이아웃으로 전환 */
     grid-template-columns: repeat(1, 1fr); /* 1열 배치 */
@@ -304,6 +252,7 @@
     flex: unset; /* Flex 속성 제거 */
     width: 100%; /* 카드가 전체 너비를 차지하도록 설정 */
   }
-
-
+  .more-link_m {
+    display: block;
+  }
 }

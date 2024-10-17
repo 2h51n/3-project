@@ -66,7 +66,7 @@
 .material-main{
     display: block;
     width: 100%;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .material-goods{
@@ -95,7 +95,7 @@
     padding: 20px;
     /* text-align: center; */
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   }
   
   .material-goods-card a > img {
@@ -169,6 +169,7 @@
   @media (max-width: 820px) {
     .material-goods-card {
       flex: 2 2 calc(50% - 20px); 
+      grid-template-columns: repeat(2, 1fr); /* 768px 이하에서는 2열 */
       /* max-width: 310px; */
     }
   }
@@ -177,8 +178,31 @@
   @media (max-width: 480px) {
     .material-goods-card {
         flex: 2 2 calc(50% - 20px); 
+        
     }
   }
+
+  @media (max-width: 360px) {
+    .product-image {
+        height: auto;
+      }      
+      .product-name {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+      
+      .product-brand {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .product-price {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    }
 
  
   .materal-textbox {
@@ -196,6 +220,7 @@
 
   .clothes, .wood, .glass{
     display: none;
+    /* display: block; */
 }
 
   

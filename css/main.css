@@ -11,6 +11,8 @@
 @import url(introduction.css);
 @import url(review.css);
 @import url(footer.css);
+@import url(modal.css);
+@import url(fix-btn.css);
 /* 폰트 */
 @font-face {
   font-family: "Noto Sans KR";

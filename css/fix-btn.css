@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* 고정 버튼들 공통 스타일 */
+.fixBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.fixBtn:hover {
+  transform: scale(1.1); /* 호버 시 확대 */
+  filter: brightness(80%);
+}
+
+/* 고정 버튼 이미지 공통 스타일 */
+.fix-btn-img,
+.fix-btn-img-hover,
+.cs-btn-img,
+.kakao-btn-img,
+.naver-btn-img,
+.top-btn-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.fix-btn-img-hover {
+  display: none;
+}
+
+/* 개별 버튼들 위치 설정 */
+.fix-buy-btn {
+  bottom: 100px;
+}
+
+.cs-btn {
+  bottom: 160px;
+}
+
+.top-btn {
+  bottom: 220px;
+}
+
+/* 모달 제어 */
+.modal-open {
+  display: block;
+}
+
+  /* 탑 버튼 숨김 */
+  .top-btn {
+    display: none; /* 스크롤 전에는 숨기기 */
+  }
+  
+  .close-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .close-wrap input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .close-wrap .close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+  }

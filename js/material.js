@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const materialSwiper = new Swiper(".swMaterial", {
+    slidesPerView: 5,
+  }); // 한 번에 보여질 슬라이드 수
+
   // 각 카테고리 버튼 및 관련 상품 영역
   const categoryButtons = document.querySelectorAll(".swMaterial .swiper-slide a");
   const materialGoodsSections = document.querySelectorAll(".material-goods");

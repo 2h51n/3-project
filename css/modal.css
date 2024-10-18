@@ -1,0 +1,62 @@
+/* 모달 창 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 배경 반투명 */
+  }
+  
+  .modal-open {
+    display: block; /* 모달이 열릴 때 */
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  /* 닫기 버튼 및 '오늘 하루 열지 않음' 스타일 */
+  .close-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .close-wrap input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .close-wrap .close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+  }
+  
+  /* 탑 버튼 */
+  .top-btn {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .top-btn:hover {
+    background-color: #f0f0f0;
+  }

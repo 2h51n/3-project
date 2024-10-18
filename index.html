@@ -99,17 +99,74 @@
                   <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
                   <div class="sidemenu-area">
                     <div class="side-top">
-                      <a href="#">
-                        <!-- <img src="images/A/main_logo.png" alt="로고"> -->
+                      <a href="#" class="side-top-logo">
+                        <img src="images/A/main_logo.png" alt="로고">
                       </a>
-                      <ul>
-                        <li>소개</li>
-                        <li>이벤트</li>
-                        <li>브랜드</li>
-                        <li>공지사항</li>
+                      <div class="side-top-icons">
+                        <div class="side-iconsBT">
+                          <div class="searchMB">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                            </a>
+                          </div>
+                          <div class="loginBt">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                              <!-- <span>로그인</span> -->
+                            </a>
+                          </div>
+                          <div class="cartBt">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                              <!-- <span>카트</span> -->
+                            </a>
+                          </div>
+                        </div>
+                        <input type="text">
+                      </div>
+                      <ul class="side-top-menu">
+                        <li><a href="#">소개</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">브랜드</a></li>
+                        <li><a href="#">공지사항</a></li>
                       </ul>
                     </div>
-                    <div class="side-bottom"></div>
+                    <hr>
+                    <div class="side-bottom">
+                      <h3 class="side-bottom-title">카테고리</h3>
+                      <ul class="side-bottom-menu">
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                            <span>플라스틱</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                            <span>천</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                            <span>목재</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                            <span>유리</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                            <span>기타</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </a>
               </li>
@@ -197,6 +254,7 @@
             <ul class="navi-bottom">
               <li><a href="#" class="category-title">카테고리</a></li>
               <li><a href="#">이벤트</a></li>
+              <li><a href="#">인기</a></li>
               <!-- <li><a href="#">구독</a></li> -->
               <li><a href="#">브랜드</a></li>
               <li><a href="#">리뷰</a></li>
@@ -703,32 +761,7 @@
         </div>
       </section>
 
-      <!-- 뉴스레터/구독영역 -->
-      <section class="subscription">
-        <div class="subscription-container">
-          <img src="../images/A/event/1920_event.png" alt="구독" class="subscription-bg" />
-          <div class="form-container">
-            <form id="subscriptionForm" action="#" method="POST">
-              <!-- 성함 입력 -->
-              <div class="form-group">
-                <input type="text" name="name" id="name" placeholder="성함" required />
-                <small class="error-message" id="nameError"></small>
-              </div>
-              <!-- 전화번호 입력 -->
-              <div class="form-group">
-                <input type="tel" name="phone" id="phone" placeholder="전화번호" required />
-                <small class="error-message" id="phoneError"></small>
-              </div>
-              <!-- 이메일 입력 -->
-              <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="이메일" required />
-                <small class="error-message" id="emailError"></small>
-              </div>
-              <button type="submit" class="submit-btn">전송</button>
-            </form>
-          </div>
-        </div>
-      </section>
+
 
       <!-- 루키 브랜드 -->
       <section class="rookie-brands">
@@ -837,32 +870,32 @@
           <div class="swiper-scrollbar-drag"></div>
         </div>
       </section>
-            <!-- 뉴스레터/구독영역 -->
-            <section class="subscription">
-              <div class="subscription-container">
-                <img src="../images/A/event/1920_event.png" alt="구독" class="subscription-bg" />
-                <div class="form-container">
-                  <form id="subscriptionForm" action="#" method="POST">
-                    <!-- 성함 입력 -->
-                    <div class="form-group">
-                      <input type="text" name="name" id="name" placeholder="성함" required />
-                      <small class="error-message" id="nameError"></small>
-                    </div>
-                    <!-- 전화번호 입력 -->
-                    <div class="form-group">
-                      <input type="tel" name="phone" id="phone" placeholder="전화번호" required />
-                      <small class="error-message" id="phoneError"></small>
-                    </div>
-                    <!-- 이메일 입력 -->
-                    <div class="form-group">
-                      <input type="email" name="email" id="email" placeholder="이메일" required />
-                      <small class="error-message" id="emailError"></small>
-                    </div>
-                    <button type="submit" class="submit-btn">전송</button>
-                  </form>
-                </div>
+      <!-- 뉴스레터/구독영역 -->
+      <section class="subscription">
+        <div class="subscription-container">
+          <img src="../images/A/event/1920_event.png" alt="구독" class="subscription-bg" />
+          <div class="form-container">
+            <form id="subscriptionForm" action="#" method="POST">
+              <!-- 성함 입력 -->
+              <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="성함" required />
+                <small class="error-message" id="nameError"></small>
               </div>
-            </section>
+              <!-- 전화번호 입력 -->
+              <div class="form-group">
+                <input type="tel" name="phone" id="phone" placeholder="전화번호" required />
+                <small class="error-message" id="phoneError"></small>
+              </div>
+              <!-- 이메일 입력 -->
+              <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="이메일" required />
+                <small class="error-message" id="emailError"></small>
+              </div>
+              <button type="submit" class="submit-btn">전송</button>
+            </form>
+          </div>
+        </div>
+      </section>
       <!-- 푸터 영역-->
       <footer class="footer">
         <div class="footer-container">

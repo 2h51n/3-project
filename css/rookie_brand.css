@@ -47,6 +47,7 @@
 }
 
 .brand-item {
+  padding-left: 3%;
   flex: 1 1 calc(33.333% - 20px); /* 기본적으로 3개의 아이템을 표시 */
 }
 
@@ -115,17 +116,10 @@
   overflow: hidden;
 }
 
-/* 서브 이미지 호버 효과 */
-.sub-images img:hover {
-  transform: scale(1.05); /* 호버 시 이미지 크기 증가 */
-  object-fit: cover;
-  overflow: hidden;
-}
-
 .sub-images img {
   width: calc(33.333% - 10px);
-  height: 100px;
-  transition: transform 0.3s ease; /* 호버 시 변환 효과 추가 */
+  cursor: pointer;
+  height: 110px;
 }
 
 /* 브랜드 이름 스타일 */
@@ -139,6 +133,11 @@
 @media (max-width: 1024px) {
   .main-image {
     height: 250px; /* 중간 크기에서 높이 감소 */
+  }
+  .sub-images img {
+    width: calc(33.333% - 10px);
+    cursor: pointer;
+    height: auto;
   }
 }
 /* 768px 이하에서 메인 이미지 높이 조정 */
@@ -166,6 +165,12 @@
   /* 1개 이후의 아이템 숨기기 */
   .brand-item:nth-child(n + 2) {
     display: none;
+  }
+  .brand-name {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
   }
 }
 /* 360px 이하에서 메인 이미지 높이 조정 */

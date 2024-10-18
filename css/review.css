@@ -16,14 +16,14 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: 20px; /* 아이템 간격 */
+  gap: 15px; /* 아이템 간격 */
 }
 
 /* 각 리뷰 아이템 스타일 */
 .review-item {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 2%;
   margin-bottom: 2%;
   text-align: center;
   flex: 1;
@@ -61,6 +61,15 @@
   /* height: 300px; */
   object-fit: cover;
   margin-bottom: 3%;
+}
+.txt_wrap{
+  position: relative;
+  display: block;
+  padding: 0 15%;
+
+}
+.txt_wrap p {
+  margin-top: 5%;
 }
 
 /* 텍스트 말줄임 처리 */

@@ -41,7 +41,7 @@
 .product-item {
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 20px;
+  padding: 3%;
   text-align: center;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,13 +60,13 @@
 }
 
 .product-brand {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 2% 0;
 }
 
 .product-price {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   margin-bottom: 10px;
   margin: 2% 0;
@@ -88,12 +88,12 @@
 /* 순위 배지 */
 .ranking-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: -10px;
+  left: -10px;
   background-color: #fdd835;
   color: #000;
-  padding: 5px 10px;
-  font-size: 14px;
+  padding: 10px 13px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;

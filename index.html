@@ -40,6 +40,7 @@
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- js -->
+    <script src="js/modal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
     <script src="js/material.js"></script>
@@ -52,6 +53,37 @@
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
   </head>
   <body>
+    <!-- 모달 구조 -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- 첫 번째 이미지 -->
+        <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
+        <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
+        <div class="close-wrap">
+          <label>
+            <input type="checkbox" id="notToday" />
+            <span class="notToday">오늘 하루 열지 않음</span>
+          </label>
+          <span class="close-btn">&times;</span>
+        </div>
+      </div>
+    </div>
+    <!-- 카트 고정 버튼 -->
+    <div class="fix-buy-btn fixBtn">
+      <a href="#">
+        <img src="images/btn/cart_btn.png" alt="구매하기 고정버튼" class="fix-btn-img" />
+        <img src="images/btn/cart_hover_btn.png" alt="구매하기 고정버튼 호버" class="fix-btn-img-hover" />
+      </a>
+    </div>
+    <!-- CS버튼 -->
+    <div class="cs-btn fixBtn">
+      <img src="images/btn/cs_btn.png" alt="고객센터" class="cs-btn-img" />
+    </div>
+    <!-- Top 버튼 -->
+    <div class="top-btn fixBtn">
+      <img src="images/btn/top_btn.png" alt="탑버튼" class="top-btn-img" />
+    </div>
+
     <div class="wrap">
       <!-- 헤더 영역 -->
       <header class="header">
@@ -214,46 +246,37 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="#">
-
-                  <img src="images/A/banner/1920_banner01.png" alt="배너1_1920" class="b1920px"/>
-                  <img src="images/A/banner/768_banner01.png" alt="배너1_768" class="b768px"/>
+                  <img src="images/A/banner/1920_banner01.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner01.png" alt="배너1_768" class="b768px" />
                   <!-- <img src="images/A/banner/360_banner01.png" alt="배너1_768" class="b360px"/> -->
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-
-                  <img src="images/A/banner/1920_banner02.png" alt="배너1_1920" class="b1920px"/>
-                  <img src="images/A/banner/768_banner02.png" alt="배너1_1920" class="b768px"/>
+                  <img src="images/A/banner/1920_banner02.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner02.png" alt="배너1_1920" class="b768px" />
                   <!-- <img src="images/A/banner/360_banner02.png" alt="배너1_1920" class="b360px"/> -->
-
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-
-                  <img src="images/A/banner/1920_banner03.png" alt="배너1_1920" class="b1920px"/>
-                  <img src="images/A/banner/768_banner03.png" alt="배너1_1920" class="b768px"/>
+                  <img src="images/A/banner/1920_banner03.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner03.png" alt="배너1_1920" class="b768px" />
                   <!-- <img src="images/A/banner/360_banner03.png" alt="배너1_1920" class="b360px"/> -->
-
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-
-                  <img src="images/A/banner/1920_banner04.png" alt="배너1_1920" class="b1920px"/>
-                  <img src="images/A/banner/768_banner04.png" alt="배너1_1920" class="b768px"/>
+                  <img src="images/A/banner/1920_banner04.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner04.png" alt="배너1_1920" class="b768px" />
                   <!-- <img src="images/A/banner/360_banner04.png" alt="배너1_1920" class="b360px"/> -->
-
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-
-                  <img src="images/A/banner/1920_banner05.png" alt="배너1_1920" class="b1920px"/>
-                  <img src="images/A/banner/768_banner05.png" alt="배너1_1920" class="b768px"/>
+                  <img src="images/A/banner/1920_banner05.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner05.png" alt="배너1_1920" class="b768px" />
                   <!-- <img src="images/A/banner/360_banner05.png" alt="배너1_1920" class="b360px"/> -->
-
                 </a>
               </div>
             </div>
@@ -311,7 +334,7 @@
                       <p><span class="price_bold">21,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(17,347)</span>
                       </div>
                     </div>
                   </a>
@@ -320,12 +343,12 @@
                   <a href="#">
                     <img src="images/material images/plastic02.png" alt="소재별 굿즈 02" />
                     <div class="materal-textbox">
-                      <p>ODD.TRAIN</p>
-                      <p>ODD. CALENDAR 2024</p>
+                      <p>아차시픈</p>
+                      <p>도자 귀걸이 반지 선물세트</p>
                       <p><span class="price_bold">56,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(13,417)</span>
                       </div>
                     </div>
                   </a>
@@ -334,9 +357,9 @@
                   <a href="#">
                     <img src="images/material images/plastic03.png" alt="소재별 굿즈 03" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>lifesalm</p>
+                      <p>플라스틱 업사이클링 책상</p>
+                      <p><span class="price_bold">32,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
                         <span>(11,347)</span>
@@ -348,12 +371,12 @@
                   <a href="#">
                     <img src="images/material images/plastic04.png" alt="소재별 굿즈 04" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>피그랩(PIGLAB)</p>
+                      <p>거북이 보틀 오프너</p>
+                      <p><span class="price_bold">16,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(28,347)</span>
                       </div>
                     </div>
                   </a>
@@ -365,12 +388,12 @@
                   <a href="#">
                     <img src="images/material images/clothe01.png" alt="소재별 굿즈 01" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>피연</p>
+                      <p>업사이클링 모던 '저고리백'</p>
+                      <p><span class="price_bold">19,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(8,377)</span>
                       </div>
                     </div>
                   </a>
@@ -379,12 +402,12 @@
                   <a href="#">
                     <img src="images/material images/clothe02.png" alt="소재별 굿즈 02" />
                     <div class="materal-textbox">
-                      <p>ODD.TRAIN</p>
-                      <p>ODD. CALENDAR 2024</p>
-                      <p><span class="price_bold">56,000원</span></p>
+                      <p>focean</p>
+                      <p>폐그물 업사이클링 가방</p>
+                      <p><span class="price_bold">45,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(6,375)</span>
                       </div>
                     </div>
                   </a>
@@ -393,12 +416,12 @@
                   <a href="#">
                     <img src="images/material images/clothe03.png" alt="소재별 굿즈 03" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>OWNU</p>
+                      <p>소방방화복 파우치</p>
+                      <p><span class="price_bold">22,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(12,347)</span>
                       </div>
                     </div>
                   </a>
@@ -407,12 +430,12 @@
                   <a href="#">
                     <img src="images/material images/clothe04.png" alt="소재별 굿즈 04" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>프로젝트 노하우</p>
+                      <p>양말목 체커보드백</p>
+                      <p><span class="price_bold">11,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(9,347)</span>
                       </div>
                     </div>
                   </a>
@@ -424,26 +447,26 @@
                   <a href="#">
                     <img src="images/material images/wood01.png" alt="소재별 굿즈 01" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>ONNANA</p>
+                      <p>업사이클링 우쿨렐레</p>
+                      <p><span class="price_bold">43,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(5,347)</span>
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="material-goods-card">
                   <a href="#">
-                    <img src="images/material images/wood02.png" alt="소재별 굿즈 02" />
+                    <img src="images/material images/pd_img (28).png" alt="소재별 굿즈 02" />
                     <div class="materal-textbox">
-                      <p>ODD.TRAIN</p>
-                      <p>ODD. CALENDAR 2024</p>
-                      <p><span class="price_bold">56,000원</span></p>
+                      <p>QUOTT</p>
+                      <p><레인보우 캘린더></p>
+                      <p><span class="price_bold">61,750원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(16,347)</span>
                       </div>
                     </div>
                   </a>
@@ -452,12 +475,12 @@
                   <a href="#">
                     <img src="images/material images/wood03.png" alt="소재별 굿즈 03" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>비비작 공작소</p>
+                      <p>폐목 우드 트레이</p>
+                      <p><span class="price_bold">35,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(10,347)</span>
                       </div>
                     </div>
                   </a>
@@ -466,9 +489,9 @@
                   <a href="#">
                     <img src="images/material images/wood04.png" alt="소재별 굿즈 04" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>ODD.TRAIN</p>
+                      <p>ODD. CALENDAR 2024</p>
+                      <p><span class="price_bold">56,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
                         <span>(11,347)</span>
@@ -483,12 +506,12 @@
                   <a href="#">
                     <img src="images/material images/glass01.png" alt="소재별 굿즈 01" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>바다 한 조각</p>
+                      <p>바다유리 선캐처</p>
+                      <p><span class="price_bold">19,500원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(7,347)</span>
                       </div>
                     </div>
                   </a>
@@ -497,9 +520,9 @@
                   <a href="#">
                     <img src="images/material images/glass02.png" alt="소재별 굿즈 02" />
                     <div class="materal-textbox">
-                      <p>ODD.TRAIN</p>
-                      <p>ODD. CALENDAR 2024</p>
-                      <p><span class="price_bold">56,000원</span></p>
+                      <p>유리노리</p>
+                      <p>리사이클 유리팔찌 '율'</p>
+                      <p><span class="price_bold">59,800원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
                         <span>(11,347)</span>
@@ -511,12 +534,12 @@
                   <a href="#">
                     <img src="images/material images/glass03.png" alt="소재별 굿즈 03" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>lifesalm</p>
+                      <p>대리석 질감의 나만의 조명</p>
+                      <p><span class="price_bold">24,300원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(6,347)</span>
                       </div>
                     </div>
                   </a>
@@ -525,8 +548,8 @@
                   <a href="#">
                     <img src="images/material images/glass04.png" alt="소재별 굿즈 04" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
+                      <p>얼림</p>
+                      <p>디퓨저 ICYCLE</p>
                       <p><span class="price_bold">21,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
@@ -542,12 +565,12 @@
                   <a href="#">
                     <img src="images/material images/pd_img (18).png" alt="소재별 굿즈 01" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>리본베어</p>
+                      <p>지구를 너무 사랑한 곰</p>
+                      <p><span class="price_bold">35,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(4,347)</span>
                       </div>
                     </div>
                   </a>
@@ -556,40 +579,40 @@
                   <a href="#">
                     <img src="images/material images/pd_img (19).png" alt="소재별 굿즈 02" />
                     <div class="materal-textbox">
-                      <p>ODD.TRAIN</p>
-                      <p>ODD. CALENDAR 2024</p>
-                      <p><span class="price_bold">56,000원</span></p>
+                      <p>달리즘</p>
+                      <p>친환경 사이드 테이블</p>
+                      <p><span class="price_bold">46,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(4,347)</span>
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="material-goods-card hidden">
                   <a href="#">
-                    <img src="images/material images/pd_img (21-1).png" alt="소재별 굿즈 03" />
+                    <img src="images/material images/pd_img (24).png" alt="소재별 굿즈 03" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>리슬</p>
+                      <p>오방색 플라옥노리개</p>
+                      <p><span class="price_bold">29,100원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(6,347)</span>
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="material-goods-card hidden">
                   <a href="#">
-                    <img src="images/material images/glass04.png" alt="소재별 굿즈 04" />
+                    <img src="images/material images/pd_img (21).png" alt="소재별 굿즈 04" />
                     <div class="materal-textbox">
-                      <p>모어포 모레</p>
-                      <p>플라스틱 비누받침</p>
-                      <p><span class="price_bold">21,000원</span></p>
+                      <p>월하담</p>
+                      <p>지게미 비누</p>
+                      <p><span class="price_bold">9,500원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
-                        <span>(11,347)</span>
+                        <span>(8,347)</span>
                       </div>
                     </div>
                   </a>
@@ -621,7 +644,7 @@
           <div class="product-grid">
             <!-- 1번 상품 -->
             <div class="product-item" data-aos="fade-up">
-              <div class="ranking-badge">순위<br />1</div>
+              <div class="ranking-badge">1</div>
               <img src="images/product images/pd_img (1).png" alt="모어포 모레 플라스틱 비누받침" class="product-image" />
               <p class="product-brand">모어포 모레</p>
               <p class="product-name">플라스틱 비누받침</p>
@@ -631,17 +654,17 @@
             </div>
             <!-- 2번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="ranking-badge">순위<br />2</div>
-              <img src="images/product images/pd_img (22).png" alt="ODD.CALENDAR 2024" class="product-image" />
-              <p class="product-brand">ODD.TRAIN</p>
-              <p class="product-name">ODD. CALENDAR 2024</p>
+              <div class="ranking-badge">2</div>
+              <img src="images/product images/pd_img (6).png" alt="ODD.CALENDAR 2024" class="product-image" />
+              <p class="product-brand">아차시픈</p>
+              <p class="product-name">도자 귀걸이 반지 선물세트</p>
               <p class="product-price">56,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(8,856)</p>
             </div>
             <!-- 3번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="ranking-badge">순위<br />3</div>
+              <div class="ranking-badge">3</div>
               <img src="images/product images/pd_img (17).png" alt="거북이 보틀 오프너" class="product-image" />
               <p class="product-brand">피그랩</p>
               <p class="product-name">거북이 보틀 오프너</p>
@@ -651,7 +674,7 @@
             </div>
             <!-- 4번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="ranking-badge">순위<br />4</div>
+              <div class="ranking-badge">4</div>
               <img src="images/product images/pd_img (16).png" alt="리사이클 유리팔찌" class="product-image" />
               <p class="product-brand">유리노리</p>
               <p class="product-name">리사이클 유리팔찌</p>
@@ -661,7 +684,7 @@
             </div>
             <!-- 5번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="400">
-              <div class="ranking-badge">순위<br />5</div>
+              <div class="ranking-badge">5</div>
               <img src="images/product images/pd_img (11).png" alt="헌의류 곱창밴드" class="product-image" />
               <p class="product-brand">DABOK</p>
               <p class="product-name">헌의류 곱창밴드</p>
@@ -671,7 +694,7 @@
             </div>
             <!-- 6번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="500">
-              <div class="ranking-badge">순위<br />6</div>
+              <div class="ranking-badge">6</div>
               <img src="images/product images/pd_img (10).png" alt="양말 목 체커보드백" class="product-image" />
               <p class="product-brand">프로젝트 노하우</p>
               <p class="product-name">양말 목 체커보드백</p>
@@ -681,7 +704,7 @@
             </div>
             <!-- 7번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="600">
-              <div class="ranking-badge">순위<br />7</div>
+              <div class="ranking-badge">7</div>
               <img src="images/product images/pd_img (9).png" alt="폐목 우드 트레이" class="product-image" />
               <p class="product-brand">비비작 공작소</p>
               <p class="product-name">폐목 우드 트레이</p>
@@ -691,7 +714,7 @@
             </div>
             <!-- 8번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="700">
-              <div class="ranking-badge">순위<br />8</div>
+              <div class="ranking-badge">8</div>
               <img src="images/product images/pd_img (15).png" alt="플라스틱 책선반" class="product-image" />
               <p class="product-brand">로샤드 스튜디오</p>
               <p class="product-name">플라스틱 책선반</p>
@@ -702,7 +725,121 @@
           </div>
         </div>
       </section>
-
+      <!-- 루키 브랜드 -->
+      <section class="rookie-brands">
+        <div class="rookie_container">
+          <h2 class="section-title">지금 주목받는 루키 브랜드</h2>
+          <a href="#" class="more-link">더 보기</a>
+          <div class="brand-grid swiper-container brand-swiper">
+            <div class="swiper-wrapper">
+              <!-- 브랜드 아이템 1: 바다 한 조각 -->
+              <div class="swiper-slide brand-item">
+                <div class="main-image">
+                  <img src="images/product images/pd_img (12).png" alt="바다 한 조각" class="active" id="mainImage1" />
+                  <div class="overlay">
+                    <h3>바다 한 조각</h3>
+                    <p>해변에서 주운 유리 조각을 <br />재료로 사용한 유리공예 상품</p>
+                    <li><a href="#">자세히 보기</a></li>
+                  </div>
+                </div>
+                <div class="sub-images">
+                  <img src="images/product images/pd_img (12-1).png" alt="바다 한 조각 이미지1" onclick="changeImage('mainImage1', this)" />
+                  <img src="images/product images/pd_img (12-2).png" alt="바다 한 조각 이미지2" onclick="changeImage('mainImage1', this)" />
+                  <img src="images/product images/pd_img (12-3).png" alt="바다 한 조각 이미지3" onclick="changeImage('mainImage1', this)" />
+                </div>
+              </div>
+              <!-- 브랜드 아이템 2: 리본베어 -->
+              <div class="swiper-slide brand-item">
+                <div class="main-image">
+                  <img src="images/product images/pd_img (18).png" alt="리본베어" class="active" id="mainImage2" />
+                  <div class="overlay">
+                    <h3>리본 베어</h3>
+                    <p>페트병을 100% 재활용한 <br />리사이클 소재(rPET)의 폴리에스터와 솜</p>
+                    <li><a href="#">자세히 보기</a></li>
+                  </div>
+                </div>
+                <div class="sub-images">
+                  <img src="images/product images/pd_img (18-1).png" alt="리본베어 서브 이미지1" onclick="changeImage('mainImage2', this)" />
+                  <img src="images/product images/pd_img (18-2).png" alt="리본베어 서브 이미지2" onclick="changeImage('mainImage2', this)" />
+                  <img src="images/product images/pd_img (18-3).png" alt="리본베어 서브 이미지3" onclick="changeImage('mainImage2', this)" />
+                </div>
+              </div>
+              <!-- 브랜드 아이템 3: 월하담 -->
+              <div class="swiper-slide brand-item">
+                <div class="main-image">
+                  <img src="images/product images/pd_img (21).png" alt="월하담" class="active" id="mainImage3" />
+                  <div class="overlay">
+                    <h3>월하담</h3>
+                    <p>술을 빚고 남은 곡물(지게미) <br />잔여물을 활용한 비누</p>
+                    <li><a href="#">자세히 보기</a></li>
+                  </div>
+                </div>
+                <div class="sub-images">
+                  <img src="images/product images/pd_img (21-1).png" alt="월하담 이미지1" onclick="changeImage('mainImage3', this)" />
+                  <img src="images/product images/pd_img (21-2).png" alt="월하담 이미지2" onclick="changeImage('mainImage3', this)" />
+                  <img src="images/product images/pd_img (21-3).png" alt="월하담 이미지3" onclick="changeImage('mainImage3', this)" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- 리뷰 영역 -->
+      <section class="review-section">
+        <div class="review-container">
+          <h2 class="section-title">정키펑키 유저 리뷰</h2>
+          <!-- 스와이퍼 슬라이더 -->
+          <div class="swiper swReview">
+            <div class="swiper-wrapper">
+              <!-- 리뷰 아이템 1 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">프로젝트 노하우</h3>
+                  <p class="bold">체커보드백</p>
+                  <p class="grey">의미있는 활동이라서 뿌듯했습니다!</p>
+                  <p class="description">프로젝트 노하우의 양말락 시리즈를 진심으로 응원합니다. 이번 체커보드백도 아주 마음에 들었어요!</p>
+                </div>
+              </div>
+              <!-- 리뷰 아이템 2 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">LifeSalem</h3>
+                  <p class="bold">버섯 조명</p>
+                  <p class="grey">서미페에서부터 관심가졌고 기다리고 있었어요!</p>
+                  <p class="description">앞으로도 역사가 공존하는 디자인과 의미있는 작업들이 계속되길 바랍니다.</p>
+                </div>
+              </div>
+              <!-- 리뷰 아이템 3 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">오도즈 슾</h3>
+                  <p class="bold">기타 테이블</p>
+                  <p class="grey">테이블의 정말 마음에 들어요.</p>
+                  <p class="description">모든 장식과 어울리는 세련된 디자인이 특징입니다. 나무 상판은 아름답게 마감되어 고급스러워요.</p>
+                </div>
+              </div>
+              <!-- 리뷰 아이템 4 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">하을</h3>
+                  <p class="bold">셔링 책커버</p>
+                  <p class="grey">유니크하고 예쁘고 마음에 들어요.</p>
+                  <p class="description">고민하다가 구매했는데, 정말 만족하고 있어요. 계속 사용하는 중입니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 스크롤라인 추가 -->
+        <div class="scroll-line">
+          <div class="swiper-scrollbar-drag"></div>
+        </div>
+      </section>
       <!-- 뉴스레터/구독영역 -->
       <section class="subscription">
         <div class="subscription-container">
@@ -729,140 +866,6 @@
           </div>
         </div>
       </section>
-
-      <!-- 루키 브랜드 -->
-      <section class="rookie-brands">
-        <div class="rookie_container">
-          <h2 class="section-title">지금 주목받는 루키 브랜드</h2>
-          <a href="#" class="more-link">더 보기</a>
-          <div class="brand-grid">
-            <!-- 브랜드 아이템 1: 바다 한 조각 -->
-            <div class="brand-item">
-              <div class="main-image">
-                <img src="images/product images/pd_img (12).png" alt="바다 한 조각" class="active" />
-                <div class="overlay">
-                  <h3>바다 한 조각</h3>
-                  <p>해변에서 주운 유리 조각을 <br />재료로 사용한 유리공예 상품</p>
-                  <li><a href="#">자세히 보기</a></li>
-                </div>
-              </div>
-              <div class="sub-images">
-                <img src="images/product images/pd_img (12-1).png" alt="바다 한 조각 이미지1" data-full="images/product images/pd_img (12).png" />
-                <img src="images/product images/pd_img (12-2).png" alt="바다 한 조각 이미지2" data-full="images/product images/pd_img (12).png" />
-                <img src="images/product images/pd_img (12-3).png" alt="바다 한 조각 이미지3" data-full="images/product images/pd_img (12).png" />
-              </div>
-              <p class="brand-name">바다 한 조각</p>
-            </div>
-            <!-- 브랜드 아이템 2: 리본베어 -->
-            <div class="brand-item">
-              <div class="main-image">
-                <img src="images/product images/pd_img (18).png" alt="리본베어" class="active" />
-                <div class="overlay">
-                  <h3>리본 베어</h3>
-                  <p>페트병을 100% 재활용한 <br />리사이클 소재(rPET)의 폴리에스터와 솜</p>
-                  <li><a href="#">자세히 보기</a></li>
-                </div>
-              </div>
-              <div class="sub-images">
-                <img src="images/product images/pd_img (18-1).png" alt="리본베어 서브 이미지1" data-full="images/product images/pd_img (18).png" />
-                <img src="images/product images/pd_img (18-2).png" alt="리본베어 서브 이미지2" data-full="images/product images/pd_img (18).png" />
-                <img src="images/product images/pd_img (18-3).png" alt="리본베어 서브 이미지3" data-full="images/product images/pd_img (18).png" />
-              </div>
-              <p class="brand-name">리본 베어</p>
-            </div>
-            <!-- 브랜드 아이템 3: 월하담 -->
-            <div class="brand-item">
-              <div class="main-image">
-                <img src="images/product images/pd_img (21).png" alt="월하담" class="active" />
-                <div class="overlay">
-                  <h3>월하담</h3>
-                  <p>술을 빚고 남은 곡물(지게미) <br />잔여물을 활용한 비누</p>
-                  <li><a href="#">자세히 보기</a></li>
-                </div>
-              </div>
-              <div class="sub-images">
-                <img src="images/product images/pd_img (21-1).png" alt="월하담 이미지1" data-full="images/product images/pd_img (21).png" />
-                <img src="images/product images/pd_img (21-2).png" alt="월하담 이미지2" data-full="images/product images/pd_img (21).png" />
-                <img src="images/product images/pd_img (21-3).png" alt="월하담 이미지3" data-full="images/product images/pd_img (21).png" />
-              </div>
-              <p class="brand-name">월하담</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- 리뷰 영역 -->
-      <section class="review-section">
-        <div class="review-container">
-          <h2 class="section-title">정키펑키 유저 리뷰</h2>
-          <!-- 스와이퍼 슬라이더 -->
-          <div class="swiper swReview">
-            <div class="swiper-wrapper">
-              <!-- 리뷰 아이템 1 -->
-              <div class="swiper-slide review-item">
-                <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
-                <h3 class="r_title">프로젝트 노하우</h3>
-                <p class="bold">체커보드백</p>
-                <p class="grey">의미있는 활동이라서 뿌듯했습니다!</p>
-                <p class="description">프로젝트 노하우의 양말락 시리즈를 진심으로 응원합니다. 이번 체커보드백도 아주 마음에 들었어요!</p>
-              </div>
-              <!-- 리뷰 아이템 2 -->
-              <div class="swiper-slide review-item">
-                <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
-                <h3 class="r_title">LifeSalem</h3>
-                <p class="bold">버섯 조명</p>
-                <p class="grey">서미페에서부터 관심가졌고 기다리고 있었어요!</p>
-                <p class="description">앞으로도 역사가 공존하는 디자인과 의미있는 작업들이 계속되길 바랍니다.</p>
-              </div>
-              <!-- 리뷰 아이템 3 -->
-              <div class="swiper-slide review-item">
-                <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
-                <h3 class="r_title">오도즈 슾</h3>
-                <p class="bold">기타 테이블</p>
-                <p class="grey">테이블의 정말 마음에 들어요.</p>
-                <p class="description">모든 장식과 어울리는 세련된 디자인이 특징입니다. 나무 상판은 아름답게 마감되어 고급스러워요.</p>
-              </div>
-              <!-- 리뷰 아이템 4 -->
-              <div class="swiper-slide review-item">
-                <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
-                <h3 class="r_title">하을</h3>
-                <p class="bold">셔링 책커버</p>
-                <p class="grey">유니크하고 예쁘고 마음에 들어요.</p>
-                <p class="description">고민하다가 구매했는데, 정말 만족하고 있어요. 계속 사용하는 중입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 스크롤라인 추가 -->
-        <div class="scroll-line">
-          <div class="swiper-scrollbar-drag"></div>
-        </div>
-      </section>
-            <!-- 뉴스레터/구독영역 -->
-            <section class="subscription">
-              <div class="subscription-container">
-                <img src="../images/A/event/1920_event.png" alt="구독" class="subscription-bg" />
-                <div class="form-container">
-                  <form id="subscriptionForm" action="#" method="POST">
-                    <!-- 성함 입력 -->
-                    <div class="form-group">
-                      <input type="text" name="name" id="name" placeholder="성함" required />
-                      <small class="error-message" id="nameError"></small>
-                    </div>
-                    <!-- 전화번호 입력 -->
-                    <div class="form-group">
-                      <input type="tel" name="phone" id="phone" placeholder="전화번호" required />
-                      <small class="error-message" id="phoneError"></small>
-                    </div>
-                    <!-- 이메일 입력 -->
-                    <div class="form-group">
-                      <input type="email" name="email" id="email" placeholder="이메일" required />
-                      <small class="error-message" id="emailError"></small>
-                    </div>
-                    <button type="submit" class="submit-btn">전송</button>
-                  </form>
-                </div>
-              </div>
-            </section>
       <!-- 푸터 영역-->
       <footer class="footer">
         <div class="footer-container">

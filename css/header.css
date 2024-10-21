@@ -631,7 +631,7 @@
         display: block;
     }
     .banner{
-        margin-top: 140px;
+        /* margin-top: 140px; */
     }
     .navi-cate{
         width: auto;
@@ -668,7 +668,7 @@
 
 @media (max-width: 768px){
     .banner{
-        margin-top: 100px;
+        /* margin-top: 100px; */
     }
     .header .header-bottom{
         display: none;

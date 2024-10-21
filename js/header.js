@@ -158,52 +158,64 @@ window.addEventListener("resize", function () {
   // }
 });
 
-AOS.init();
+// 비디오 항목 체크 (video태그로 파악)
+  // 모든비디오 태그를 변수에 저장
+  let videos = this.document.querySelectorAll(".swVideo video");
+  console.log(videos);
+  // 비디오 재생시간 체크
+  // 비디오의 재생 시간을 보관할 배열을 생성
+  let videosTimeArr = [];
+  // 비디오 재생 시간을 배열에 저장하는 반복문을 작성
+  for (let i = 0; i < videos.length; i++) {
+    console.log(videos[0].duration);
 
-// Swiper 초기화
-const swVideo = new Swiper(".swVideo", {
-  loop: true,
-  on: {
-    slideChange: handleSlideChange,
-  },
-});
-
-// 모든 비디오 가져오기
-const videos = document.querySelectorAll(".swVideo video");
-let videoTimeArr = []; // 재생 시간을 저장할 배열
-let currentVideoIndex = 0; // 현재 재생 중인 비디오 인덱스
-
-// 비디오 재생 시간 로드 및 저장
-videos.forEach((video, index) => {
-  video.addEventListener("loadedmetadata", () => {
-    videoTimeArr[index] = Math.ceil(video.duration); // 초 단위로 올림
-    console.log(`Video ${index} duration: ${videoTimeArr[index]} seconds`);
-  });
-
-  video.addEventListener("ended", () => {
-    handleVideoEnd(index); // 영상 종료 시 다음 슬라이드로 이동
-  });
-});
-
-// 첫 번째 비디오 자동 재생
-videos[currentVideoIndex].play();
-
-// 슬라이드 변경 시 비디오 처리
-function handleSlideChange() {
-  videos[currentVideoIndex].pause(); // 현재 비디오 멈춤
-  videos[currentVideoIndex].currentTime = 0; // 재생 시간 초기화
-
-  currentVideoIndex = swVideo.realIndex; // 새로운 인덱스 업데이트
-  videos[currentVideoIndex].play(); // 새로운 비디오 재생
-}
-
-// 비디오 종료 시 호출되는 함수
-function handleVideoEnd(index) {
-  if (index === videos.length - 1) {
-    swVideo.slideTo(0); // 마지막 슬라이드 → 첫 번째 슬라이드로 이동
-  } else {
-    swVideo.slideNext(); // 다음 슬라이드로 이동
+    videosTimeArr[i] = Math.ceil(videos[i].duration);
+    console.log(videosTimeArr[0]);
   }
-}
+  // 첫번째 비디오 자동 실행
+  let videoIndex = 0;
+  videos[videoIndex].play();
+  // visual slide
+  // swiper슬라이드 초기화
+  let swVisual = new Swiper(".swVideo", {
+    loop: true,
+  });
+  // 슬라이드 변경 이벤트시 처리
+  swVisual.on("slideChange", function () {
+    // 진행중인 비디오 멈춤
+    videos[videoIndex].pause();
+    // 다음 화면 보이는 swiper 슬라이드 번호
+    // console.log(swVisual.activeIndex);
+    // console.log(swVisual.realIndex);
+    videoIndex = swVisual.realIndex;
+
+    videos[videoIndex].currentTime = 0;
+    const playPromise = videos[videoIndex].play();
+    if (playPromise !== undefined) {
+      playPromise.then((_) => {}).catch((error) => {});
+    }
+    clearInterval(videoTimer);
+    videoReset();
+  });
+
+  // 타이머를 생성한다
+  // 비디오 타이머 초기화 및 설정
+  let videoTimer;
+  // 비디오 타이머를 설정하고 초기화하는 함수 를 정의하고 호출
+  function videoReset() {
+    clearInterval(videoTimer);
+    // 비디오 플레이시간
+    let videoTime = videosTimeArr[videoIndex];
+    // console.log(videoTime);
+    videoTimer = setInterval(() => {
+      // console.log(barScaleW);
+
+      swVisual.slideNext();
+      clearInterval(videoTimer);
+      videoReset();
+    }, videoTime * 1000);
+  }
+  videoReset();
+ 
 
 }

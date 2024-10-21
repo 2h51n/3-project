@@ -22,8 +22,8 @@
 .kakao-btn-img,
 .naver-btn-img,
 .top-btn-img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -33,15 +33,21 @@
 
 /* 개별 버튼들 위치 설정 */
 .cart-btn {
-  bottom: 100px; /* 장바구니 버튼 위치 */
+  bottom: 80px; /* 장바구니 버튼 위치 */
+  right: 30px;
 }
 
 .cs-btn {
-  bottom: 160px; /* CS 버튼 위치 */
+  bottom: 150px; /* CS 버튼 위치 */
+  right: 30px;
 }
 
 .top-btn {
   bottom: 220px; /* Top 버튼 위치 */
+  opacity: 0; /* 초기 상태: 숨김 */
+  transition: opacity 0.5s ease; /* 부드러운 페이드 인/아웃 효과 */
+  display: none; /* 초기 상태: 숨김 */
+  right: 30px;
 }
 
 /* 모달 제어 */
@@ -69,4 +75,130 @@
   cursor: pointer;
   font-size: 24px;
   color: #000;
+}
+
+/* 알림 메시지 스타일 */
+.notification {
+  position: fixed;
+  bottom: 20px; /* 원하는 위치 조정 */
+  right: 20px; /* 원하는 위치 조정 */
+  background-color: #fdd835; /* 배경색 */
+  color: #000; /* 글자색 */
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none; /* 기본적으로 숨김 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+  transition: opacity 0.3s ease; /* 부드럽게 나타나고 사라짐 */
+}
+
+@charset "utf-8";
+
+/* 고정 버튼들 공통 스타일 */
+.fixBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.fixBtn:hover {
+  transform: scale(1.1); /* 호버 시 확대 */
+  filter: brightness(80%);
+}
+
+/* 고정 버튼 이미지 공통 스타일 */
+.fix-btn-img,
+.fix-btn-img-hover,
+.cs-btn-img,
+.kakao-btn-img,
+.naver-btn-img,
+.top-btn-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.fix-btn-img-hover {
+  display: none;
+}
+
+/* 개별 버튼들 위치 설정 */
+.cart-btn {
+  bottom: 80px; /* 장바구니 버튼 위치 */
+  right: 30px;
+}
+
+.cs-btn {
+  bottom: 150px; /* CS 버튼 위치 */
+  right: 30px;
+}
+
+.top-btn {
+  bottom: 220px; /* Top 버튼 위치 */
+  opacity: 0; /* 초기 상태: 숨김 */
+  transition: opacity 0.5s ease; /* 부드러운 페이드 인/아웃 효과 */
+  display: none; /* 초기 상태: 숨김 */
+  right: 30px;
+}
+
+/* 모달 제어 */
+.modal-open {
+  display: block;
+}
+
+/* 탑 버튼 숨김 */
+.top-btn {
+  display: none; /* 스크롤 전에는 숨기기 */
+}
+
+.close-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.close-wrap input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.close-wrap .close-btn {
+  cursor: pointer;
+  font-size: 24px;
+  color: #000;
+}
+
+/* 알림 메시지 스타일 */
+.notification {
+  position: fixed;
+  bottom: 20px; /* 원하는 위치 조정 */
+  right: 20px; /* 원하는 위치 조정 */
+  background-color: #fdd835; /* 배경색 */
+  color: #000; /* 글자색 */
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none; /* 기본적으로 숨김 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+  transition: opacity 0.3s ease; /* 부드럽게 나타나고 사라짐 */
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 1024px) {
+  /* 1024px 이하 스타일 */
+}
+
+@media (max-width: 768px) {
+  /* 768px 이하 스타일 */
+}
+
+@media (max-width: 480px) {
+  .top-btn {
+    display: none; /* 480px 이하에서는 Top 버튼 숨김 */
+  }
+}
+
+@media (max-width: 360px) {
+  /* 360px 이하 스타일 */
 }

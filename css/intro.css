@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+/* 소개 영역 스타일 */
+.aboutUs {
+  width: 100%;
+  background-color: #fff; /* 배경색 */
+}
+
+.aboutUs_container {
+  max-width: 1300px; /* 최대 너비 */
+  margin: 0 auto; /* 중앙 정렬 */
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 배치 */
+  align-items: center; /* 가운데 정렬 */
+  overflow: hidden;
+}
+
+/* 메인 타이틀 중앙 정렬 */
+.intro_main_title {
+  text-align: center; /* 중앙 정렬 */
+  margin-bottom: 40px; /* 타이틀과 다음 요소 간 여백 */
+}
+
+.intro_main_title img {
+  max-width: 400px;
+}
+
+/* 공통 그리드 레이아웃 */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 두 개의 열로 나눔 */
+  grid-template-rows: auto; /* 자동으로 높이 설정 */
+  grid-template-areas:
+    "image title"
+    "image text"; /* 좌측은 이미지, 우측 상단은 타이틀, 하단은 텍스트 배치 */
+  gap: 20px; /* 요소 간 간격 */
+  width: 100%; /* 전체 너비 */
+  max-width: 1300px; /* 최대 너비 */
+  margin-bottom: 40px; /* 다음 섹션과의 여백 */
+}
+
+.grid-layout img {
+  width: 100%;
+  height: auto; /* 이미지 비율 유지 */
+}
+
+/* 좌측 큰 이미지 */
+.grid-layout .main-image {
+  grid-area: image; /* 그리드 영역 설정 */
+  max-width: 600px; /* 이미지 최대 너비 */
+}
+
+/* 우측 타이틀 */
+.grid-layout .title {
+  grid-area: title; /* 그리드 영역 설정 */
+  justify-self: end; /* 오른쪽 정렬 */
+}
+
+/* 우측 하단 텍스트 */
+.grid-layout .text {
+  grid-area: text; /* 그리드 영역 설정 */
+  justify-self: end; /* 오른쪽 정렬 */
+}
+
+/* 1wrap, 2wrap에 그리드 레이아웃 적용 */
+.intro_1_wrap,
+.intro_2_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 좌우로 나눔 */
+  grid-template-rows: auto auto; /* 위아래로 두 줄 */
+  grid-template-areas:
+    "image title"
+    "image text"; /* 그리드 영역 설정 */
+  gap: 20px; /* 간격 */
+  width: 100%; /* 전체 너비 */
+  max-width: 1300px; /* 최대 너비 */
+  margin-bottom: 40px; /* 여백 */
+}
+
+.intro_1_wrap img,
+.intro_2_wrap img {
+  width: 100%; /* 이미지 너비 */
+  height: auto; /* 이미지 비율 유지 */
+}
+
+.intro_1_wrap .main-image,
+.intro_2_wrap .main-image {
+  grid-area: image; /* 그리드 이미지 영역 */
+}
+
+.intro_1_wrap .title,
+.intro_2_wrap .title {
+  grid-area: title; /* 타이틀 그리드 영역 */
+  justify-self: end; /* 타이틀 오른쪽 정렬 */
+}
+
+.intro_1_wrap .text,
+.intro_2_wrap .text {
+  grid-area: text; /* 텍스트 그리드 영역 */
+  justify-self: end; /* 텍스트 오른쪽 정렬 */
+}
+
+/* 3wrap: 이미지가 전체로 차지하고 텍스트를 이미지 안 우상단에 배치 */
+.intro_3_wrap {
+  position: relative; /* 자식 요소의 절대 위치 설정을 위해 */
+  width: 100%; /* 전체 너비 */
+}
+
+.intro_3_wrap img {
+  width: 100%; /* 전체 너비 */
+  max-width: none; /* 최대 너비 제한 해제 */
+}
+
+.intro_3_wrap img:last-child {
+  position: absolute; /* 텍스트를 이미지 위에 위치시키기 위해 절대 위치 설정 */
+  max-width: 400px;
+  top: 20px; /* 이미지 위쪽 여백 */
+  right: 20px; /* 이미지 오른쪽 여백 */
+  padding: 10px; /* 텍스트 패딩 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  z-index: 2; /* 텍스트 위에 표시 */
+}

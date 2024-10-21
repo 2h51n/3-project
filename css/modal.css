@@ -1,62 +1,54 @@
-/* 모달 창 */
+@charset "utf-8";
+/* 모달 전체 스타일 */
 .modal {
-    display: none; /* 기본적으로 숨김 */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 배경 반투명 */
-  }
-  
-  .modal-open {
-    display: block; /* 모달이 열릴 때 */
-  }
-  
-  .modal-content {
-    position: relative;
-    margin: 10% auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-  }
-  
-  /* 닫기 버튼 및 '오늘 하루 열지 않음' 스타일 */
-  .close-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .close-wrap input[type="checkbox"] {
-    margin-right: 8px;
-  }
-  
-  .close-wrap .close-btn {
-    cursor: pointer;
-    font-size: 24px;
-    color: #000;
-  }
-  
-  /* 탑 버튼 */
-  .top-btn {
-    display: none; /* 기본적으로 숨김 */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    cursor: pointer;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .top-btn:hover {
-    background-color: #f0f0f0;
-  }
+  display: block; /* 기본적으로 모달을 숨깁니다 */
+  position: fixed; /* 고정 위치 */
+  z-index: 1000; /* 최상위 계층 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 전체 화면 너비 */
+  height: 100%; /* 전체 화면 높이 */
+  overflow: auto; /* 오버플로우 설정 */
+  background-color: rgba(0, 0, 0, 0.5); /* 배경 색상 (반투명) */
+  backdrop-filter: blur(8px); /* 배경 블러 처리 */
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+  margin: 15% auto; /* 위쪽 여백 및 가운데 정렬 */
+  padding: 20px; /* 내부 여백 */
+  border: 1px solid #c8ff00; /* 테두리 */
+  background-color: aliceblue;
+  width: 80%; /* 너비 설정 */
+  max-width: 600px; /* 최대 너비 설정 */
+  position: relative; /* 위치 지정 */
+  border-radius: 20px; /* 모서리 둥글게 */
+}
+
+.modal-content > img {
+  width: 100%;
+}
+
+/* 닫기 버튼 및 체크박스 스타일 */
+.close-wrap {
+  display: flex;
+  justify-content: space-between; /* 공간 분배 */
+  align-items: center; /* 수직 정렬 */
+  margin-top: 15px; /* 여백 설정 */
+}
+
+.close-btn {
+  cursor: pointer; /* 포인터 커서로 변경 */
+  font-size: 24px; /* 폰트 사이즈 */
+  color: #aaa; /* 색상 */
+}
+
+.close-btn:hover {
+  color: #000; /* 마우스 오버 시 색상 변경 */
+}
+
+/* 체크박스 스타일 */
+.notToday {
+  margin-left: 5px; /* 체크박스와 텍스트 간격 설정 */
+  font-size: 14px; /* 폰트 사이즈 설정 */
+}

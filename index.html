@@ -12,7 +12,7 @@
     <meta property="og:title" content="환경을 살리는 소비 'JUNKY FUNKY!',정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
     <meta property="og:description" content="환경을 살리는 소비 'JUNKY FUNKY!', 정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
     <!-- 버셀 주소 -->
-    <meta property="og:image" content="images/A/main_logo.png" />
+    <meta property="og:image" content="https://3-project-alpha.vercel.app/images/A/main_logo.png" />
     <meta property="og:url" content="https://3-project-alpha.vercel.app/" />
     <meta property="og:site_name" content="환경을 살리는 소비 'JUNKY FUNKY!'" />
     <meta property="og:type" content="website" />
@@ -48,6 +48,8 @@
     <script src="js/subscription.js"></script>
     <script src="js/rookie_brand.js"></script>
     <script src="js/review.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/fix-btn.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
@@ -68,12 +70,19 @@
         </div> -->
       </div>
     </div>
-    <!-- 카트 고정 버튼 -->
-    <div class="fix-buy-btn fixBtn">
-      <a href="#">
+    <!-- 장바구니 고정 버튼 -->
+    <div class="cart-btn fixBtn">
+      <a href="cart.html" onclick="showCart()">
         <img src="images/btn/cart_btn.png" alt="구매하기 고정버튼" class="fix-btn-img" />
         <img src="images/btn/cart_hover_btn.png" alt="구매하기 고정버튼 호버" class="fix-btn-img-hover" />
       </a>
+      <div class="fixed-buttons">
+        <div class="cart-btn">
+          <a href="#" id="cart-count">0</a>
+          <!-- 장바구니 상품 표시 영역 -->
+          <div id="cart-content" class="cart-content"></div>
+        </div>
+      </div>
     </div>
     <!-- CS버튼 -->
     <div class="cs-btn fixBtn">
@@ -83,7 +92,6 @@
     <div class="top-btn fixBtn">
       <img src="images/btn/top_btn.png" alt="탑버튼" class="top-btn-img" />
     </div>
-
     <div class="wrap">
       <!-- 헤더 영역 -->
       <header class="header">
@@ -134,7 +142,7 @@
                     <button class="cate-close2">X</button>
                     <div class="side-top">
                       <a href="#" class="side-top-logo">
-                        <img src="images/A/main_logo.png" alt="로고">
+                        <img src="images/A/main_logo.png" alt="로고" />
                       </a>
                       <div class="side-top-icons">
                         <div class="side-iconsBT">
@@ -156,7 +164,7 @@
                             </a>
                           </div>
                         </div>
-                        <input type="text">
+                        <input type="text" />
                       </div>
                       <ul class="side-top-menu">
                         <li><a href="#">소개</a></li>
@@ -165,7 +173,7 @@
                         <li><a href="#">공지사항</a></li>
                       </ul>
                     </div>
-                    <hr>
+                    <hr />
                     <div class="side-bottom">
                       <h3 class="side-bottom-title">카테고리</h3>
                       <ul class="side-bottom-menu">
@@ -362,6 +370,26 @@
           </div>
         </div>
       </div>
+      <!-- 소개 영역 -->
+      <!-- <section class="aboutUs">
+        <div class="aboutUs_container">
+          <div class="intro_main_title" data-aos="fade-up">
+            <img src="images/intro/intro_main_title.png" alt="소개" />
+          </div>
+          <div class="intro_1_wrap">
+            <img src="images/intro/intro_img_1.png" alt="이미지1" data-aos="fade-up" data-aos-delay="100" />
+            <img src="images/intro/intro_title_1.png" alt="타이틀1" data-aos="fade-up" />
+          </div>
+          <div class="intro_2_wrap">
+            <img src="images/intro/intro_img_2.png" alt="이미지2" data-aos="fade-up" data-aos-delay="100" />
+            <img src="images/intro/intro_title_2.png" alt="타이틀2" data-aos="fade-up" />
+          </div>
+          <div class="intro_3_wrap">
+            <img src="images/intro/intro_img_3.png" alt="이미지3" data-aos="fade-up" />
+            <img src="images/intro/intro_txt_3.png" alt="텍스트3" data-aos="fade-up" data-aos-delay="100" />
+          </div>
+        </div>
+      </section> -->
       <!-- 메인 영역 시작 -->
       <!-- 소재별 카테고리 영역 -->
       <div class="material-area">
@@ -714,7 +742,7 @@
           <img class="respon_360" src="images/A/e.banner/360_e.banner.png" alt="이벤트배너" />
         </div>
       </div>
-      <!-- 인기 아이템-->
+      <!-- 인기 아이템 -->
       <section class="popular-items-section">
         <div class="container">
           <h2 class="section-title">인기 아이템</h2>
@@ -730,6 +758,9 @@
               <p class="product-price">21,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(11,347)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '모어포 모레 플라스틱 비누받침', 21000)" />
+              </div>
             </div>
             <!-- 2번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="100">
@@ -740,6 +771,9 @@
               <p class="product-price">56,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(8,856)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '도자 귀걸이 반지 선물세트', 56000)" />
+              </div>
             </div>
             <!-- 3번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="200">
@@ -750,6 +784,9 @@
               <p class="product-price">12,300원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(7,724)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '거북이 보틀 오프너', 12300)" />
+              </div>
             </div>
             <!-- 4번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="300">
@@ -760,6 +797,9 @@
               <p class="product-price">32,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(6,249)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '리사이클 유리팔찌', 32000)" />
+              </div>
             </div>
             <!-- 5번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="400">
@@ -770,6 +810,9 @@
               <p class="product-price">7,900원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(5,237)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '헌의류 곱창밴드', 7900)" />
+              </div>
             </div>
             <!-- 6번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="500">
@@ -780,6 +823,9 @@
               <p class="product-price">15,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(3,856)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '양말 목 체커보드백', 15000)" />
+              </div>
             </div>
             <!-- 7번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="600">
@@ -790,6 +836,9 @@
               <p class="product-price">35,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(2,261)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '폐목 우드 트레이', 35000)" />
+              </div>
             </div>
             <!-- 8번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="700">
@@ -800,10 +849,14 @@
               <p class="product-price">38,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(1,832)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="toggleCartIcon(this, '플라스틱 책선반', 38000)" />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       <!-- 루키 브랜드 -->
       <section class="rookie-brands">
         <div class="rookie_container">
@@ -928,17 +981,14 @@
               <!-- 성함 입력 -->
               <div class="form-group">
                 <input type="text" name="name" id="name" placeholder="성함" required />
-                <small class="error-message" id="nameError"></small>
               </div>
               <!-- 전화번호 입력 -->
               <div class="form-group">
                 <input type="tel" name="phone" id="phone" placeholder="전화번호" required />
-                <small class="error-message" id="phoneError"></small>
               </div>
               <!-- 이메일 입력 -->
               <div class="form-group">
                 <input type="email" name="email" id="email" placeholder="이메일" required />
-                <small class="error-message" id="emailError"></small>
               </div>
               <button type="submit" class="submit-btn">전송</button>
             </form>

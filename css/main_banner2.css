@@ -6,11 +6,14 @@
   /* height: auto; */
   margin-top: 100px;
   box-shadow: 0 5px 5px -5px #333;
-  /* height: calc(100vh - 100px) ; */
+  height: calc(100vh - 100px) ;
   /* height: auto; */
   /* max-width: 1100px; */
   /* background-color: aqua; */
 }
+/* .swVideo .swiper-wrapper{
+  width: 100%;
+} */
 
 .swVideo .swiper-slide{
   width: 100%;
@@ -18,7 +21,7 @@
   /* background-color: rgb(255, 255, 255); */
 }
 
-.black{
+/* .black{
   background-color: black;
 }
 
@@ -27,15 +30,25 @@
 }
 .white{
   background-color: white;
-}
+} */
 
 .swVideo video{
   width: 100%;
   height: auto;
-  /* height: calc(100vh - 100px) ; */
+  height: calc(100vh - 100px) ;
   overflow: hidden;
-  object-fit: contain;
+  object-fit: cover;
   
+}
+
+@media (max-width: 1340px){
+  .video-banner{
+    height: auto ;
+  }
+  .swVideo video{
+    height: auto ;
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 1170px){

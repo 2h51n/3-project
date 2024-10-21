@@ -17,11 +17,13 @@
   align-items: center;
   padding: 0 20px;
   position: relative;
+  gap: 20px;
 }
 /* 왼쪽 영역 스타일 */
 .footer-left {
   font-size: 12px;
   line-height: 1.7;
+  word-break: keep-all;
 }
 .footer-left p {
   margin: 5px 0;
@@ -33,6 +35,9 @@
   display: flex;
   font-size: 12px;
   line-height: 1.7;
+  align-items: flex-end;
+  text-align: right;
+  word-break: keep-all;
 }
 .footer-right p {
   margin: 5px 0;

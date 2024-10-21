@@ -128,6 +128,12 @@ sideInputBT.addEventListener("click", function(){
   sideInput.classList.toggle("active")
 })
 
+const search830 = document.querySelector(".header-icons > .searchMB > a .search_icon")
+const searchInput = document.querySelector(".searchMB input")
+
+search830.addEventListener("click", function(){
+  searchInput.classList.toggle("active")
+})
 
 
 // 사이드 메뉴 내부 클릭 시 이벤트 버블링 방지
@@ -140,6 +146,7 @@ window.addEventListener("resize", function () {
   if (window.innerWidth > 768) {  // 임의로 768px로 설정 (필요 시 조정)
     headLogo.classList.remove("hidden");  // 큰 화면에서는 로고를 항상 표시
     sideMenu.classList.remove("active");  // 메뉴도 닫힘
+    naviCate.classList.remove("active")
     // cateClose2.classList.remove("active");
   }
   const icon = document.querySelector("#category-icon");

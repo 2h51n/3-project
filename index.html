@@ -70,11 +70,14 @@
         </div>
       </div>
     </div>
+    <!-- 알림 메시지 -->
+    <div id="notification" style="display: none">상품이 장바구니에 추가되었습니다!</div>
     <!-- 장바구니 고정 버튼 -->
     <div class="cart-btn fixBtn">
       <a href="#">
         <img src="images/btn/cart_btn.png" alt="구매하기 고정버튼" class="fix-btn-img" />
         <img src="images/btn/cart_hover_btn.png" alt="구매하기 고정버튼 호버" class="fix-btn-img-hover" />
+        <span id="cartCount" class="cart-count">0</span> <!-- 카운터 추가 -->
       </a>
     </div>
     <!-- CS버튼 -->
@@ -157,7 +160,7 @@
                             </a>
                           </div>
                         </div>
-                        <input type="text" placeholder="입력 후 엔터"/>
+                        <input type="text" placeholder="입력 후 엔터" />
                       </div>
                       <ul class="side-top-menu">
                         <li><a href="#">소개</a></li>
@@ -738,20 +741,20 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(11,347)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('모어포 모레 플라스틱 비누받침', 21000)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="모어포 모레 플라스틱 비누받침" data-price="21000" />
               </div>
             </div>
             <!-- 2번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="100">
               <div class="ranking-badge">2</div>
-              <img src="images/product images/pd_img (6).png" alt="ODD.CALENDAR 2024" class="product-image" />
+              <img src="images/product images/pd_img (6).png" alt="도자 귀걸이 반지 선물세트" class="product-image" />
               <p class="product-brand">아차시픈</p>
               <p class="product-name">도자 귀걸이 반지 선물세트</p>
               <p class="product-price">56,000원</p>
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(8,856)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('도자 귀걸이 반지 선물세트', 56000)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="도자 귀걸이 반지 선물세트" data-price="56000" />
               </div>
             </div>
             <!-- 3번 상품 -->
@@ -764,7 +767,7 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(7,724)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('거북이 보틀 오프너', 12300)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="거북이 보틀 오프너" data-price="12300" />
               </div>
             </div>
             <!-- 4번 상품 -->
@@ -777,7 +780,7 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(6,249)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('리사이클 유리팔찌', 32000)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="리사이클 유리팔찌" data-price="32000" />
               </div>
             </div>
             <!-- 5번 상품 -->
@@ -790,7 +793,7 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(5,237)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('헌의류 곱창밴드', 7900)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="헌의류 곱창밴드" data-price="7900" />
               </div>
             </div>
             <!-- 6번 상품 -->
@@ -803,7 +806,7 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(3,856)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('양말 목 체커보드백', 15000)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="양말 목 체커보드백" data-price="15000" />
               </div>
             </div>
             <!-- 7번 상품 -->
@@ -816,7 +819,7 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(2,261)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('폐목 우드 트레이', 35000)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="폐목 우드 트레이" data-price="35000" />
               </div>
             </div>
             <!-- 8번 상품 -->
@@ -829,12 +832,20 @@
               <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
               <p class="review-count">(1,832)</p>
               <div class="add-to-cart">
-                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon" onclick="addToCart('플라스틱 책선반', 38000)" />
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="플라스틱 책선반" data-price="38000" />
               </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- 장바구니 팝업 -->
+      <div id="cartPopup" class="cart-popup" style="display: none">
+        <div class="popup-content">
+          <h2>장바구니 내용</h2>
+          <ul id="cartItemsList"></ul>
+          <button onclick="closeCartPopup()">닫기</button>
+        </div>
+      </div>
       <!-- 루키 브랜드 -->
       <section class="rookie-brands">
         <div class="rookie_container">
@@ -943,11 +954,9 @@
                 </div>
               </div>
             </div>
+            <!-- 스크롤라인 추가 -->
+            <div class="scroll-line swiper-scrollbar"></div>
           </div>
-        </div>
-        <!-- 스크롤라인 추가 -->
-        <div class="scroll-line">
-          <div class="swiper-scrollbar-drag"></div>
         </div>
       </section>
       <!-- 뉴스레터/구독영역 -->

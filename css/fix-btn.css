@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* 고정 버튼들 공통 스타일 */
 .fixBtn {
   position: fixed;
@@ -77,112 +76,102 @@
   color: #000;
 }
 
-/* 알림 메시지 스타일 */
-.notification {
-  position: fixed;
-  bottom: 20px; /* 원하는 위치 조정 */
-  right: 20px; /* 원하는 위치 조정 */
-  background-color: #fdd835; /* 배경색 */
-  color: #000; /* 글자색 */
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: none; /* 기본적으로 숨김 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
-  transition: opacity 0.3s ease; /* 부드럽게 나타나고 사라짐 */
+.popup-content {
+  text-align: center;
+  padding: 2%;
 }
 
-@charset "utf-8";
+#cartItemsList {
+  list-style-type: none;
+  padding: 1%;
+}
 
-/* 고정 버튼들 공통 스타일 */
-.fixBtn {
+#notification {
   position: fixed;
-  right: 20px;
   bottom: 20px;
-  z-index: 1000;
-  cursor: pointer;
-  transition: transform 0.3s, filter 0.3s;
+  right: 20px;
+  background-color: #fdd835;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease;
+  z-index: 1000; /* 다른 요소 위에 표시 */
 }
 
-.fixBtn:hover {
-  transform: scale(1.1); /* 호버 시 확대 */
-  filter: brightness(80%);
+/* 팝업 배경 스타일 */
+#cartPopup {
+  position: fixed; /* 고정 위치 */
+  top: 78%; /* 중앙 위치 */
+  left: 78%; /* 중앙 위치 */
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  width: 90%; /* 최대 너비 수정 */
+  max-width: 400px; /* 최대 너비 설정 */
+  background-color: rgba(255, 255, 255, 0.9); /* 반투명 흰색 배경 */
+  display: none; /* 기본적으로 숨김 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  z-index: 99; /* 가장 위에 표시 */
+  overflow: hidden;
+  border-radius: 15px; /* 더 부드러운 모서리 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
 }
 
-/* 고정 버튼 이미지 공통 스타일 */
-.fix-btn-img,
-.fix-btn-img-hover,
-.cs-btn-img,
-.kakao-btn-img,
-.naver-btn-img,
-.top-btn-img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+/* 팝업 내용 스타일 */
+#cartItemsList {
+  background-color: white; /* 흰색 배경 */
+  padding: 30px; /* 패딩 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
 }
 
-.fix-btn-img-hover {
-  display: none;
+/* 버튼 스타일 */
+#cartPopup button {
+  margin-top: 5%; /* 버튼 위쪽 마진 */
+  padding: 10px 15px; /* 패딩 */
+  background-color: #fdd835; /* 더 부드러운 파란색 */
+  color: white; /* 버튼 텍스트 색 */
+  border: none; /* 기본 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 마우스 포인터 변경 */
+  transition: background-color 0.3s, transform 0.2s; /* 배경색 변화 애니메이션 및 크기 변화 추가 */
 }
 
-/* 개별 버튼들 위치 설정 */
-.cart-btn {
-  bottom: 80px; /* 장바구니 버튼 위치 */
-  right: 30px;
-}
-
-.cs-btn {
-  bottom: 150px; /* CS 버튼 위치 */
-  right: 30px;
-}
-
-.top-btn {
-  bottom: 220px; /* Top 버튼 위치 */
-  opacity: 0; /* 초기 상태: 숨김 */
-  transition: opacity 0.5s ease; /* 부드러운 페이드 인/아웃 효과 */
-  display: none; /* 초기 상태: 숨김 */
-  right: 30px;
-}
-
-/* 모달 제어 */
-.modal-open {
-  display: block;
-}
-
-/* 탑 버튼 숨김 */
-.top-btn {
-  display: none; /* 스크롤 전에는 숨기기 */
-}
-
-.close-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.close-wrap input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-.close-wrap .close-btn {
-  cursor: pointer;
-  font-size: 24px;
-  color: #000;
+/* 버튼 호버 효과 */
+#cartPopup button:hover {
+  background-color: #0056b3; /* 호버 시 배경색 변경 */
+  transform: scale(1.05); /* 호버 시 버튼 확대 */
 }
 
 /* 알림 메시지 스타일 */
-.notification {
-  position: fixed;
-  bottom: 20px; /* 원하는 위치 조정 */
-  right: 20px; /* 원하는 위치 조정 */
-  background-color: #fdd835; /* 배경색 */
-  color: #000; /* 글자색 */
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: none; /* 기본적으로 숨김 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
-  transition: opacity 0.3s ease; /* 부드럽게 나타나고 사라짐 */
+#notification {
+  position: fixed; /* 고정 위치 */
+  bottom: 20px; /* 하단 */
+  left: 80%; /* 중앙 정렬 */
+  transform: translateX(-50%); /* 중앙 정렬 보정 */
+  background-color: #fdd835; /* 반투명 검정색 배경 */
+  color: white; /* 텍스트 색 */
+  padding: 10px 20px; /* 패딩 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  transition: opacity 0.3s, visibility 0.3s; /* 투명도 및 가시성 애니메이션 */
 }
+
+.cart-count {
+  position: absolute; /* 절대 위치 지정 */
+  top: -10px; /* 아이콘 위쪽으로 위치 조정 */
+  right: -10px; /* 아이콘 오른쪽으로 위치 조정 */
+  background-color: #fdd835; /* 배경 색상 */
+  color: #000; /* 텍스트 색상 */
+  border-radius: 50%; /* 원형 */
+  width: 24px; /* 너비 */
+  height: 24px; /* 높이 */
+  display: flex; /* flexbox 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  font-weight: bold; /* 두껍게 */
+  font-size: 14px; /* 글자 크기 */
+}
+
+
 
 /* 미디어 쿼리 */
 @media (max-width: 1024px) {

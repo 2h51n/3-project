@@ -54,18 +54,18 @@
   </head>
   <body>
     <!-- 모달 구조 -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
+    <!-- <div id="myModal" class="modal"> -->
+      <!-- <div class="modal-content"> -->
         <!-- 첫 번째 이미지 -->
-        <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
+        <!-- <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" /> -->
         <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
-        <div class="close-wrap">
+        <!-- <div class="close-wrap">
           <label>
             <input type="checkbox" id="notToday" />
             <span class="notToday">오늘 하루 열지 않음</span>
           </label>
           <span class="close-btn">&times;</span>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- 카트 고정 버튼 -->
@@ -126,10 +126,12 @@
                   </ul>
                 </div>
               </div>
-              <li id="category-icon">
-                <a href="#">
+              <li>
+                <button class="cate-close">X</button>
+                <a href="#" id="category-icon">
                   <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
                   <div class="sidemenu-area">
+                    <button class="cate-close2">X</button>
                     <div class="side-top">
                       <a href="#" class="side-top-logo">
                         <img src="images/A/main_logo.png" alt="로고">
@@ -296,7 +298,26 @@
           </div>
         </div>
       </header>
-      <!-- 배너 영역 -->
+      <!-- 동영상 배너 -->
+       <div class="video-banner">
+        <div class="video-slide-area">
+          <div class="swiper swVideo">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <video loop muted>
+                  <source src="/video/video2.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="swiper-slide">
+                <video loop muted>
+                  <source src="/video/video1.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      <!-- 상품 이미지 배너 영역 -->
       <div class="banner">
         <!-- 배너 슬라이드 -->
         <div class="slide-area">

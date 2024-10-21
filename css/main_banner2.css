@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+.video-banner {
+  position: relative;
+  height: calc(100vh - 100px) ;
+  width: 100%;
+  /* height: auto; */
+  margin-top: 100px;
+  /* max-width: 1100px; */
+  /* background-color: aqua; */
+  box-shadow: 0 5px 5px -5px #333;
+}
+
+.swVideo .swiper-slide{
+  width: 100%;
+}
+.swVideo video{
+  width: 100%;
+  height: calc(100vh - 100px) ;
+  overflow: hidden;
+  object-fit: cover;
+  
+}
+

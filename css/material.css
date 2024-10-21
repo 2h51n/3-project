@@ -70,7 +70,7 @@
   /* background-color: darkcyan; */
   justify-content: center;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 4%;
 }
 .material-goods-card {
   display: block;
@@ -213,7 +213,7 @@
   }
   .material-goods-card a > img {
 
-    height: auto;
+    height: 433px;
   }
   
 }
@@ -229,6 +229,11 @@
 @media (max-width: 768px) {
   .materal-textbox {
     text-align: center;
+
+  }
+  .material-goods-card a > img {
+
+    height: 328.61px;
   }
 }
 
@@ -236,6 +241,11 @@
 @media (max-width: 480px) {
   .swiper-slide img {
     width: 60%; /* 아이콘의 너비를 화면의 40%로 설정 */
+  }
+
+  .material-goods-card a > img {
+
+    height: 372px;
   }
 
   .material-goods {
@@ -272,6 +282,11 @@
     display: grid; /* 그리드 레이아웃으로 전환 */
     grid-template-columns: repeat(1, 1fr); /* 1열 배치 */
     gap: 10px; /* 그리드 아이템 간의 간격 */
+  }
+
+  .material-goods-card a > img {
+
+    height: 276px;
   }
 
   .material-goods-card {

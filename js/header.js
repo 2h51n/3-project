@@ -60,16 +60,6 @@ window.onload = function () {
     toggleSideMenu(true);
   });
 
-  // 카테고리 닫기 버튼 클릭 시
-  cateClose.addEventListener("click", function (e) {
-    e.preventDefault();
-    toggleSideMenu(false);
-  });
-  cateClose2.addEventListener("click", function (e) {
-    e.preventDefault();
-    toggleSideMenu(false);
-  });
-
   // 사이드 메뉴 열기/닫기 토글 함수
   function toggleSideMenu(isOpen) {
     if (isOpen) {

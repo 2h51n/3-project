@@ -15,10 +15,10 @@ window.onload = function () {
     spaceBetween: 20, // 슬라이드 간격 설정
     breakpoints: {
       // 화면 너비에 따른 슬라이드 개수 설정
-      320: { slidesPerView: 1.5 },
-      480: { slidesPerView: 2 },
-      768: { slidesPerView: 3 },
-      1024: { slidesPerView: 5 },
+      // 320: { slidesPerView: 1.5 },
+      // 480: { slidesPerView: 2 },
+      // 768: { slidesPerView: 3 },
+      // 1024: { slidesPerView: 5 },
     },
   });
   // ===소재별 인기 상품 섹션 끝===

@@ -1,45 +1,76 @@
 window.onload = function () {
-  // ===메인 배너 스와이퍼 슬라이드 영역 시작===
+  // ===메인 배너 스와이퍼 슬라이드 영역 시작
   const swBanner = new Swiper(".swBanner", {
-    loop: true, // 무한 루프
+    loop: true, // loop : 무한으로 도는 것.
     autoplay: {
       delay: 3500,
-      disableOnInteraction: false, // 상호작용 후에도 자동 재생
+      disableOnInteraction: false, // 상관없이 계속 autoplay.
     },
   });
-  // ===메인 배너 스와이퍼 슬라이드 영역 끝===
+  // ===메인 배너 슬라이드 영역 끝
 
-  // ===소재별 인기 상품 섹션 스와이퍼 슬라이드 영역 시작===
+
   const swMaterial = new Swiper(".swMaterial", {
-    slidesPerView: 5, 
-    // spaceBetween: 2, 
-    // breakpoints: {
-      
-    //   320: { slidesPerView: 1.5 },
-    //   480: { slidesPerView: 2 },
-    //   768: { slidesPerView: 3 },
-    //   1024: { slidesPerView: 5 },
+    slidesPerView: 5, // 한 번에 3개의 슬라이드 표시
+    // loop: true,
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false, // 상관없이 계속 autoplay.
     // },
-  });
-  // ===소재별 인기 상품 섹션 끝===
 
-  // ===리뷰 섹션 스와이퍼 슬라이드 영역 시작===
+});
+//   const swVideo = new Swiper(".swVideo", {
+//     slidesPerView: 1, // 한 번에 3개의 슬라이드 표시
+
+
+// });
+
+const materialSwiper = new Swiper(".swMaterial" ,{
+  slidesPerView: 5, // 한 번에 보여질 슬라이드 수
+    // loop: true,
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false, // 상관없이 계속 autoplay.
+    // },
+});
+
   const swReview = new Swiper(".swReview", {
-    slidesPerView: 1,
+    slidesPerView: 1, 
     spaceBetween: 20,
     loop: true,
-    breakpoints: {
-      320: { slidesPerView: 1.5 },
-      480: { slidesPerView: 2 },
-      768: { slidesPerView: 2 },
-      950: { slidesPerView: 3.5 },
-      1024: { slidesPerView: 4 },
-    },
-  });
-  // ===리뷰 섹션 끝===
-  
 
-  // 카테고리 텍스트메뉴 클릭 시 소재별 미니카테고리 나옴
+
+    breakpoints: {
+      // 화면 너비가 320px 이상일 때
+      320: {
+        slidesPerView: 1.5,
+      },
+      // 화면 너비가 480px 이상일 때
+      480: {
+        slidesPerView: 2,
+      },
+      // 화면 너비가 768px 이상일 때
+      500: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      // 화면 너비가 1024px 이상일 때
+      950: {
+        slidesPerView: 3.5,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+
+
+
+});
+// ===슬라이드 영역 끝
+
+// 카테고리 텍스트메뉴 클릭 시 소재별 미니카테고리 나옴
 const cateTitle = document.querySelectorAll(".category-title")
 const naviCate = document.querySelector(".navi-cate")
 // cateIcon.addEventListener("click", function(e){
@@ -137,8 +168,6 @@ window.addEventListener("resize", function () {
 // 비디오 항목 체크 (video태그로 파악)
   // 모든비디오 태그를 변수에 저장
   let videos = this.document.querySelectorAll(".swVideo video");
-      // 페이지가 로드되면 자동으로 2배속 설정
-
   console.log(videos);
   // 비디오 재생시간 체크
   // 비디오의 재생 시간을 보관할 배열을 생성
@@ -193,10 +222,7 @@ window.addEventListener("resize", function () {
       videoReset();
     }, videoTime * 1000);
   }
-
   videoReset();
  
 
-
-  
-};
+}

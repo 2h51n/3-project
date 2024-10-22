@@ -25,9 +25,25 @@ function initializeEventListeners() {
     closeCartPopup(); // 장바구니 팝업 닫기
   });
 
-  // 고객센터 버튼 클릭 시
+  // 고객센터 버튼 클릭 시 소셜 아이콘 표시/숨김
   csBtn.addEventListener("click", function () {
-    alert("고객센터에 문의해 주십시오.\n연락처: 123-456-7890"); // 고객센터 정보 표시
+    const socialIcons = document.querySelector(".social-icons");
+    const isVisible = socialIcons.style.display === "flex"; // 현재 표시 여부 확인
+
+    // 소셜 아이콘의 표시 및 숨김
+    socialIcons.style.display = isVisible ? "none" : "flex"; // 토글
+    if (!isVisible) {
+      socialIcons.style.opacity = 0; // 초기 투명도 설정
+      setTimeout(() => {
+        socialIcons.style.transition = "opacity 0.3s"; // 애니메이션 효과
+        socialIcons.style.opacity = 1; // 애니메이션으로 보이기
+      }, 10); // 약간의 딜레이 후 애니메이션 시작
+    } else {
+      socialIcons.style.opacity = 0; // 투명도 감소
+      setTimeout(() => {
+        socialIcons.style.display = "none"; // 완전히 사라지면 숨김
+      }, 300); // 애니메이션 효과와 일치하는 시간
+    }
   });
 
   // 스크롤 시 Top 버튼 표시 및 숨김
@@ -122,14 +138,19 @@ function closeCartPopup() {
 
 // Top 버튼의 표시 여부를 토글하는 함수
 function toggleTopButtonVisibility(topBtn) {
-  if (window.scrollY > 100) {
-    topBtn.style.display = "block"; // Top 버튼 표시
-    topBtn.style.opacity = 1; // 완전 불투명
+  if (window.innerWidth > 480) {
+    // 해상도 체크: 480px 이상일 때만 적용
+    if (window.scrollY > 100) {
+      topBtn.style.display = "block"; // Top 버튼 표시
+      topBtn.style.opacity = 1; // 완전 불투명
+    } else {
+      topBtn.style.opacity = 0; // 완전 투명
+      setTimeout(() => {
+        topBtn.style.display = "none"; // 버튼 숨김
+      }, 500); // 페이드 아웃 효과 후 숨김
+    }
   } else {
-    topBtn.style.opacity = 0; // 완전 투명
-    setTimeout(() => {
-      topBtn.style.display = "none"; // 버튼 숨김
-    }, 500); // 페이드 아웃 효과 후 숨김
+    topBtn.style.display = "none"; // 480px 이하에서는 버튼 숨기기
   }
 }
 

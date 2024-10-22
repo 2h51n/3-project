@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* 고정 버튼들 공통 스타일 */
 .fixBtn {
   position: fixed;
@@ -10,7 +11,7 @@
 }
 
 .fixBtn:hover {
-  transform: scale(1.1); /* 호버 시 확대 */
+  transform: scale(1.1);
   filter: brightness(80%);
 }
 
@@ -32,20 +33,44 @@
 
 /* 개별 버튼들 위치 설정 */
 .cart-btn {
-  bottom: 80px; /* 장바구니 버튼 위치 */
+  bottom: 80px;
   right: 30px;
 }
 
 .cs-btn {
-  bottom: 150px; /* CS 버튼 위치 */
-  right: 30px;
+  position: fixed; /* 화면 고정 */
+  bottom: 150px; /* 화면 하단에서의 거리 */
+  right: 30px; /* 화면 오른쪽에서의 거리 */
+  z-index: 1000; /* 다른 요소 위에 나타나도록 설정 */
+}
+
+.social-icons {
+  position: absolute; /* 소셜 아이콘은 CS 버튼을 기준으로 위치 */
+  top: calc(100% + -50px); /* CS 버튼 아래에 표시 */
+  left: -80px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+  display: none; /* 기본 상태는 숨김 */
+  flex-direction: row; /* 세로로 나열 */
+  gap: 10px; /* 아이콘 간 간격 설정 */
+  z-index: 1000; /* CS 버튼 위에 나타나도록 설정 */
+}
+
+.social-icon {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s; /* opacity에 대한 transition 추가 */
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8; /* 마우스 오버 시 투명도 감소 */
 }
 
 .top-btn {
-  bottom: 220px; /* Top 버튼 위치 */
-  opacity: 0; /* 초기 상태: 숨김 */
-  transition: opacity 0.5s ease; /* 부드러운 페이드 인/아웃 효과 */
-  display: none; /* 초기 상태: 숨김 */
+  bottom: 220px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: none;
   right: 30px;
 }
 
@@ -54,140 +79,216 @@
   display: block;
 }
 
-/* 탑 버튼 숨김 */
-.top-btn {
-  display: none; /* 스크롤 전에는 숨기기 */
-}
-
-.close-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.close-wrap input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-.close-wrap .close-btn {
-  cursor: pointer;
-  font-size: 24px;
-  color: #000;
-}
-
-.popup-content {
-  text-align: center;
-  padding: 2%;
+/* 팝업 공통 스타일 */
+#cartPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--popup-width);
+  max-width: var(--popup-max-width);
+  padding: var(--popup-padding);
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  z-index: 99;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 #cartItemsList {
-  list-style-type: none;
-  padding: 1%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#cartPopup button {
+  margin-top: 5%;
+  padding: var(--button-padding);
+  background-color: #fdd835;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#cartPopup button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* 알림 스타일 */
 #notification {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #fdd835;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
-  transition: opacity 0.3s ease;
-  z-index: 1000; /* 다른 요소 위에 표시 */
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
 }
 
-/* 팝업 배경 스타일 */
-#cartPopup {
-  position: fixed; /* 고정 위치 */
-  top: 78%; /* 중앙 위치 */
-  left: 78%; /* 중앙 위치 */
-  transform: translate(-50%, -50%); /* 중앙 정렬 */
-  width: 90%; /* 최대 너비 수정 */
-  max-width: 400px; /* 최대 너비 설정 */
-  background-color: rgba(255, 255, 255, 0.9); /* 반투명 흰색 배경 */
-  display: none; /* 기본적으로 숨김 */
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
-  z-index: 99; /* 가장 위에 표시 */
-  overflow: hidden;
-  border-radius: 15px; /* 더 부드러운 모서리 */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
-}
-
-/* 팝업 내용 스타일 */
-#cartItemsList {
-  background-color: white; /* 흰색 배경 */
-  padding: 30px; /* 패딩 */
-  border-radius: 8px; /* 모서리 둥글게 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-}
-
-/* 버튼 스타일 */
-#cartPopup button {
-  margin-top: 5%; /* 버튼 위쪽 마진 */
-  padding: 10px 15px; /* 패딩 */
-  background-color: #fdd835; /* 더 부드러운 파란색 */
-  color: white; /* 버튼 텍스트 색 */
-  border: none; /* 기본 테두리 제거 */
-  border-radius: 5px; /* 모서리 둥글게 */
-  cursor: pointer; /* 마우스 포인터 변경 */
-  transition: background-color 0.3s, transform 0.2s; /* 배경색 변화 애니메이션 및 크기 변화 추가 */
-}
-
-/* 버튼 호버 효과 */
-#cartPopup button:hover {
-  background-color: #0056b3; /* 호버 시 배경색 변경 */
-  transform: scale(1.05); /* 호버 시 버튼 확대 */
-}
-
-/* 알림 메시지 스타일 */
-#notification {
-  position: fixed; /* 고정 위치 */
-  bottom: 20px; /* 하단 */
-  left: 80%; /* 중앙 정렬 */
-  transform: translateX(-50%); /* 중앙 정렬 보정 */
-  background-color: #fdd835; /* 반투명 검정색 배경 */
-  color: white; /* 텍스트 색 */
-  padding: 10px 20px; /* 패딩 */
-  border-radius: 5px; /* 모서리 둥글게 */
-  transition: opacity 0.3s, visibility 0.3s; /* 투명도 및 가시성 애니메이션 */
-}
-
+/* 장바구니 카운트 스타일 */
 .cart-count {
-  position: absolute; /* 절대 위치 지정 */
-  top: -10px; /* 아이콘 위쪽으로 위치 조정 */
-  right: -10px; /* 아이콘 오른쪽으로 위치 조정 */
-  background-color: #fdd835; /* 배경 색상 */
-  color: #000; /* 텍스트 색상 */
-  border-radius: 50%; /* 원형 */
-  width: 24px; /* 너비 */
-  height: 24px; /* 높이 */
-  display: flex; /* flexbox 사용 */
-  justify-content: center; /* 중앙 정렬 */
-  align-items: center; /* 중앙 정렬 */
-  font-weight: bold; /* 두껍게 */
-  font-size: 14px; /* 글자 크기 */
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fdd835;
+  color: #000;
+  border-radius: 50%;
+  width: var(--count-size);
+  height: var(--count-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: var(--count-font-size);
 }
 
+/* CSS 변수 */
+:root {
+  --popup-width: 90%;
+  --popup-max-width: 400px;
+  --popup-padding: 30px;
+  --popup-font-size: 14px;
+  --button-padding: 10px 15px;
+  --count-size: 24px;
+  --count-font-size: 14px;
+}
 
-
-/* 미디어 쿼리 */
+/* 1024px 이하 */
 @media (max-width: 1024px) {
-  /* 1024px 이하 스타일 */
-}
+  :root {
+    --popup-width: 80%;
+    --popup-max-width: 350px;
+    --popup-padding: 20px;
+    --popup-font-size: 13px;
+    --button-padding: 10px 14px;
+    --count-size: 22px;
+    --count-font-size: 13px;
+  }
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img {
+    width: 50px;
+    height: 50px;
+  }
+  .cart-btn {
+    bottom: 70px;
+    right: 30px;
+  }
 
-@media (max-width: 768px) {
-  /* 768px 이하 스타일 */
-}
+  .cs-btn {
+    bottom: 130px;
+    right: 30px;
+  }
 
-@media (max-width: 480px) {
   .top-btn {
-    display: none; /* 480px 이하에서는 Top 버튼 숨김 */
+    bottom: 190px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+    right: 30px;
   }
 }
 
+/* 768px 이하 */
+@media (max-width: 768px) {
+  :root {
+    --popup-width: 90%;
+    --popup-max-width: 320px;
+    --popup-padding: 18px;
+    --popup-font-size: 12px;
+    --button-padding: 10px 14px;
+    --count-size: 20px;
+    --count-font-size: 12px;
+  }
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img {
+    width: 40px;
+    height: 40px;
+  }
+  .cart-btn {
+    bottom: 70px;
+    right: 30px;
+  }
+
+  .cs-btn {
+    bottom: 120px;
+    right: 30px;
+  }
+
+  .top-btn {
+    bottom: 170px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+    right: 30px;
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  :root {
+    --popup-width: 95%;
+    --popup-max-width: 340px;
+    --popup-padding: 16px;
+    --popup-font-size: 12px;
+    --button-padding: 8px 12px;
+    --count-size: 17px;
+    --count-font-size: 13px;
+  }
+
+  #notification {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img {
+    width: 40px;
+    height: 40px;
+  }
+  .top-btn {
+    display: none !important; /* 중요한 경우 강제로 숨김 처리 */
+  }
+}
+
+/* 360px 이하 */
 @media (max-width: 360px) {
-  /* 360px 이하 스타일 */
+  :root {
+    --popup-width: 98%;
+    --popup-max-width: 320px;
+    --popup-padding: 16px;
+    --popup-font-size: 12px;
+    --button-padding: 8px 12px;
+    --count-size: 20px;
+    --count-font-size: 12px;
+  }
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img {
+    width: 40px;
+    height: 40px;
+  }
 }

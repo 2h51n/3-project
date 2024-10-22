@@ -50,16 +50,83 @@
     <script src="js/review.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/fix-btn.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/cart-slide.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
   </head>
   <body>
+    <!-- 로그인 폼 -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">로그인</h2>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="이메일" required class="input-field" />
+          <input type="password" id="password" placeholder="비밀번호" required class="input-field" />
+          <div class="remember-me">
+            <input type="checkbox" id="rememberMe" />
+            <label for="rememberMe" style="font-size: 14px; margin-left: 5px">로그인 상태 유지</label>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="login-button">로그인</button>
+            <div class="footer-links">
+              <a href="#" class="open-register">회원가입</a>
+              <span>|</span>
+              <a href="#">아이디/비밀번호 찾기</a>
+            </div>
+            <div class="divider txt_c">
+              <div class="border"></div>
+              <span>또는</span>
+              <div class="border right"></div>
+            </div>
+            <button type="button" class="social-login naver-login">네이버로 로그인</button>
+            <button type="button" class="social-login kakao-login">카카오톡으로 로그인</button>
+          </div>
+        </form>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
+    <!-- 가입유형 -->
+    <div id="userTypeModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">가입 유형 선택</h2>
+        <div class="user-type">
+          <button type="button" class="user-type-btn individual">일반 회원</button>
+          <button type="button" class="user-type-btn business">사업자 회원</button>
+        </div>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
+    <!-- 회원가입 폼 -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">회원가입</h2>
+        <form id="registerForm">
+          <div class="selected-form">
+            <button type="submit" class="register-button">ID/PW로 회원가입</button>
+          </div>
+          <div class="divider txt_c">
+            <div class="border"></div>
+            <span>또는</span>
+            <div class="border right"></div>
+          </div>
+          <button type="button" class="social-login naver-login">네이버로 시작하기</button>
+          <button type="button" class="social-login kakao-login">카카오로 시작하기</button>
+        </form>
+        <div class="footer-links">
+          <a href="#" class="open-login">로그인</a>
+        </div>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
     <!-- 모달 구조 -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <!-- 첫 번째 이미지 -->
         <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
+        <!-- 타이머 표시 -->
+        <div id="timer" style="font-size: 24px; color: #d9534f; text-align: center; margin-top: 20px"></div>
         <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
         <div class="close-wrap">
           <label>
@@ -82,8 +149,12 @@
       </a>
     </div>
     <!-- CS버튼 -->
-    <div class="cs-btn fixBtn">
+    <div class="cs-btn fixBtn" tabindex="0">
       <img src="images/btn/cs_btn.png" alt="고객센터" class="cs-btn-img" />
+      <div class="social-icons" role="menu" aria-hidden="true">
+        <img src="images/btn/kakaotalk.png" alt="카카오톡" class="social-icon kakao-btn-img" tabindex="0" />
+        <img src="images/btn/naver_talk_icon_green.png" alt="네이버" class="social-icon naver-btn-img" tabindex="0" />
+      </div>
     </div>
     <!-- Top 버튼 -->
     <div class="top-btn fixBtn">
@@ -283,9 +354,8 @@
                   </a>
                 </div>
                 <div class="cartBt">
-                  <a href="#">
+                  <a href="#" class="cart-btn">
                     <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                    <!-- <span>카트</span> -->
                   </a>
                 </div>
               </div>

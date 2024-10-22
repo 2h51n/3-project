@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* 모달 전체 스타일 */
 .modal {
-  display: block; /* 기본적으로 모달을 숨깁니다 */
+  display: none; /* 기본적으로 모달을 숨깁니다 */
   position: fixed; /* 고정 위치 */
   z-index: 1000; /* 최상위 계층 */
   left: 0;
@@ -53,4 +53,51 @@
   font-size: 14px; /* 폰트 사이즈 설정 */
 }
 
+#timer {
+  font-size: 24px; /* 글자 크기 */
+  color: #d9534f; /* 긴박감을 줄 수 있는 빨간색 */
+  text-align: center; /* 중앙 정렬 */
+  margin-top: 20px; /* 위쪽 여백 */
+}
 
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  .modal-content {
+    width: 70%; /* 너비 70%로 줄임 */
+    max-width: 500px; /* 최대 너비 조정 */
+    margin: 15% auto; /* 위쪽 여백을 줄임 */
+    padding: 15px; /* 패딩을 줄임 */
+    top: 25%;
+  }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 85%; /* 너비를 85%로 조정 */
+    max-width: 400px; /* 최대 너비를 400px로 제한 */
+    margin: 15% auto; /* 위쪽 여백을 유지 */
+    padding: 15px; /* 패딩을 줄임 */
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%; /* 너비를 90%로 설정 */
+    max-width: 350px; /* 최대 너비를 350px로 조정 */
+    margin: 10% auto; /* 위쪽 여백을 더 줄임 */
+    padding: 10px; /* 패딩을 줄임 */
+    top: 25%;
+  }
+}
+
+/* 360px 이하 */
+@media (max-width: 360px) {
+  .modal-content {
+    width: 95%; /* 너비를 95%로 설정 */
+    max-width: 320px; /* 최대 너비를 320px로 제한 */
+    margin: 10% auto; /* 위쪽 여백을 유지 */
+    padding: 8px; /* 패딩을 더 줄임 */
+  }
+}

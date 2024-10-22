@@ -4,6 +4,7 @@ let cartItems = []; // 장바구니 아이템 배열
 // DOMContentLoaded 이벤트 리스너
 document.addEventListener("DOMContentLoaded", function () {
   initializeEventListeners(); // 이벤트 리스너 초기화
+  AOS.init(); // AOS 초기화
 });
 
 // 이벤트 리스너를 초기화하는 함수
@@ -11,11 +12,17 @@ function initializeEventListeners() {
   const cartBtn = document.querySelector(".cart-btn a");
   const csBtn = document.querySelector(".cs-btn");
   const topBtn = document.querySelector(".top-btn");
+  const cartIcon = document.querySelector(".cart-icon"); // 카트 아이콘
 
   // 장바구니 버튼 클릭 시
   cartBtn.addEventListener("click", function (event) {
     event.preventDefault(); // 기본 링크 동작 방지
     showCartPopup(); // 장바구니 팝업 표시
+  });
+
+  // 카트 아이콘 클릭 시 장바구니 팝업 닫기
+  cartIcon.addEventListener("click", function () {
+    closeCartPopup(); // 장바구니 팝업 닫기
   });
 
   // 고객센터 버튼 클릭 시
@@ -32,34 +39,6 @@ function initializeEventListeners() {
   topBtn.addEventListener("click", function () {
     scrollToTop();
   });
-
-  // 카트 아이콘 클릭 시
-  const cartIcons = document.querySelectorAll(".cart-icon");
-  cartIcons.forEach((icon) => {
-    const productName = icon.dataset.productName; // 데이터 속성에서 상품명 가져오기
-    const price = icon.dataset.price; // 데이터 속성에서 가격 가져오기
-    icon.addEventListener("click", function () {
-      addToCart(productName, price);
-    });
-  });
-}
-
-// 장바구니에 상품을 추가하거나 제거하는 함수
-function addToCart(productName, price) {
-  const existingItemIndex = cartItems.findIndex((item) => item.name === productName);
-
-  if (existingItemIndex === -1) {
-    // 상품이 장바구니에 없으면 추가
-    cartItems.push({ name: productName, price: price });
-    showNotification(`${productName}이(가) 장바구니에 추가되었습니다!`);
-  } else {
-    // 상품이 장바구니에 있으면 제거
-    cartItems.splice(existingItemIndex, 1);
-    showNotification(`${productName}이(가) 장바구니에서 제거되었습니다!`);
-  }
-  
-  updateCartCount(); // 카운터 업데이트
-  updateCartPopup(); // 장바구니 팝업 업데이트
 }
 
 // 장바구니 팝업을 여는 함수
@@ -67,6 +46,9 @@ function showCartPopup() {
   const cartPopup = document.getElementById("cartPopup");
   cartPopup.style.display = "flex"; // 팝업 표시
   updateCartPopup(); // 장바구니 팝업 내용 업데이트
+
+  // 5초 후에 장바구니 팝업 닫기
+  setTimeout(closeCartPopup, 5000); // 5000ms = 5초
 }
 
 // 장바구니 내용을 업데이트하는 함수
@@ -80,14 +62,13 @@ function updateCartPopup() {
     cartItems.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.textContent = `${item.name} - ${item.price}원`;
-
       // 제거 버튼 추가
       const removeBtn = document.createElement("button");
       removeBtn.textContent = "제거";
-      removeBtn.addEventListener("click", () => {
+      removeBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // 클릭 이벤트 전파 방지
         removeFromCart(item.name); // 제거 함수 호출
       });
-
       listItem.appendChild(removeBtn); // 리스트 아이템에 제거 버튼 추가
       cartItemsList.appendChild(listItem);
     });
@@ -99,8 +80,17 @@ function removeFromCart(productName) {
   const existingItemIndex = cartItems.findIndex((item) => item.name === productName);
   if (existingItemIndex !== -1) {
     cartItems.splice(existingItemIndex, 1); // 상품 제거
+    updateCartCount(); // 카운터 업데이트
     updateCartPopup(); // 장바구니 팝업 업데이트
     showNotification(`${productName}이(가) 장바구니에서 제거되었습니다!`);
+
+    // 장바구니 아이콘의 이미지 상태를 업데이트
+    const cartIcons = document.querySelectorAll(".cart-icon");
+    cartIcons.forEach((icon) => {
+      if (icon.dataset.productName === productName) {
+        icon.src = "images/like/cart_plus.png"; // 원래 이미지로 변경
+      }
+    });
   }
 }
 

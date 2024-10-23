@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* 모달 전체 스타일 */
+.modal {
+  display: none; /* 기본적으로 모달을 숨깁니다 */
+  position: fixed; /* 고정 위치 */
+  z-index: 1000; /* 최상위 계층 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 전체 화면 너비 */
+  height: 100%; /* 전체 화면 높이 */
+  overflow: auto; /* 오버플로우 설정 */
+  background-color: rgba(0, 0, 0, 0.5); /* 배경 색상 (반투명) */
+  backdrop-filter: blur(8px); /* 배경 블러 처리 */
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+  margin: 20% auto; /* 위쪽 여백 및 가운데 정렬 */
+  padding: 20px; /* 내부 여백 */
+  border: 1px solid #c8ff00; /* 테두리 */
+  background-color: aliceblue;
+  width: 80%; /* 너비 설정 */
+  max-width: 600px; /* 최대 너비 설정 */
+  position: relative; /* 위치 지정 */
+  border-radius: 20px; /* 모서리 둥글게 */
+}
+
+.modal-content > img {
+  width: 100%;
+}
+
+/* 닫기 버튼 및 체크박스 스타일 */
+.close-wrap {
+  display: flex;
+  justify-content: space-between; /* 공간 분배 */
+  align-items: center; /* 수직 정렬 */
+  margin-top: 15px; /* 여백 설정 */
+}
+
+.close-btn {
+  cursor: pointer; /* 포인터 커서로 변경 */
+  font-size: 24px; /* 폰트 사이즈 */
+  color: #aaa; /* 색상 */
+}
+
+.close-btn:hover {
+  color: #000; /* 마우스 오버 시 색상 변경 */
+}
+
+/* 체크박스 스타일 */
+.notToday {
+  margin-left: 5px; /* 체크박스와 텍스트 간격 설정 */
+  font-size: 14px; /* 폰트 사이즈 설정 */
+}
+
+#timer {
+  font-size: 24px; /* 글자 크기 */
+  color: #d9534f; /* 긴박감을 줄 수 있는 빨간색 */
+  text-align: center; /* 중앙 정렬 */
+  margin-top: 20px; /* 위쪽 여백 */
+}
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  .modal-content {
+    width: 70%; /* 너비 70%로 줄임 */
+    max-width: 500px; /* 최대 너비 조정 */
+    margin: 15% auto; /* 위쪽 여백을 줄임 */
+    padding: 15px; /* 패딩을 줄임 */
+    top: 25%;
+  }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 85%; /* 너비를 85%로 조정 */
+    max-width: 400px; /* 최대 너비를 400px로 제한 */
+    margin: 15% auto; /* 위쪽 여백을 유지 */
+    padding: 15px; /* 패딩을 줄임 */
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%; /* 너비를 90%로 설정 */
+    max-width: 350px; /* 최대 너비를 350px로 조정 */
+    margin: 10% auto; /* 위쪽 여백을 더 줄임 */
+    padding: 10px; /* 패딩을 줄임 */
+    top: 25%;
+  }
+}
+
+/* 360px 이하 */
+@media (max-width: 360px) {
+  .modal-content {
+    width: 95%; /* 너비를 95%로 설정 */
+    max-width: 320px; /* 최대 너비를 320px로 제한 */
+    margin: 10% auto; /* 위쪽 여백을 유지 */
+    padding: 8px; /* 패딩을 더 줄임 */
+  }
+}

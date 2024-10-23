@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+/* 모달 전체 스타일 */
+.modal {
+  display: none; /* 기본적으로 모달을 숨깁니다 */
+  position: fixed; /* 고정 위치 */
+  z-index: 1000; /* 최상위 계층 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 전체 화면 너비 */
+  height: 100%; /* 전체 화면 높이 */
+  overflow: auto; /* 오버플로우 설정 */
+  background-color: rgba(0, 0, 0, 0.8); /* 배경 색상 (더 어두운 반투명) */
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+  margin: 10% auto; /* 위쪽 여백 및 가운데 정렬 */
+  padding: 30px; /* 내부 여백 */
+  border: 1px solid #fff; /* 테두리 색상 흰색 */
+  background-color: #fff; /* 흰색 배경 */
+  width: 90%; /* 너비 설정 */
+  max-width: 400px; /* 최대 너비 설정 */
+  position: relative; /* 위치 지정 */
+  border-radius: 1px; /* 모서리 둥글게 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+/* 모달 제목 스타일 */
+.modal-content h2 {
+  margin-bottom: 20px; /* 아래 여백 */
+  font-weight: 600; /* 굵은 글씨 */
+  color: #000; /* 검은색 글씨 */
+  text-align: center; /* 중앙 정렬 */
+}
+
+/* 입력 필드 스타일 */
+.modal-content input {
+  width: 100%; /* 입력 필드 너비 */
+  padding: 10px; /* 내부 여백 */
+  margin-bottom: 15px; /* 아래 여백 */
+  border: 1px solid #ccc; /* 테두리 */
+  font-size: 14px; /* 글씨 크기 */
+  transition: border-color 0.3s; /* 테두리 색상 변화 효과 */
+}
+
+.modal-content input:focus {
+  border-color: #000; /* 포커스 시 테두리 색상 변경 */
+  outline: none; /* 아웃라인 제거 */
+}
+
+/* 체크박스 스타일 */
+.remember-me {
+  display: flex; /* 가로로 나열 */
+  align-items: center; /* 수직 정렬 */
+}
+
+.remember-me label {
+  margin-bottom: 15px;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 13px; /* 체크박스 크기 */
+  height: 13px; /* 체크박스 크기 */
+  margin-right: 2px; /* 체크박스와 레이블 간의 간격 */
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+  display: flex;
+  flex-direction: column; /* 버튼을 세로로 나열 */
+}
+
+/* 소셜 로그인 이미지 스타일 */
+.social-login {
+  cursor: pointer; /* 포인터 커서로 변경 */
+}
+
+/* 푸터 링크 스타일 */
+.footer-links {
+  margin-top: 10px; /* 위쪽 여백 */
+  text-align: center; /* 중앙 정렬 */
+}
+
+.footer-links a {
+  margin: 0 5px; /* 링크 간격 */
+  text-decoration: none; /* 밑줄 제거 */
+  color: #a7a7a7;
+  transition: color 0.3s; /* 색상 변화 효과 */
+  font-size: 13px;
+  text-align: center;
+}
+
+.footer-links a:hover {
+  color: #000000; /* 호버 시 색상 변화 */
+}
+
+/* 닫기 버튼 스타일 */
+.close-btn {
+  cursor: pointer; /* 포인터 커서로 변경 */
+  font-size: 24px; /* 폰트 사이즈 */
+  color: #aaa; /* 색상 */
+  position: absolute; /* 위치 지정 */
+  top: 10px;
+  right: 10px; /* 우측 상단에 위치 */
+  background: none; /* 배경 제거 */
+  border: none; /* 테두리 제거 */
+  transition: color 0.3s; /* 색상 변화 효과 */
+}
+
+.close-btn:hover {
+  color: #fffb00; /* 호버 시 색상 변화 */
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+  width: 100%; /* 버튼 너비 */
+  padding: 10px; /* 내부 여백 */
+  border: 1px solid #ccc; /* 검은색 테두리 */
+  background-color: #fff; /* 흰색 배경 */
+  color: #000; /* 검은색 글자 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 호버 시 배경색 변화 */
+}
+
+.login-button:hover {
+  background-color: #ffffff; /* 호버 시 연한 회색으로 변경 */
+  border: 1px solid black; /* 검은색 테두리 */
+  transition: all 0.3s;
+}
+
+/* 구분선 스타일 */
+.divider {
+  display: flex; /* 플렉스박스 설정 */
+  align-items: center; /* 수직 정렬 */
+  margin: 15px 0; /* 위 아래 여백 */
+}
+
+.border {
+  flex: 1; /* 남은 공간을 차지 */
+  height: 1px; /* 세로 크기 */
+  background-color: #ccc; /* 회색 배경 */
+}
+
+.border.right {
+  margin-left: 10px; /* 오른쪽 테두리와 간격 */
+}
+
+/* 텍스트 중앙 정렬 */
+.txt_c {
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 네이버 로그인 버튼 스타일 */
+.naver-login {
+  width: 100%; /* 버튼 너비 */
+  padding: 12px; /* 내부 여백 */
+  background-color: #03c75a; /* 네이버 그린 */
+  color: #fff; /* 흰색 글자 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  font-size: 16px; /* 글씨 크기 */
+  font-weight: 600; /* 글씨 굵게 */
+  margin-bottom: 10px; /* 아래 여백 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 호버 시 배경색 변화 */
+}
+
+.naver-login:hover {
+  background-color: #02b150; /* 호버 시 더 짙은 녹색 */
+}
+
+/* 카카오톡 로그인 버튼 스타일 */
+.kakao-login {
+  width: 100%; /* 버튼 너비 */
+  padding: 12px; /* 내부 여백 */
+  background-color: #fee500; /* 카카오톡 노란색 */
+  color: #3c1e1e; /* 카카오톡 검은색 텍스트 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  font-size: 16px; /* 글씨 크기 */
+  font-weight: 600; /* 글씨 굵게 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 호버 시 배경색 변화 */
+}
+
+.kakao-login:hover {
+  background-color: #ffd700; /* 호버 시 더 짙은 노란색 */
+}
+
+/* 구분선 스타일 */
+.divider {
+  display: flex; /* 플렉스박스 설정 */
+  align-items: center; /* 수직 정렬 */
+  margin: 15px 0; /* 위 아래 여백 */
+}
+
+.border {
+  flex: 1; /* 남은 공간을 차지 */
+  height: 1px; /* 세로 크기 */
+  background-color: #ccc; /* 회색 배경 */
+}
+
+.border.right {
+  margin-left: 10px; /* 오른쪽 테두리와 간격 */
+}
+
+.txt_c {
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 회원가입 버튼 스타일 */
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-button:hover {
+  background-color: #f0f0f0;
+  border-color: #000;
+}
+
+.naver-login:hover {
+  background-color: #02b150;
+}
+
+.kakao-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #fee500;
+  color: #3c1e1e;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.kakao-login:hover {
+  background-color: #ffd700;
+}
+
+/* 가입유형 버튼 스타일 */
+.user-type {
+  display: flex;
+  justify-content: space-between; /* 버튼을 양쪽으로 배치 */
+  margin-bottom: 20px;
+}
+
+.user-type-btn {
+  flex: 1; /* 버튼을 동일한 너비로 */
+  padding: 12px;
+  margin: 0 5px; /* 버튼 간 간격 */
+  background-color: #fff;
+  border: 1px solid #ccc; /* 회색 테두리 */
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.user-type-btn:hover {
+  border-color: #000; /* 호버 시 테두리 색상 변경 */
+}

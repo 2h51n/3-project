@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO 적용 -->
+    <meta name="description" content="정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
+    <meta name="keywords" content="정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
+    <meta property="og:title" content="환경을 살리는 소비 'JUNKY FUNKY!',정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
+    <meta property="og:description" content="환경을 살리는 소비 'JUNKY FUNKY!', 정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
+    <!-- 버셀 주소 -->
+    <meta property="og:image" content="https://3-project-alpha.vercel.app/images/A/main_logo.png" />
+    <meta property="og:url" content="https://3-project-alpha.vercel.app/" />
+    <meta property="og:site_name" content="환경을 살리는 소비 'JUNKY FUNKY!'" />
+    <meta property="og:type" content="website" />
+    <!-- 파비콘 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <!-- <link rel="manifest" href="images/favicon/site.webmanifest" /> -->
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- css적용 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- swiper css적용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- js -->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery-1.12.3.js"></script>
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- js -->
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/material.js"></script>
+    <script src="js/popular_item.js"></script>
+    <script src="js/subscription.js"></script>
+    <script src="js/rookie_brand.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/fix-btn.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/header.css" />
+    <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+      .main{
+        width: 100%;
+        /* max-width: 1300px; */
+        margin-top: 200px;
+        display: block;
+        /* background-color: antiquewhite; */
+      }
+      .inner{
+        /* width: 100%; */
+        max-width: 1300px;
+        margin: 0 auto;
+        /* background-color: aqua; */
+      }
+      h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        width: 100%;
+        font-family: "Noto Sans KR";
+      }
+      hr{
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 40px;
+      }
+      .notice-board {
+        width: 80%;
+        max-width: 1000px;
+        margin: 50px auto;
+        border-collapse: collapse;
+        /* background-color: aqua; */
+      }
+      .notice-board th,
+      .notice-board td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      .notice-board td:first-child{
+        text-align: center;
+      }
+      .pagination {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .pagination li {
+        cursor: pointer;
+        padding: 5px 10px;
+        border: 1px solid #333;
+      }
+      .pagination li.active {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 헤더 영역 -->
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <ul class="head-navi">
+            <div class="navi-cate">
+              <div class="cate-right">
+                <ul class="depth-top">
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                      <span>플라스틱</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                      <span>천</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                      <span>목재</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                      <span>유리</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                      <span>기타</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <li>
+              <button class="cate-close">X</button>
+              <a href="#" id="category-icon">
+                <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
+                <div class="sidemenu-area">
+                  <button class="cate-close2">X</button>
+                  <div class="side-top">
+                    <a href="#" class="side-top-logo">
+                      <img src="images/A/main_logo.png" alt="로고" />
+                    </a>
+                    <div class="side-top-icons">
+                      <div class="side-iconsBT">
+                        <div class="searchMB">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                          </a>
+                        </div>
+                        <div class="loginBt">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                            <!-- <span>로그인</span> -->
+                          </a>
+                        </div>
+                        <div class="cartBt">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                            <!-- <span>카트</span> -->
+                          </a>
+                        </div>
+                      </div>
+                      <input type="text" placeholder="입력 후 엔터" />
+                    </div>
+                    <ul class="side-top-menu">
+                      <li><a href="index.html#event">이벤트</a></li>
+                      <li><a href="index.html#popular">인기</a></li>
+                      <li><a href="index.html#brands">브랜드</a></li>
+                      <li><a href="index.html#review">리뷰</a></li>
+                      <!-- <li><a href="notice.html">공지사항</a></li> -->
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="side-bottom">
+                    <h3 class="side-bottom-title">카테고리</h3>
+                    <ul class="side-bottom-menu">
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                          <span>플라스틱</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                          <span>천</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                          <span>목재</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                          <span>유리</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                          <span>기타</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="category-title">카테고리</a>
+              <div class="navi-cate">
+                <div class="cate-right">
+                  <ul class="depth-top">
+                    <li>
+                      <a href="#">
+                        <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                        <span>플라스틱</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                        <span>천</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                        <span>목재</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                        <span>유리</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                        <span>기타</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li><a href="index.html#event">이벤트</a></li>
+            <li><a href="index.html#popular">인기</a></li>
+            <li><a href="index.html#brands">브랜드</a></li>
+            <li><a href="index.html#review">리뷰</a></li>
+            <li><a href="about_us.html">소개</a></li>
+            <!-- <li><a href="notice.html">공지사항</a></li> -->
+          </ul>
+          <div class="head-logo">
+            <a href="index.html">
+              <img src="images/A/main_logo.png" alt="메인 헤더 로고" />
+            </a>
+          </div>
+          <div class="header-right">
+            <div class="head-search">
+              <input type="text" placeholder="검색어를 입력해주세요" />
+              <a href="#">
+                <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+              </a>
+            </div>
+            <div class="header-icons">
+              <div class="searchMB">
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                  <input type="text">
+                </a>
+              </div>
+              <div class="loginBt">
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                  <!-- <span>로그인</span> -->
+                </a>
+              </div>
+              <div class="cartBt">
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                  <!-- <span>카트</span> -->
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <ul class="navi-bottom">
+            <li><a href="#" class="category-title">카테고리</a></li>
+            <li><a href="index.html#event">이벤트</a></li>
+            <li><a href="index.html#popular">인기</a></li>
+            <li><a href="index.html#brands">브랜드</a></li>
+            <li><a href="index.html#review">리뷰</a></li>
+            <li><a href="about_us.html">소개</a></li>
+            <!-- <li><a href="notice.html">공지사항</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="main">
+      <div class="inner">
+        <h1>NOTICE</h1>
+        <hr>
+        <!-- 공지사항 게시판 -->
+        <table class="notice-board">
+          <!-- thead: 타이틀헤드, tr : 테이블 가로, td: 테이블 데이터 -->
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+          <tbody id="noticeList">
+            <!-- js 출력 -->
+          </tbody>
+        </table>
+        <!-- 페이지네이션 버튼 -->
+        <ul class="pagination" id="pagination">
+          <!-- js 출력 -->
+        </ul>
+      </section>
+
+      </div>
+
+    <script>
+      // 예시 공지사항 데이터
+      const notices = [
+        { id: 1, title: "공지사항 1", date: "2024-10-01" },
+        { id: 2, title: "공지사항 2", date: "2024-09-30" },
+        { id: 3, title: "공지사항 3", date: "2024-09-29" },
+        { id: 4, title: "공지사항 4", date: "2024-09-28" },
+        { id: 5, title: "공지사항 5", date: "2024-09-27" },
+        { id: 6, title: "공지사항 6", date: "2024-09-26" },
+        { id: 7, title: "공지사항 7", date: "2024-09-25" },
+        { id: 8, title: "공지사항 8", date: "2024-09-24" },
+        { id: 9, title: "공지사항 9", date: "2024-09-23" },
+        { id: 10, title: "공지사항 10", date: "2024-09-22" },
+        { id: 11, title: "공지사항 11", date: "2024-09-21" },
+        { id: 12, title: "공지사항 12", date: "2024-09-20" },
+        { id: 1, title: "공지사항 1", date: "2024-10-01" },
+        { id: 2, title: "공지사항 2", date: "2024-09-30" },
+        { id: 3, title: "공지사항 3", date: "2024-09-29" },
+        { id: 4, title: "공지사항 4", date: "2024-09-28" },
+        { id: 5, title: "공지사항 5", date: "2024-09-27" },
+        { id: 6, title: "공지사항 6", date: "2024-09-26" },
+        { id: 7, title: "공지사항 7", date: "2024-09-25" },
+        { id: 8, title: "공지사항 8", date: "2024-09-24" },
+        { id: 9, title: "공지사항 9", date: "2024-09-23" },
+        { id: 10, title: "공지사항 10", date: "2024-09-22" },
+        { id: 11, title: "공지사항 11", date: "2024-09-21" },
+        { id: 12, title: "공지사항 12", date: "2024-09-20" },
+      ];
+      //   페이지당 표시할 항목 수
+      const itemsPerPage = 12;
+      let currentPage = 1; // 가장 먼저 보여지는 페이지(1)
+      const totalPages = Math.ceil(notices.length / itemsPerPage);
+      // console.log(totalPages); // 3
+      // 공지사항 목록을 출력하는 함수
+      function displayNotices(notice, page, itemsPerpage) {
+        // console.log(itemsPerpage);
+        const noticeList = document.getElementById("noticeList");
+        const start = (page - 1) * itemsPerpage;
+        // console.log(start);
+        const pageNotices = notices.slice(start, start + itemsPerpage);
+        // console.log(pageNotices);
+        noticeList.innerHTML = pageNotices
+          .map(
+            (item, index) =>
+              //   console.log(item);
+              `
+        <tr>
+            <td> ${start + index + 1} </td>
+            <td> ${item.title} </td>
+            <td> ${item.date} </td>
+        </tr>
+
+        `
+          )
+          .join("");
+      }
+      //   페이지네이션 버튼을 출력하는 함수
+      function displayPagination(totalPg, currentPg) {
+        // console.log(totalPg);
+        // console.log(currentPg);
+        const paginationUL = document.getElementById("pagination");
+        paginationUL.innerHTML = ""; // 기존 페이지네이션 초기화
+        // 이전 버튼
+        const prevBtn = document.createElement("li");
+        prevBtn.textContent = "이전";
+        prevBtn.addEventListener("click", () => {
+          if (currentPage > 1) {
+            currentPage--;
+            displayNotices(notices, currentPage, itemsPerPage);
+            audatPaginationUI();
+          }
+        });
+        paginationUL.appendChild(prevBtn);
+        // 페이지 번호 버튼 생성
+        for (let i = 1; i <= totalPg; i++) {
+          const li = document.createElement("li");
+          li.textContent = i;
+          li.addEventListener("click", () => {
+            currentPage = i;
+            // console.log(currentPg);
+            li.classList.add(i === currentPage ? "active" : "");
+            displayNotices(notices, currentPage, itemsPerPage);
+            audatPaginationUI();
+          });
+          paginationUL.appendChild(li);
+        }
+        // 다음 페이지 버튼
+        const nextBtn = document.createElement("li");
+        nextBtn.textContent = "다음";
+        nextBtn.addEventListener("click", () => {
+          if (currentPage < totalPg) {
+            currentPage++;
+            displayNotices(notices, currentPage, itemsPerPage);
+            displayPagination(totalPages, currentPage);
+            audatPaginationUI();
+          }
+        });
+        paginationUL.appendChild(nextBtn);
+      }
+      //   페이지네이션 ul 업데이트 (각 페이지 번호 클릭시 할당된 목록만 표시)
+      function audatPaginationUI() {
+        const paginationItems = document.querySelectorAll("#pagination li");
+        paginationItems.forEach((item, index) => {
+          console.log(item);
+          if (index === currentPage) {
+            item.classList.add("active");
+          } else {
+            item.classList.remove("active");
+          }
+        });
+      }
+      // 공지사항 목록 화면에 호출
+      displayNotices(notices, currentPage, itemsPerPage);
+      displayPagination(totalPages, currentPage);
+    </script>
+  </body>
+</html>

@@ -1,93 +1,181 @@
 @charset "utf-8";
-
 /* 섹션 전체 너비 100% */
 .rookie-brands {
-    width: 100%;
-  }
-  
-  /* 컨테이너 레이아웃 설정: 최대 너비 1300px */
-  .rookie_container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  width: 100%;
+}
 
-h2.section-title {
-    text-align: center;
-    justify-content: center;
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
+/* 컨테이너 레이아웃 설정: 최대 너비 1300px */
+.rookie_container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .title-section .more-link {
-    font-size: 14px;
-    text-decoration: none;
-    justify-content: right;
-    color: #000;
-  }
-  
-  /* 브랜드 그리드 레이아웃 설정 */
-  .brand-grid {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .brand-item {
-    flex: 1;
-  }
-  
-  /* 메인 이미지 스타일 */
+.section-title {
+  margin: 30px 0;
+}
+
+.more-link {
+  display: flex;
+  justify-content: right;
+  margin: 30px;
+  font-weight: bold;
+  text-align: right;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+}
+
+.title-section .more-link {
+  display: flex;
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* 브랜드 그리드 레이아웃 설정 */
+.brand-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 */
+}
+
+.brand-item {
+  padding-left: 3%;
+  flex: 1 1 calc(33.333% - 20px); /* 기본적으로 3개의 아이템을 표시 */
+}
+
+/* 메인 이미지 스타일 */
+.main-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 오버레이 텍스트 기본 숨김 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  text-align: center;
+}
+
+.overlay h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.overlay p {
+  text-align: center;
+  line-height: 1.7;
+}
+
+.overlay li a {
+  color: #fff;
+  line-height: 1.7;
+}
+
+/* 호버 시 오버레이 텍스트 표시 */
+.main-image:hover .overlay {
+  opacity: 1;
+}
+
+/* 서브 이미지 스타일 */
+.sub-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: space-between;
+  cursor: pointer; /* 클릭 가능함을 알리기 위한 커서 */
+  transition: transform 1s ease; /* 호버 시 변환 효과 추가 */
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.sub-images img {
+  width: calc(33.333% - 10px);
+  cursor: pointer;
+  height: 110px;
+}
+
+/* 브랜드 이름 스타일 */
+.brand-name {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* 1024px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 1024px) {
   .main-image {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
+    height: 250px; /* 중간 크기에서 높이 감소 */
   }
-  
-  .main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* 오버레이 텍스트 기본 숨김 */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* 호버 시 오버레이 텍스트 표시 */
-  .main-image:hover .overlay {
-    opacity: 1;
-  }
-  
-  /* 서브 이미지 스타일 */
-  .sub-images {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
   .sub-images img {
     width: calc(33.333% - 10px);
-    height: 100px;
-    object-fit: cover;
+    cursor: pointer;
+    height: auto;
   }
-  
-  /* 브랜드 이름 스타일 */
+}
+/* 768px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 768px) {
+  .main-image {
+    grid-template-columns: repeat(2, 1fr); /* 768px 이하에서는 2열 */
+    height: 200px; /* 작은 화면에서 높이 감소 */
+  }
+  .brand-item {
+    flex: 1 1 calc(50% - 20px); /* 2개의 아이템 표시 */
+  }
+  /* 2개 이후의 아이템 숨기기 */
+  .brand-item:nth-child(n + 3) {
+    display: none;
+  }
+}
+/* 480px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 480px) {
+  .main-image {
+    height: 350px; /* 모바일 화면에서 높이 감소 */
+  }
+  .brand-item {
+    flex: 1 1 calc(100% - 20px); /* 1개의 아이템 표시 */
+  }
+  /* 1개 이후의 아이템 숨기기 */
+  .brand-item:nth-child(n + 2) {
+    display: none;
+  }
   .brand-name {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
+    font-size: 20px;
   }
+}
+/* 360px 이하에서 메인 이미지 높이 조정 */
+@media (max-width: 360px) {
+  .main-image {
+    height: 300px; /* 매우 작은 화면에서 높이 감소 */
+  }
+}

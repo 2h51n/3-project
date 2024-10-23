@@ -1,19 +1,22 @@
 @charset "utf-8";
 /* 영역별 css */
 @import url(header.css);
-
+@import url(main_banner2.css);
 @import url(main_banner.css);
 @import url(material.css);
 @import url(event_banner.css);
-@import url(best_item.css);
+@import url(popular_item.css);
 @import url(subscription.css);
 @import url(rookie_brand.css);
-
 @import url(main-banner.css);
 @import url(introduction.css);
-
 @import url(review.css);
 @import url(footer.css);
+@import url(modal.css);
+@import url(fix-btn.css);
+@import url(intro.css);
+@import url(login.css);
+@import url(cart-slide-panel.css);
 /* 폰트 */
 @font-face {
   font-family: "Noto Sans KR";
@@ -69,6 +72,7 @@ textarea,
 select {
   font-family: "Noto Sans KR", sans-serif;
 }
+
 /* 초기화 */
 * {
   margin: 0;
@@ -76,15 +80,66 @@ select {
   box-sizing: border-box;
   list-style: none;
 }
+
 /* 공통 타이틀 */
-.section-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
 }
 
-.section-title h2{
-    font-size: 24px;
-    font-weight: 900;
+h2.section-title {
+  justify-content: center;
+  font-size: 30px;
+  margin: 10% 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+  h2.section-title {
+    font-size: 26px; /* 폰트 크기 줄이기 */
+    margin: 8% 0; /* 여백 조정 */
+  }
+}
+
+/* 768px 이하 */
+@media (max-width: 768px) {
+  h2.section-title {
+    font-size: 24px; /* 폰트 크기 줄이기 */
+    margin: 10% 0; /* 여백 조정 */
+  }
+
+  .section-title {
+    flex-direction: column; /* 세로 정렬로 변경 */
+  }
+}
+
+/* 480px 이하 */
+@media (max-width: 480px) {
+  h2.section-title {
+    font-size: 20px; /* 폰트 크기 줄이기 */
+    margin: 5% 0; /* 여백 조정 */
+  }
+
+  .section-title {
+    justify-content: center; /* 중앙 정렬 */
+  }
+}
+
+/* 360px 이하 */
+@media (max-width: 360px) {
+  h2.section-title {
+    font-size: 18px; /* 폰트 크기 줄이기 */
+    margin: 4% 0; /* 여백 조정 */
+  }
+
+  .section-title {
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+  }
 }

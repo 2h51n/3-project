@@ -12,15 +12,15 @@
     <meta property="og:title" content="환경을 살리는 소비 'JUNKY FUNKY!',정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
     <meta property="og:description" content="환경을 살리는 소비 'JUNKY FUNKY!', 정키펑키, 업사이클링, 브랜드, 플랫폼, 재활용, 리사이클링" />
     <!-- 버셀 주소 -->
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
+    <meta property="og:image" content="https://3-project-alpha.vercel.app/images/A/main_logo.png" />
+    <meta property="og:url" content="https://3-project-alpha.vercel.app/" />
     <meta property="og:site_name" content="환경을 살리는 소비 'JUNKY FUNKY!'" />
     <meta property="og:type" content="website" />
     <!-- 파비콘 -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon//favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon//favicon-16x16.png" />
-    <link rel="manifest" href="images/favicon//site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <!-- <link rel="manifest" href="images/favicon/site.webmanifest" /> -->
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <!-- css적용 -->
@@ -40,215 +40,361 @@
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- js -->
+    <script src="js/modal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/material.js"></script>
+    <script src="js/popular_item.js"></script>
+    <script src="js/subscription.js"></script>
+    <script src="js/rookie_brand.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/fix-btn.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/cart-slide.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
   </head>
   <body>
+    <!-- 로그인 폼 -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">로그인</h2>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="이메일" required class="input-field" />
+          <input type="password" id="password" placeholder="비밀번호" required class="input-field" />
+          <div class="remember-me">
+            <input type="checkbox" id="rememberMe" />
+            <label for="rememberMe" style="font-size: 14px; margin-left: 5px">로그인 상태 유지</label>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="login-button">로그인</button>
+            <div class="footer-links">
+              <a href="#" class="open-register">회원가입</a>
+              <span>|</span>
+              <a href="#">아이디/비밀번호 찾기</a>
+            </div>
+            <div class="divider txt_c">
+              <div class="border"></div>
+              <span>또는</span>
+              <div class="border right"></div>
+            </div>
+            <button type="button" class="social-login naver-login">네이버로 로그인</button>
+            <button type="button" class="social-login kakao-login">카카오톡으로 로그인</button>
+          </div>
+        </form>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
+    <!-- 가입유형 -->
+    <div id="userTypeModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">가입 유형 선택</h2>
+        <div class="user-type">
+          <button type="button" class="user-type-btn individual">일반 회원</button>
+          <button type="button" class="user-type-btn business">사업자 회원</button>
+        </div>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
+    <!-- 회원가입 폼 -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">회원가입</h2>
+        <form id="registerForm">
+          <div class="selected-form">
+            <button type="submit" class="register-button">ID/PW로 회원가입</button>
+          </div>
+          <div class="divider txt_c">
+            <div class="border"></div>
+            <span>또는</span>
+            <div class="border right"></div>
+          </div>
+          <button type="button" class="social-login naver-login">네이버로 시작하기</button>
+          <button type="button" class="social-login kakao-login">카카오로 시작하기</button>
+        </form>
+        <div class="footer-links">
+          <a href="#" class="open-login">로그인</a>
+        </div>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
+    <!-- 모달 구조 -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- 첫 번째 이미지 -->
+        <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
+        <!-- 타이머 표시 -->
+        <div id="timer" style="font-size: 24px; color: #d9534f; text-align: center; margin-top: 20px"></div>
+        <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
+        <div class="close-wrap">
+          <label>
+            <input type="checkbox" id="notToday" />
+            <span class="notToday">오늘 하루 열지 않음</span>
+          </label>
+          <span class="close-btn">&times;</span>
+        </div>
+      </div>
+    </div>
+    <!-- 알림 메시지 -->
+    <div id="notification" style="display: none">상품이 장바구니에 추가되었습니다!</div>
+    <!-- 장바구니 고정 버튼 -->
+    <div class="cart-btn fixBtn">
+      <a href="#">
+        <img src="images/btn/cart_btn.png" alt="구매하기 고정버튼" class="fix-btn-img" />
+        <img src="images/btn/cart_hover_btn.png" alt="구매하기 고정버튼 호버" class="fix-btn-img-hover" />
+        <span id="cartCount" class="cart-count">0</span>
+        <!-- 카운터 추가 -->
+      </a>
+    </div>
+    <!-- CS버튼 -->
+    <div class="cs-btn fixBtn" tabindex="0">
+      <img src="images/btn/cs_btn.png" alt="고객센터" class="cs-btn-img" />
+      <div class="social-icons" role="menu" aria-hidden="true">
+        <img src="images/btn/kakaotalk.png" alt="카카오톡" class="social-icon kakao-btn-img" tabindex="0" />
+        <img src="images/btn/naver_talk_icon_green.png" alt="네이버" class="social-icon naver-btn-img" tabindex="0" />
+      </div>
+    </div>
+    <!-- Top 버튼 -->
+    <div class="top-btn fixBtn">
+      <img src="images/btn/top_btn.png" alt="탑버튼" class="top-btn-img" />
+    </div>
     <div class="wrap">
       <!-- 헤더 영역 -->
       <header class="header">
         <div class="container">
-          <ul class="head-navi">
-            <div class="navi-cate">
-              <!-- <div class="cate-left">
-                <img src="images/A/icon/submenu-icon/tech-electronics.svg" alt="카테고리 아이콘" />
-                <span>카테고리</span>
-              </div> -->
-              <div class="cate-right">
-                <ul class="depth-top">
-                  <!-- <li class="cate-title">소재별</li> -->
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
-                      <span>플라스틱</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
-                      <span>천</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
-                      <span>목재</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
-                      <span>유리</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
-                      <span>기타</span>
-                    </a>
-                  </li>
-                </ul>
-                <!-- <hr> -->
-                <!-- <ul class="depth-bottom">
-                  <p class="cate-title">품목별</p>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/accessories.svg" alt="잡화">
-                      <span>잡화</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/fashion.svg" alt="의류">
-                      <span>의류</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/home-living.svg" alt="홈/리빙">
-                      <span>홈/리빙</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/perfumes-cosmetics.svg" alt="향수/뷰티">
-                      <span>향수/뷰티</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/jewerly.svg" alt="주얼리">
-                      <span>주얼리</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/A/icon/submenu-icon/charactor-goods.svg" alt="캐릭터/굿즈">
-                      <span>캐릭터/굿즈</span>
-                    </a>
-                  </li>
-                </ul> -->
+          <div class="header-top">
+            <ul class="head-navi">
+              <div class="navi-cate">
+                <div class="cate-right">
+                  <ul class="depth-top">
+                    <li>
+                      <a href="#plastic">
+                        <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                        <span>플라스틱</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#clothes">
+                        <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                        <span>천</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#wood">
+                        <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                        <span>목재</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#glass">
+                        <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                        <span>유리</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#etc">
+                        <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                        <span>기타</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <li>
-              <a href="#">
-                <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
+              <li>
+                <button class="cate-close">X</button>
+                <a href="#" id="category-icon">
+                  <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
+                  <div class="sidemenu-area">
+                    <button class="cate-close2">X</button>
+                    <div class="side-top">
+                      <a href="#" class="side-top-logo">
+                        <img src="images/A/main_logo.png" alt="로고" />
+                      </a>
+                      <div class="side-top-icons">
+                        <div class="side-iconsBT">
+                          <div class="searchMB">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                            </a>
+                          </div>
+                          <div class="loginBt">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                              <!-- <span>로그인</span> -->
+                            </a>
+                          </div>
+                          <div class="cartBt">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                              <!-- <span>카트</span> -->
+                            </a>
+                          </div>
+                        </div>
+                        <input type="text" placeholder="입력 후 엔터" />
+                      </div>
+                      <ul class="side-top-menu">
+                        <li><a href="#event">이벤트</a></li>
+                        <li><a href="#popular">인기</a></li>
+                        <li><a href="#brands">브랜드</a></li>
+                        <!-- <li><a href="#review">리뷰</a></li> -->
+                        <li><a href="notice.html">공지사항</a></li>
+                      </ul>
+                    </div>
+                    <hr />
+                    <div class="side-bottom">
+                      <h3 class="side-bottom-title">카테고리</h3>
+                      <ul class="side-bottom-menu">
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                            <span>플라스틱</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                            <span>천</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                            <span>목재</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                            <span>유리</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                            <span>기타</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-title">카테고리</a>
                 <div class="navi-cate">
                   <div class="cate-right">
                     <ul class="depth-top">
                       <li>
-                        <a href="#">
+                        <a href="#materlai plastic">
                           <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                           <span>플라스틱</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#clothes">
                           <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                           <span>천</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#wood">
                           <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                           <span>목재</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#glass">
                           <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                           <span>유리</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#etc">
                           <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                           <span>기타</span>
                         </a>
                       </li>
                     </ul>
-                    <!-- <hr> -->
-                    <!-- <ul class="depth-bottom">
-                      <p class="cate-title">품목별</p>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/accessories.svg" alt="잡화">
-                          <span>잡화</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/fashion.svg" alt="의류">
-                          <span>의류</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/home-living.svg" alt="홈/리빙">
-                          <span>홈/리빙</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/perfumes-cosmetics.svg" alt="향수/뷰티">
-                          <span>향수/뷰티</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/jewerly.svg" alt="주얼리">
-                          <span>주얼리</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/charactor-goods.svg" alt="캐릭터/굿즈">
-                          <span>캐릭터/굿즈</span>
-                        </a>
-                      </li>
-                    </ul> -->
                   </div>
                 </div>
+              </li>
+              <li><a href="#event">이벤트</a></li>
+              <li><a href="#popular">인기</a></li>
+              <!-- <li><a href="#">구독</a></li> -->
+              <li><a href="#brands">브랜드</a></li>
+              <li><a href="#review">리뷰</a></li>
+              <li><a href="about_us.html">소개</a></li>
+              <li><a href="notice.html">공지사항</a></li>
+            </ul>
+            <div class="head-logo">
+              <a href="index.html">
+                <img src="images/A/main_logo.png" alt="메인 헤더 로고" />
               </a>
-            </li>
-            <li><a href="#">카테고리</a></li>
-            <li><a href="#">공지사항</a></li>
-            <li><a href="#">이벤트</a></li>
-            <li><a href="#">구독</a></li>
-            <li><a href="#">브랜드</a></li>
-            <li><a href="#">리뷰</a></li>
-          </ul>
-          <div class="head-logo">
-            <a href="#">
-              <img src="images/A/main_logo.png" alt="메인 헤더 로고" />
-            </a>
+            </div>
+            <div class="header-right">
+              <div class="head-search">
+                <input type="text" placeholder="검색어를 입력해주세요" />
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                </a>
+              </div>
+              <div class="header-icons">
+                <div class="searchMB">
+                  <a href="#">
+                    <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                    <input type="text" />
+                  </a>
+                </div>
+                <div class="loginBt">
+                  <a href="#">
+                    <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                    <!-- <span>로그인</span> -->
+                  </a>
+                </div>
+                <div class="cartBt">
+                  <a href="#" class="cart-btn">
+                    <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="header-right">
-            <div class="head-search">
-              <input type="text" placeholder="검색어를 입력해주세요" />
-              <a href="#">
-                <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
-              </a>
-            </div>
-            <div class="loginBt">
-              <a href="#">
-                <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                <!-- <span>로그인</span> -->
-              </a>
-            </div>
-            <div class="cartBt">
-              <a href="#">
-                <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                <!-- <span>카트</span> -->
-              </a>
-            </div>
+          <div class="header-bottom">
+            <ul class="navi-bottom">
+              <li><a href="#" class="category-title">카테고리</a></li>
+              <li><a href="#event">이벤트</a></li>
+              <li><a href="#popular">인기</a></li>
+              <!-- <li><a href="#">구독</a></li> -->
+              <li><a href="#brands">브랜드</a></li>
+              <li><a href="#review">리뷰</a></li>
+              <li><a href="about_us.html">소개</a></li>
+              <li><a href="notice.html">공지사항</a></li>
+            </ul>
           </div>
         </div>
       </header>
-      <!-- 배너 영역 -->
+      <!-- 동영상 배너 -->
+      <div class="video-banner">
+        <div class="video-slide-area">
+          <div class="swiper swVideo">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide black">
+                <video loop muted>
+                  <source src="/video/video2.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="swiper-slide mosgreen">
+                <video loop muted>
+                  <source src="/video/video1.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 상품 이미지 배너 영역 -->
       <div class="banner">
         <!-- 배너 슬라이드 -->
         <div class="slide-area">
@@ -256,33 +402,44 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="#">
-                  <img src="images/A/banner/1920_banner01.png" alt="배너1_1920" />
+                  <img src="images/A/banner/1920_banner01.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner01.png" alt="배너1_768" class="b768px" />
+                  <!-- <img src="images/A/banner/360_banner01.png" alt="배너1_768" class="b360px"/> -->
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-                  <img src="images/A/banner/1920_banner02.png" alt="배너1_1920" />
+                  <img src="images/A/banner/1920_banner02.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner02.png" alt="배너1_1920" class="b768px" />
+                  <!-- <img src="images/A/banner/360_banner02.png" alt="배너1_1920" class="b360px"/> -->
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-                  <img src="images/A/banner/1920_banner03.png" alt="배너1_1920" />
+                  <img src="images/A/banner/1920_banner03.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner03.png" alt="배너1_1920" class="b768px" />
+                  <!-- <img src="images/A/banner/360_banner03.png" alt="배너1_1920" class="b360px"/> -->
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-                  <img src="images/A/banner/1920_banner04.png" alt="배너1_1920" />
+                  <img src="images/A/banner/1920_banner04.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner04.png" alt="배너1_1920" class="b768px" />
+                  <!-- <img src="images/A/banner/360_banner04.png" alt="배너1_1920" class="b360px"/> -->
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#">
-                  <img src="images/A/banner/1920_banner05.png" alt="배너1_1920" />
+                  <img src="images/A/banner/1920_banner05.png" alt="배너1_1920" class="b1920px" />
+                  <img src="images/A/banner/768_banner05.png" alt="배너1_1920" class="b768px" />
+                  <!-- <img src="images/A/banner/360_banner05.png" alt="배너1_1920" class="b360px"/> -->
                 </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <!-- 소재별카테고리영역 =============================================================================-->
 <div class="material">
   <div class="container">
@@ -303,112 +460,640 @@
       <!-- 내부 레이아웃을 위한 컨테이너 -->
       <div class="rookie_container">
         <!-- 타이틀 영역 -->
+
         <h2 class="section-title">소재별 카테고리</h2>
-        <a href="#" class="more-link">더 보기</a>
-        <!-- 브랜드 그리드 영역 -->
-        <div class="brand-grid">
-          <!-- 브랜드 아이템 1: 바다 한 조각 -->
-          <div class="brand-item">
-            <!-- 메인 이미지와 오버레이 텍스트 -->
-            <div class="main-image">
-              <img src="images/product images/pd_img (12).png" alt="바다 한 조각" />
-              <div class="overlay">
-                <h3>바다 한 조각</h3>
-                <p>해변에서 주운 유리 조각을 재료로 사용한 유리공예 상품</p>
-                <li><a href="#">자세히 보기</a></li>
+        <!-- 소재목록 슬라이드 -->
+        <div class="material-slide-area">
+          <div class="swiper swMaterial">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/A/icon/submenu-icon/plastic.svg" alt="plastic" />
+                  <p>플라스틱</p>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/A/icon/submenu-icon/clothes.svg" alt="clothes" />
+                  <p>천</p>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/A/icon/submenu-icon/wood.svg" class="scale" alt="wood" />
+                  <p>목재</p>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/A/icon/submenu-icon/glass.svg" alt="glass" />
+                  <p>유리</p>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/A/icon/submenu-icon/etc.svg" class="scale" alt="etc" />
+                  <p>기타</p>
+                </a>
               </div>
             </div>
-            <!-- 서브 이미지 -->
-            <div class="sub-images">
-              <img src="images/product images/pd_img (12-1).png" alt="바다 한 조각 이미지1" />
-              <img src="images/product images/pd_img (12-2).png" alt="바다 한 조각 이미지2" />
-              <img src="images/product images/pd_img (12-3).png" alt="바다 한 조각 이미지3" />
-            </div>
-            <p class="brand-name">바다 한 조각</p>
-          </div>
-          <!-- 브랜드 아이템 2: 리본베어 -->
-          <div class="brand-item">
-            <!-- 메인 이미지와 오버레이 텍스트 -->
-            <div class="main-image">
-              <img src="images/product images/pd_img (18).png" alt="리본베어" />
-              <div class="overlay">
-                <h3>리본 베어</h3>
-                <p>해변에서 주운 유리 조각을 재료로 사용한 유리공예 상품</p>
-                <li><a href="#">자세히 보기</a></li>
+            <div class="material-main">
+              <!-- 플라스틱 소재 카테고리 -->
+              <div class="material-goods plastic" id="plastic">
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/plastic01.png" alt="소재별 굿즈 01" />
+                    <div class="materal-textbox">
+                      <p class="m_title">모어포 모레</p>
+                      <p>플라스틱 비누받침</p>
+                      <p><span class="price_bold">21,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(17,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/plastic02.png" alt="소재별 굿즈 02" />
+                    <div class="materal-textbox">
+                      <p class="m_title">아차시픈</p>
+                      <p>도자 귀걸이 반지 선물세트</p>
+                      <p><span class="price_bold">56,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(13,417)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/plastic03.png" alt="소재별 굿즈 03" />
+                    <div class="materal-textbox">
+                      <p class="m_title">lifesalm</p>
+                      <p>플라스틱 업사이클링 책상</p>
+                      <p><span class="price_bold">32,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(11,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/plastic04.png" alt="소재별 굿즈 04" />
+                    <div class="materal-textbox">
+                      <p class="m_title">피그랩(PIGLAB)</p>
+                      <p>거북이 보틀 오프너</p>
+                      <p><span class="price_bold">16,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(28,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- 천 소재 카테고리 -->
+              <div class="material-goods clothes" id="clothes">
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/clothe01.png" alt="소재별 굿즈 01" />
+                    <div class="materal-textbox">
+                      <p class="m_title">피연</p>
+                      <p>업사이클링 모던 '저고리백'</p>
+                      <p><span class="price_bold">19,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(8,377)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/clothe02.png" alt="소재별 굿즈 02" />
+                    <div class="materal-textbox">
+                      <p class="m_title">focean</p>
+                      <p>폐그물 업사이클링 가방</p>
+                      <p><span class="price_bold">45,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(6,375)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/clothe03.png" alt="소재별 굿즈 03" />
+                    <div class="materal-textbox">
+                      <p>OWNU</p>
+                      <p class="m_title">소방방화복 파우치</p>
+                      <p><span class="price_bold">22,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(12,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/clothe04.png" alt="소재별 굿즈 04" />
+                    <div class="materal-textbox">
+                      <p class="m_title">프로젝트 노하우</p>
+                      <p>양말목 체커보드백</p>
+                      <p><span class="price_bold">11,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(9,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- 목재 소재 카테고리 -->
+              <div class="material-goods wood" id="wood">
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/wood01.png" alt="소재별 굿즈 01" />
+                    <div class="materal-textbox">
+                      <p class="m_title">ONNANA</p>
+                      <p>업사이클링 우쿨렐레</p>
+                      <p><span class="price_bold">43,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(5,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/pd_img (28).png" alt="소재별 굿즈 02" />
+                    <div class="materal-textbox">
+                      <p class="m_title">QUOTT</p>
+                      <p><레인보우 캘린더></p>
+                      <p><span class="price_bold">61,750원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(16,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/wood03.png" alt="소재별 굿즈 03" />
+                    <div class="materal-textbox">
+                      <p class="m_title">비비작 공작소</p>
+                      <p>폐목 우드 트레이</p>
+                      <p><span class="price_bold">35,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(10,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/wood04.png" alt="소재별 굿즈 04" />
+                    <div class="materal-textbox">
+                      <p class="m_title">ODD.TRAIN</p>
+                      <p>ODD. CALENDAR 2024</p>
+                      <p><span class="price_bold">56,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(11,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- 유리 소재 카테고리 -->
+              <div class="material-goods glass" id="glass">
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/glass01.png" alt="소재별 굿즈 01" />
+                    <div class="materal-textbox">
+                      <p class="m_title">바다 한 조각</p>
+                      <p>바다유리 선캐처</p>
+                      <p><span class="price_bold">19,500원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(7,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/glass02.png" alt="소재별 굿즈 02" />
+                    <div class="materal-textbox">
+                      <p class="m_title">유리노리</p>
+                      <p>리사이클 유리팔찌 '율'</p>
+                      <p><span class="price_bold">59,800원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(11,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/glass03.png" alt="소재별 굿즈 03" />
+                    <div class="materal-textbox">
+                      <p class="m_title">lifesalm</p>
+                      <p>대리석 질감의 나만의 조명</p>
+                      <p><span class="price_bold">24,300원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(6,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/glass04.png" alt="소재별 굿즈 04" />
+                    <div class="materal-textbox">
+                      <p class="m_title">얼림</p>
+                      <p>디퓨저 ICYCLE</p>
+                      <p><span class="price_bold">21,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(11,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- 기타 소재 카테고리 -->
+              <div class="material-goods etc" id="etc">
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/pd_img (18).png" alt="소재별 굿즈 01" />
+                    <div class="materal-textbox">
+                      <p class="m_title">리본베어</p>
+                      <p>지구를 너무 사랑한 곰</p>
+                      <p><span class="price_bold">35,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(4,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card">
+                  <a href="#">
+                    <img src="images/material images/pd_img (19).png" alt="소재별 굿즈 02" />
+                    <div class="materal-textbox">
+                      <p class="m_title">달리즘</p>
+                      <p>친환경 사이드 테이블</p>
+                      <p><span class="price_bold">46,000원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(4,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/pd_img (24).png" alt="소재별 굿즈 03" />
+                    <div class="materal-textbox">
+                      <p class="m_title">리슬</p>
+                      <p>오방색 플라옥노리개</p>
+                      <p><span class="price_bold">29,100원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(6,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="material-goods-card hidden">
+                  <a href="#">
+                    <img src="images/material images/pd_img (21).png" alt="소재별 굿즈 04" />
+                    <div class="materal-textbox">
+                      <p class="m_title">월하담</p>
+                      <p>지게미 비누</p>
+                      <p><span class="price_bold">9,500원</span></p>
+                      <div class="materal-rating">
+                        <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
+                        <span>(8,347)</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-            <!-- 서브 이미지 -->
-            <div class="sub-images">
-              <img src="images/product images/pd_img (18-1).png" alt="리본베어 서브 이미지1" />
-              <img src="images/product images/pd_img (18-2).png" alt="리본베어 서브 이미지2" />
-              <img src="images/product images/pd_img (18-3).png" alt="리본베어 서브 이미지3" />
-            </div>
-            <p class="brand-name">리본 베어</p>
-          </div>
-          <!-- 브랜드 아이템 3: 월하담 -->
-          <div class="brand-item">
-            <!-- 메인 이미지와 오버레이 텍스트 -->
-            <div class="main-image">
-              <img src="images/product images/pd_img (21).png" alt="바다 한 조각" />
-              <div class="overlay">
-                <h3>월하담</h3>
-                <p>술을 빚고 남은 곡물(지게미) 잔여물을 활용한 비누</p>
-                <li><a href="#">자세히 보기</a></li>
-              </div>
-            </div>
-            <!-- 서브 이미지 -->
-            <div class="sub-images">
-              <img src="images/product images/pd_img (21-1).png" alt="바다 한 조각 이미지1" />
-              <img src="images/product images/pd_img (21-2).png" alt="바다 한 조각 이미지2" />
-              <img src="images/product images/pd_img (21-3).png" alt="바다 한 조각 이미지3" />
-            </div>
-            <p class="brand-name">월하담</p>
           </div>
         </div>
+        <!-- 더 보기 버튼 -->
+        <div class="show-more">
+          <button id="showMoreButton">더 보기</button>
+        </div>
       </div>
-    </section>
-    <!-- 리뷰 영역 -->
-    <section class="review-section">
-      <div class="review-container">
-        <h2 class="section-title">정키펑키 유저 리뷰</h2>
-        <!-- 스와이퍼 슬라이더 -->
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <!-- 리뷰 아이템 1 -->
-            <div class="swiper-slide review-item">
-              <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
-              <h3>프로젝트 노하우</h3>
-              <p class="bold">체커보드백</p>
-              <p class="description">의미있는 월동이라서 뿌듯했습니다! 프로젝트 노하우의 양말락 시리즈를 진심으로 응원합니다. 이번 체커보드백도...</p>
+      <!-- 이벤트 배너 -->
+      <div class="event_banner" id="event">
+        <div class="event_banner_container">
+          <img src="images/A/e.banner/1920_e.banner.png" alt="이벤트배너" />
+          <!-- 반응형 -->
+          <img class="respon_768" src="images/A/e.banner/768_e.banner.png" alt="이벤트배너" />
+          <img class="respon_360" src="images/A/e.banner/360_e.banner.png" alt="이벤트배너" />
+        </div>
+      </div>
+      <!-- 인기 아이템 -->
+      <section class="popular-items-section" id="popular">
+        <div class="container">
+          <h2 class="section-title">인기 아이템</h2>
+          <a href="#" class="more-link">더 보기</a>
+          <!-- 제품 그리드 -->
+          <div class="product-grid">
+            <!-- 1번 상품 -->
+            <div class="product-item" data-aos="fade-up">
+              <div class="ranking-badge">1</div>
+              <img src="images/product images/pd_img (1).png" alt="모어포 모레 플라스틱 비누받침" class="product-image" />
+              <p class="product-brand">모어포 모레</p>
+              <p class="product-name">플라스틱 비누받침</p>
+              <p class="product-price">21,000원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(11,347)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="모어포 모레 플라스틱 비누받침" data-price="21000" />
+              </div>
             </div>
-            <!-- 리뷰 아이템 2 -->
-            <div class="swiper-slide review-item">
-              <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
-              <h3>lifeSalem</h3>
-              <p class="bold">버섯 조명</p>
-              <p class="description">서미페에서부터 관심가졌고 기다리고 있었어요! 앞으로도 역사가 공존할 수료를 활용한 예쁜 디자인과 의미있는 멋진 평가 기대...</p>
+            <!-- 2번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="ranking-badge">2</div>
+              <img src="images/product images/pd_img (6).png" alt="도자 귀걸이 반지 선물세트" class="product-image" />
+              <p class="product-brand">아차시픈</p>
+              <p class="product-name">도자 귀걸이 반지 선물세트</p>
+              <p class="product-price">56,000원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(8,856)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="도자 귀걸이 반지 선물세트" data-price="56000" />
+              </div>
             </div>
-            <!-- 리뷰 아이템 3 -->
-            <div class="swiper-slide review-item">
-              <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
-              <h3>오도즈 슾</h3>
-              <p class="bold">기타 테이블</p>
-              <p class="description">테이블의 정말 마음에 들어요. 모든 장식과 어울리는 세련된 디자인이 특징입니다. 나무 상판은 아름답게 마감되어 고급...</p>
+            <!-- 3번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="ranking-badge">3</div>
+              <img src="images/product images/pd_img (17).png" alt="거북이 보틀 오프너" class="product-image" />
+              <p class="product-brand">피그랩</p>
+              <p class="product-name">거북이 보틀 오프너</p>
+              <p class="product-price">12,300원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(7,724)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="거북이 보틀 오프너" data-price="12300" />
+              </div>
             </div>
-            <!-- 리뷰 아이템 4 -->
-            <div class="swiper-slide review-item">
-              <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
-              <h3>하윤</h3>
-              <p class="bold">셔링 책커버</p>
-              <p class="description">너무 유니크하고 예쁘고 마음에 들어요. 너무 높은 거 아닌가 고민하다가, 지금까지 사용하면서 계속... 속 마음에 들어서 늦은...</p>
+            <!-- 4번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="ranking-badge">4</div>
+              <img src="images/product images/pd_img (16).png" alt="리사이클 유리팔찌" class="product-image" />
+              <p class="product-brand">유리노리</p>
+              <p class="product-name">리사이클 유리팔찌</p>
+              <p class="product-price">32,000원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(6,249)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="리사이클 유리팔찌" data-price="32000" />
+              </div>
+            </div>
+            <!-- 5번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="ranking-badge">5</div>
+              <img src="images/product images/pd_img (11).png" alt="헌의류 곱창밴드" class="product-image" />
+              <p class="product-brand">DABOK</p>
+              <p class="product-name">헌의류 곱창밴드</p>
+              <p class="product-price">7,900원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(5,237)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="헌의류 곱창밴드" data-price="7900" />
+              </div>
+            </div>
+            <!-- 6번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="ranking-badge">6</div>
+              <img src="images/product images/pd_img (10).png" alt="양말 목 체커보드백" class="product-image" />
+              <p class="product-brand">프로젝트 노하우</p>
+              <p class="product-name">양말 목 체커보드백</p>
+              <p class="product-price">15,000원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(3,856)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="양말 목 체커보드백" data-price="15000" />
+              </div>
+            </div>
+            <!-- 7번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="600">
+              <div class="ranking-badge">7</div>
+              <img src="images/product images/pd_img (9).png" alt="폐목 우드 트레이" class="product-image" />
+              <p class="product-brand">비비작 공작소</p>
+              <p class="product-name">폐목 우드 트레이</p>
+              <p class="product-price">35,000원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(2,261)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="폐목 우드 트레이" data-price="35000" />
+              </div>
+            </div>
+            <!-- 8번 상품 -->
+            <div class="product-item" data-aos="fade-up" data-aos-delay="700">
+              <div class="ranking-badge">8</div>
+              <img src="images/product images/pd_img (15).png" alt="플라스틱 책선반" class="product-image" />
+              <p class="product-brand">로샤드 스튜디오</p>
+              <p class="product-name">플라스틱 책선반</p>
+              <p class="product-price">38,000원</p>
+              <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
+              <p class="review-count">(1,832)</p>
+              <div class="add-to-cart">
+                <img src="images/like/cart_plus.png" alt="장바구니에 담기" class="add-icon cart-icon" data-product-name="플라스틱 책선반" data-price="38000" />
+              </div>
             </div>
           </div>
         </div>
-        <!-- 하단 스크롤 라인 -->
-        <div class="scroll-line"></div>
+
+      </section>
+      <!-- 장바구니 팝업 -->
+      <div id="cartPopup" class="cart-popup" style="display: none">
+        <div class="popup-content">
+          <h2>장바구니 내용</h2>
+          <ul id="cartItemsList"></ul>
+          <!-- <button onclick="closeCartPopup()">닫기</button> -->
+        </div>
+
       </div>
-    </section>
-    <!-- 푸터 영역-->
-    <div class="footer"></div>
+      <!-- 루키 브랜드 -->
+      <section class="rookie-brands" id="brands">
+        <div class="rookie_container">
+          <h2 class="section-title">지금 주목받는 루키 브랜드</h2>
+          <a href="#" class="more-link">더 보기</a>
+          <div class="brand-grid swiper-container brand-swiper">
+            <div class="swiper-wrapper">
+              <!-- 브랜드 아이템 1: 바다 한 조각 -->
+              <div class="swiper-slide brand-item">
+                <div class="main-image">
+                  <img src="images/product images/pd_img (12).png" alt="바다 한 조각" class="active" id="mainImage1" />
+                  <div class="overlay">
+                    <h3>바다 한 조각</h3>
+                    <p>해변에서 주운 유리 조각을 <br />재료로 사용한 유리공예 상품</p>
+                    <li><a href="#">자세히 보기</a></li>
+                  </div>
+                </div>
+                <div class="sub-images">
+                  <img src="images/product images/pd_img (12-1).png" alt="바다 한 조각 이미지1" onclick="changeImage('mainImage1', this)" />
+                  <img src="images/product images/pd_img (12-2).png" alt="바다 한 조각 이미지2" onclick="changeImage('mainImage1', this)" />
+                  <img src="images/product images/pd_img (12-3).png" alt="바다 한 조각 이미지3" onclick="changeImage('mainImage1', this)" />
+                </div>
+              </div>
+              <!-- 브랜드 아이템 2: 리본베어 -->
+              <div class="swiper-slide brand-item">
+                <div class="main-image">
+                  <img src="images/product images/pd_img (18).png" alt="리본베어" class="active" id="mainImage2" />
+                  <div class="overlay">
+                    <h3>리본 베어</h3>
+                    <p>페트병을 100% 재활용한 <br />리사이클 소재(rPET)의 폴리에스터와 솜</p>
+                    <li><a href="#">자세히 보기</a></li>
+                  </div>
+                </div>
+                <div class="sub-images">
+                  <img src="images/product images/pd_img (18-1).png" alt="리본베어 서브 이미지1" onclick="changeImage('mainImage2', this)" />
+                  <img src="images/product images/pd_img (18-2).png" alt="리본베어 서브 이미지2" onclick="changeImage('mainImage2', this)" />
+                  <img src="images/product images/pd_img (18-3).png" alt="리본베어 서브 이미지3" onclick="changeImage('mainImage2', this)" />
+                </div>
+              </div>
+              <!-- 브랜드 아이템 3: 월하담 -->
+              <div class="swiper-slide brand-item">
+                <div class="main-image">
+                  <img src="images/product images/pd_img (21).png" alt="월하담" class="active" id="mainImage3" />
+                  <div class="overlay">
+                    <h3>월하담</h3>
+                    <p>술을 빚고 남은 곡물(지게미) <br />잔여물을 활용한 비누</p>
+                    <li><a href="#">자세히 보기</a></li>
+                  </div>
+                </div>
+                <div class="sub-images">
+                  <img src="images/product images/pd_img (21-1).png" alt="월하담 이미지1" onclick="changeImage('mainImage3', this)" />
+                  <img src="images/product images/pd_img (21-2).png" alt="월하담 이미지2" onclick="changeImage('mainImage3', this)" />
+                  <img src="images/product images/pd_img (21-3).png" alt="월하담 이미지3" onclick="changeImage('mainImage3', this)" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- 리뷰 영역 -->
+      <section class="review-section" id="review">
+        <div class="review-container">
+          <h2 class="section-title">정키펑키 유저 리뷰</h2>
+          <!-- 스와이퍼 슬라이더 -->
+          <div class="swiper swReview">
+            <div class="swiper-wrapper">
+              <!-- 리뷰 아이템 1 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">프로젝트 노하우</h3>
+                  <p class="bold">체커보드백</p>
+                  <p class="grey">의미있는 활동이라서 뿌듯했습니다!</p>
+                  <p class="description">프로젝트 노하우의 양말락 시리즈를 진심으로 응원합니다. 이번 체커보드백도 아주 마음에 들었어요!</p>
+                </div>
+              </div>
+              <!-- 리뷰 아이템 2 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">LifeSalem</h3>
+                  <p class="bold">버섯 조명</p>
+                  <p class="grey">서미페에서부터 관심가졌고 기다리고 있었어요!</p>
+                  <p class="description">앞으로도 역사가 공존하는 디자인과 의미있는 작업들이 계속되길 바랍니다.</p>
+                </div>
+              </div>
+              <!-- 리뷰 아이템 3 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">오도즈 슾</h3>
+                  <p class="bold">기타 테이블</p>
+                  <p class="grey">테이블의 정말 마음에 들어요.</p>
+                  <p class="description">모든 장식과 어울리는 세련된 디자인이 특징입니다. 나무 상판은 아름답게 마감되어 고급스러워요.</p>
+                </div>
+              </div>
+              <!-- 리뷰 아이템 4 -->
+              <div class="swiper-slide review-item">
+                <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
+                <div class="txt_wrap">
+                  <h3 class="r_title">하을</h3>
+                  <p class="bold">셔링 책커버</p>
+                  <p class="grey">유니크하고 예쁘고 마음에 들어요.</p>
+                  <p class="description">고민하다가 구매했는데, 정말 만족하고 있어요. 계속 사용하는 중입니다.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 스크롤라인 추가 -->
+            <div class="scroll-line swiper-scrollbar"></div>
+          </div>
+        </div>
+      </section>
+      <!-- 뉴스레터/구독영역 -->
+      <section class="subscription">
+        <div class="subscription-container">
+          <img src="../images/A/event/1920_event.png" alt="구독" class="subscription-bg" />
+          <div class="form-container">
+            <form id="subscriptionForm" action="#" method="POST">
+              <!-- 성함 입력 -->
+              <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="성함" required />
+              </div>
+              <!-- 전화번호 입력 -->
+              <div class="form-group">
+                <input type="tel" name="phone" id="phone" placeholder="전화번호" required />
+              </div>
+              <!-- 이메일 입력 -->
+              <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="이메일" required />
+              </div>
+              <button type="submit" class="submit-btn">전송</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- 푸터 영역-->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <p>&copy; inter JUNKYFUNKY System B.V 1999 - 2024</p>
+            <img class="logo" src="images/A/footer/ft_logo.png" alt="푸터 로고" />
+            <p>주소: (유) 경기도 광명시 일직로 17, 1층 (역직동) 정키펑키 본점</p>
+            <p>사업자 등록번호: 106-84-7765</p>
+            <p>대표자: 김홍도</p>
+            <p>통신판매업 신고: 2024-경기광명-1184</p>
+            <p>고객센터: 1670-4532</p>
+          </div>
+          <div class="footer-right">
+            <p><a href="#">개인정보 처리방침</a></p>
+            <p><a href="#">쿠키 정책</a></p>
+            <p><a href="#">쿠키설정</a></p>
+            <p><a href="#">웹사이트 이용약관</a></p>
+            <p><a href="#">Responsible Disclosure</a></p>
+            <p><a href="#">회사안내</a></p>
+            <p><a href="#">입점 상담안내</a></p>
+            <p><a href="#">고객센터</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

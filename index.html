@@ -51,7 +51,6 @@
     <script src="js/modal.js"></script>
     <script src="js/fix-btn.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/cart-slide.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
@@ -99,12 +98,12 @@
       </div>
     </div>
     <!-- 회원가입 폼 -->
-    <div id="registerModal" class="modal">
-      <div class="modal-content">
-        <h2 style="font-size: 30px; text-align: center">회원가입</h2>
+    <div id="registerModal" class="modal register-modal">
+      <div class="modal-content register-modal-content">
+        <h2>회원가입</h2>
         <form id="registerForm">
           <div class="selected-form">
-            <button type="submit" class="register-button">ID/PW로 회원가입</button>
+            <button type="button" class="register-button">ID/PW로 회원가입</button>
           </div>
           <div class="divider txt_c">
             <div class="border"></div>
@@ -117,26 +116,48 @@
         <div class="footer-links">
           <a href="#" class="open-login">로그인</a>
         </div>
-        <button class="close-btn">&times;</button>
+        <button class="close-btn register-close-btn">&times;</button>
       </div>
     </div>
-    <!-- 모달 구조 -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <!-- 첫 번째 이미지 -->
-        <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
-        <!-- 타이머 표시 -->
-        <div id="timer" style="font-size: 24px; color: #d9534f; text-align: center; margin-top: 20px"></div>
-        <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
-        <div class="close-wrap">
-          <label>
-            <input type="checkbox" id="notToday" />
-            <span class="notToday">오늘 하루 열지 않음</span>
-          </label>
-          <span class="close-btn">&times;</span>
-        </div>
+    <!-- 약관 동의 폼 -->
+    <div id="termsModal" class="modal terms-modal">
+      <div class="modal-content terms-modal-content">
+        <h2>약관 동의</h2>
+        <form id="termsForm">
+          <div class="terms-checkbox">
+            <input type="checkbox" id="termsAgree" required />
+            <label for="termsAgree">약관에 동의합니다.</label>
+          </div>
+          <div class="terms-content">
+            <h3>서비스 이용 약관</h3>
+            <p>서비스 이용 약관 내용이 여기에 표시됩니다. 내용을 읽고 동의해 주세요.</p>
+            <h3>개인정보 처리 방침</h3>
+            <p>개인정보 처리 방침 내용이 여기에 표시됩니다. 내용을 읽고 동의해 주세요.</p>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="terms-submit-button">회원가입</button>
+            <button type="button" class="close-btn terms-close-btn">&times;</button>
+          </div>
+        </form>
       </div>
     </div>
+<!-- 모달 구조 -->
+<div id="myModal" class="modal" style="display:none;"> <!-- 처음에는 모달이 숨겨져 있어야 함 -->
+  <div class="modal-content">
+    <!-- 첫 번째 이미지 -->
+    <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
+    <!-- 타이머 표시 -->
+    <div id="timer"></div>
+    <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
+    <div class="close-wrap">
+      <span class="close-btn">&times;</span>
+    </div>
+    <div class="notToday-wrap">
+      <input type="checkbox" id="notTodayCheck" /> <!-- 여기 id="notTodayCheck"로 수정 -->
+      <span class="notToday">오늘 하루 열지 않음</span>
+    </div>
+  </div>
+</div>
     <!-- 알림 메시지 -->
     <div id="notification" style="display: none">상품이 장바구니에 추가되었습니다!</div>
     <!-- 장바구니 고정 버튼 -->
@@ -170,31 +191,31 @@
                 <div class="cate-right">
                   <ul class="depth-top">
                     <li>
-                      <a href="#plastic">
+                      <a href="#" data-category="plastic">
                         <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                         <span>플라스틱</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#clothes">
+                      <a href="#" data-category="clothes">
                         <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                         <span>천</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#wood">
+                      <a href="#" data-category="wood">
                         <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                         <span>목재</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#glass">
+                      <a href="#" data-category="glass">
                         <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                         <span>유리</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#etc">
+                      <a href="#" data-category="etc">
                         <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                         <span>기타</span>
                       </a>
@@ -238,8 +259,8 @@
                         <li><a href="#event">이벤트</a></li>
                         <li><a href="#popular">인기</a></li>
                         <li><a href="#brands">브랜드</a></li>
-                        <!-- <li><a href="#review">리뷰</a></li> -->
-                        <li><a href="notice.html">공지사항</a></li>
+                        <li><a href="#review">리뷰</a></li>
+                        <!-- <li><a href="notice.html">공지사항</a></li> -->
                       </ul>
                     </div>
                     <hr />
@@ -247,31 +268,31 @@
                       <h3 class="side-bottom-title">카테고리</h3>
                       <ul class="side-bottom-menu">
                         <li>
-                          <a href="#">
+                          <a href="#" data-category="plastic">
                             <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                             <span>플라스틱</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="#" data-category="clothes">
                             <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                             <span>천</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="#" data-category="wood">
                             <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                             <span>목재</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="#" data-category="glass">
                             <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                             <span>유리</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="#" data-category="etc">
                             <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                             <span>기타</span>
                           </a>
@@ -287,31 +308,31 @@
                   <div class="cate-right">
                     <ul class="depth-top">
                       <li>
-                        <a href="#materlai plastic">
+                        <a href="#">
                           <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                           <span>플라스틱</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#clothes">
+                        <a href="#">
                           <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                           <span>천</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#wood">
+                        <a href="#">
                           <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                           <span>목재</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#glass">
+                        <a href="#">
                           <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                           <span>유리</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#etc">
+                        <a href="#">
                           <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                           <span>기타</span>
                         </a>
@@ -325,7 +346,7 @@
               <!-- <li><a href="#">구독</a></li> -->
               <li><a href="#brands">브랜드</a></li>
               <li><a href="#review">리뷰</a></li>
-              <li><a href="about_us.html">소개</a></li>
+              <li><a href="#">소개</a></li>
               <li><a href="notice.html">공지사항</a></li>
             </ul>
             <div class="head-logo">
@@ -354,8 +375,9 @@
                   </a>
                 </div>
                 <div class="cartBt">
-                  <a href="#" class="cart-btn">
+                  <a href="#">
                     <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                    <!-- <span>카트</span> -->
                   </a>
                 </div>
               </div>
@@ -369,7 +391,7 @@
               <!-- <li><a href="#">구독</a></li> -->
               <li><a href="#brands">브랜드</a></li>
               <li><a href="#review">리뷰</a></li>
-              <li><a href="about_us.html">소개</a></li>
+              <li><a href="#">소개</a></li>
               <li><a href="notice.html">공지사항</a></li>
             </ul>
           </div>
@@ -390,6 +412,11 @@
                   <source src="/video/video1.mp4" type="video/mp4" />
                 </video>
               </div>
+              <!-- <div class="swiper-slide white">
+                <video loop muted>
+                  <source src="/video/video3.mp4" type="video/mp4" />
+                </video>
+              </div> -->
             </div>
           </div>
         </div>
@@ -439,28 +466,8 @@
           </div>
         </div>
       </div>
-
-      <!-- 소재별카테고리영역 =============================================================================-->
-<div class="material">
-  <div class="container">
-
-  </div>
-</div>
-      <!-- 이벤트배너영역 ================================================================================ -->
-<div class="eventbanner">
-  <div class="eventbanner_container">
-    <a href="#"><img src="images/A/e.banner/1920_e.banner.png" alt="#"></a>
-  </div>
-
-</div>
-      <!-- 인기상품영역 ===================================================================================-->
-    </div>
-    <!-- 루키 브랜드 -->
-    <section class="rookie-brands">
-      <!-- 내부 레이아웃을 위한 컨테이너 -->
-      <div class="rookie_container">
-        <!-- 타이틀 영역 -->
-
+      <!-- 소재별 카테고리 영역 -->
+      <div class="material-area">
         <h2 class="section-title">소재별 카테고리</h2>
         <!-- 소재목록 슬라이드 -->
         <div class="material-slide-area">
@@ -499,7 +506,7 @@
             </div>
             <div class="material-main">
               <!-- 플라스틱 소재 카테고리 -->
-              <div class="material-goods plastic" id="plastic">
+              <div class="material-goods plastic">
                 <div class="material-goods-card">
                   <a href="#">
                     <img src="images/material images/plastic01.png" alt="소재별 굿즈 01" />
@@ -558,7 +565,7 @@
                 </div>
               </div>
               <!-- 천 소재 카테고리 -->
-              <div class="material-goods clothes" id="clothes">
+              <div class="material-goods clothes">
                 <div class="material-goods-card">
                   <a href="#">
                     <img src="images/material images/clothe01.png" alt="소재별 굿즈 01" />
@@ -617,7 +624,7 @@
                 </div>
               </div>
               <!-- 목재 소재 카테고리 -->
-              <div class="material-goods wood" id="wood">
+              <div class="material-goods wood">
                 <div class="material-goods-card">
                   <a href="#">
                     <img src="images/material images/wood01.png" alt="소재별 굿즈 01" />
@@ -676,7 +683,7 @@
                 </div>
               </div>
               <!-- 유리 소재 카테고리 -->
-              <div class="material-goods glass" id="glass">
+              <div class="material-goods glass">
                 <div class="material-goods-card">
                   <a href="#">
                     <img src="images/material images/glass01.png" alt="소재별 굿즈 01" />
@@ -735,7 +742,7 @@
                 </div>
               </div>
               <!-- 기타 소재 카테고리 -->
-              <div class="material-goods etc" id="etc">
+              <div class="material-goods etc">
                 <div class="material-goods-card">
                   <a href="#">
                     <img src="images/material images/pd_img (18).png" alt="소재별 굿즈 01" />
@@ -923,7 +930,6 @@
             </div>
           </div>
         </div>
-
       </section>
       <!-- 장바구니 팝업 -->
       <div id="cartPopup" class="cart-popup" style="display: none">
@@ -932,17 +938,16 @@
           <ul id="cartItemsList"></ul>
           <!-- <button onclick="closeCartPopup()">닫기</button> -->
         </div>
-
       </div>
       <!-- 루키 브랜드 -->
       <section class="rookie-brands" id="brands">
         <div class="rookie_container">
           <h2 class="section-title">지금 주목받는 루키 브랜드</h2>
           <a href="#" class="more-link">더 보기</a>
-          <div class="brand-grid swiper-container brand-swiper">
+          <div class="brand-grid">
             <div class="swiper-wrapper">
               <!-- 브랜드 아이템 1: 바다 한 조각 -->
-              <div class="swiper-slide brand-item">
+              <div class="brand-item">
                 <div class="main-image">
                   <img src="images/product images/pd_img (12).png" alt="바다 한 조각" class="active" id="mainImage1" />
                   <div class="overlay">
@@ -958,7 +963,7 @@
                 </div>
               </div>
               <!-- 브랜드 아이템 2: 리본베어 -->
-              <div class="swiper-slide brand-item">
+              <div class="brand-item">
                 <div class="main-image">
                   <img src="images/product images/pd_img (18).png" alt="리본베어" class="active" id="mainImage2" />
                   <div class="overlay">
@@ -974,7 +979,7 @@
                 </div>
               </div>
               <!-- 브랜드 아이템 3: 월하담 -->
-              <div class="swiper-slide brand-item">
+              <div class="brand-item">
                 <div class="main-image">
                   <img src="images/product images/pd_img (21).png" alt="월하담" class="active" id="mainImage3" />
                   <div class="overlay">
@@ -990,7 +995,6 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>

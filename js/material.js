@@ -1,93 +1,111 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
   const materialSwiper = new Swiper(".swMaterial", {
     slidesPerView: 5,
   }); // 한 번에 보여질 슬라이드 수
 
-  // 각 카테고리 버튼 및 관련 상품 영역
-  const categoryButtons = document.querySelectorAll(".swMaterial .swiper-slide a");
-  const materialGoodsSections = document.querySelectorAll(".material-goods");
-  const showMoreButton = document.getElementById("showMoreButton"); // 더 보기 버튼
+  const depthCategoryButtons = $(".depth-top a"); // depth-top 카테고리 버튼
+  const depthBottomCategoryButtons = $(".depth-bottom a"); // depth-bottom 카테고리 버튼
+  const swiperCategoryButtons = $(".swMaterial .swiper-slide a"); // swiper-slide 카테고리 버튼
+  const materialGoodsSections = $(".material-goods");
+  const sideBottomButtons = $(".side-bottom-menu li a"); // 사이드 바텀 카테고리 버튼
+  const showMoreButton = $("#showMoreButton"); // 더 보기 버튼
 
   // 모든 카테고리 상품 숨기기 함수
   function hideAllCategories() {
-    materialGoodsSections.forEach(function (section) {
-      section.style.display = "none";
-    });
+    materialGoodsSections.hide();
   }
 
   // 모든 아이콘 비활성화 함수
   function deactivateAllIcons() {
-    categoryButtons.forEach(function (button) {
-      button.style.opacity = "0.53"; // 비활성화 스타일
-    });
+    depthCategoryButtons.css("opacity", "0.53"); // 비활성화 스타일
+    depthBottomCategoryButtons.css("opacity", "0.53"); // 비활성화 스타일
+    swiperCategoryButtons.css("opacity", "0.53"); // 비활성화 스타일
+    swiperCategoryButtons.find("img").css("filter", "none"); // 이미지 색상 필터 초기화
+    sideBottomButtons.css("opacity", "0.53"); // 비활성화 스타일
   }
 
   // 모든 아이콘 활성화 함수
   function activateIcon(button) {
-    button.style.opacity = "1"; // 활성화 스타일
+    button.css("opacity", "1"); // 활성화 스타일
   }
 
   // 클릭한 카테고리 상품만 표시하는 함수
-  categoryButtons.forEach(function (button) {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
+  function displayCategory(category) {
+    hideAllCategories();
+    deactivateAllIcons(); // 모든 아이콘 비활성화
 
-      // 모든 카테고리 상품을 먼저 숨기기
-      hideAllCategories();
-      deactivateAllIcons(); // 모든 아이콘 비활성화
-
-      // 클릭한 아이콘의 alt 속성에 따른 카테고리 표시
-      const category = button.querySelector("img").alt.toLowerCase(); // alt 값을 소문자로 변환하여 일치시킴
-
-      // 해당하는 카테고리 상품만 표시
-      const selectedCategory = document.querySelector(`.material-goods.${category}`);
-      if (selectedCategory) {
-        selectedCategory.style.display = "flex"; // flex 또는 block으로 변경 가능
-        activateIcon(button); // 클릭한 아이콘 활성화
+    // 해당하는 카테고리 상품만 표시
+    const selectedCategory = $(`.material-goods.${category}`);
+    if (selectedCategory.length) {
+      selectedCategory.show(); // flex 또는 block으로 변경 가능
+      const relatedButton = depthCategoryButtons.filter(`[data-category="${category}"]`);
+      if (relatedButton.length) {
+        activateIcon(relatedButton); // 클릭한 아이콘 활성화
       }
-      adjustGoodsVisibility(); // 카테고리가 변경될 때마다 굿즈 가시성 재조정
-    });
+      const relatedBottomButton = depthBottomCategoryButtons.filter(`[data-category="${category}"]`);
+      if (relatedBottomButton.length) {
+        activateIcon(relatedBottomButton); // 사이드 바텀 아이콘 활성화
+      }
+      const relatedSwiperButton = swiperCategoryButtons.filter(function () {
+        return $(this).find("img").attr("alt").toLowerCase() === category;
+      });
+      if (relatedSwiperButton.length) {
+        activateIcon(relatedSwiperButton); // Swiper 아이콘 활성화
+      }
+      const relatedSideBottomButton = sideBottomButtons.filter(`[data-category="${category}"]`);
+      if (relatedSideBottomButton.length) {
+        activateIcon(relatedSideBottomButton); // 사이드 바텀 아이콘 활성화
+      }
+    }
+  }
+
+  // depth-top 카테고리 버튼 클릭 이벤트 리스너
+  depthCategoryButtons.on("click", function (e) {
+    e.preventDefault();
+    const category = $(this).data("category");
+    displayCategory(category); // 해당 카테고리 보여주기
   });
+
+  // depth-bottom 카테고리 버튼 클릭 이벤트 리스너
+  depthBottomCategoryButtons.on("click", function (e) {
+    e.preventDefault();
+    const category = $(this).data("category");
+    displayCategory(category); // 해당 카테고리 보여주기
+  });
+
+  // swiper-slide 카테고리 버튼 클릭 이벤트 리스너
+  swiperCategoryButtons.on("click", function (e) {
+    e.preventDefault();
+    const category = $(this).find("img").attr("alt").toLowerCase(); // alt 값을 소문자로 변환하여 일치시킴
+    displayCategory(category); // 해당 카테고리 보여주기
+  });
+
+  // 사이드 바텀 버튼 클릭 이벤트 리스너 추가
+  sideBottomButtons.on("click", function (e) {
+    e.preventDefault();
+    const category = $(this).data("category");
+    displayCategory(category); // 해당 카테고리 보여주기
+  });
+
   // 페이지 로드 시 기본으로 무작위 카테고리 및 해당 아이콘 표시
   hideAllCategories();
   deactivateAllIcons(); // 모든 아이콘 비활성화
   const randomIndex = Math.floor(Math.random() * materialGoodsSections.length); // 무작위 인덱스 선택
-  const randomCategory = materialGoodsSections[randomIndex]; // 무작위 카테고리 선택
-  if (randomCategory) {
-    randomCategory.style.display = "flex"; // 무작위 카테고리 표시
-    // 선택된 카테고리에 해당하는 아이콘 활성화
-    const categoryAlt = randomCategory.classList[1]; // 두 번째 클래스(예: 'plastic') 가져오기
-    const relatedButton = Array.from(categoryButtons).find((button) => button.querySelector("img").alt.toLowerCase() === categoryAlt);
-    if (relatedButton) {
-      activateIcon(relatedButton); // 무작위 카테고리와 관련된 아이콘 활성화
-    }
+  const randomCategory = materialGoodsSections.eq(randomIndex); // 무작위 카테고리 선택
+  if (randomCategory.length) {
+    randomCategory.show(); // 무작위 카테고리 표시
+    const categoryAlt = randomCategory.attr("class").split(" ")[1]; // 두 번째 클래스(예: 'plastic') 가져오기
+    displayCategory(categoryAlt); // 해당 카테고리와 아이콘 활성화
   }
+
   // 더 보기 버튼 클릭 시 히든 클래스 토글
-  showMoreButton.addEventListener("click", function () {
-    if (window.innerWidth <= 480) {
-      const hiddenItems = document.querySelectorAll(".hidden"); // .hidden 클래스를 가진 모든 요소 선택
-      hiddenItems.forEach(function (item) {
+  showMoreButton.on("click", function () {
+    if ($(window).width() <= 480) {
+      const hiddenItems = $(".hidden"); // .hidden 클래스를 가진 모든 요소 선택
+      hiddenItems.each(function () {
         // 현재 요소의 display 속성에 따라 보이게 하거나 숨기기
-        if (item.style.display === "none" || item.style.display === "") {
-          item.style.display = "block"; // 보이게 설정
-        } else {
-          item.style.display = "none"; // 숨기기 설정
-        }
+        $(this).toggle(); // 보이게 또는 숨기기
       });
     }
   });
-  // 윈도우 크기 변경 시 .hidden 클래스 활성화
-  // window.addEventListener("resize", function () {
-  //   if (window.innerWidth > 481) {
-  //     const hiddenItems = document.querySelectorAll(".hidden");
-  //     hiddenItems.forEach(function (item) {
-  //       item.style.display = "block"; // 숨기기
-  //     });
-  //   }
-  // });
-
-
-
-
-
 });

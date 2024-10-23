@@ -15,14 +15,13 @@
 
 /* 모달 콘텐츠 스타일 */
 .modal-content {
-  margin: 20% auto; /* 위쪽 여백 및 가운데 정렬 */
-  padding: 20px; /* 내부 여백 */
+  margin: 15% auto; /* 위쪽 여백 및 가운데 정렬 */
+  padding: 10px; /* 내부 여백 */
   border: 1px solid #c8ff00; /* 테두리 */
   background-color: aliceblue;
-  width: 80%; /* 너비 설정 */
+  width: 100%; /* 너비 설정 */
   max-width: 600px; /* 최대 너비 설정 */
   position: relative; /* 위치 지정 */
-  border-radius: 20px; /* 모서리 둥글게 */
 }
 
 .modal-content > img {
@@ -41,20 +40,35 @@
   cursor: pointer; /* 포인터 커서로 변경 */
   font-size: 24px; /* 폰트 사이즈 */
   color: #aaa; /* 색상 */
+
 }
 
 .close-btn:hover {
   color: #000; /* 마우스 오버 시 색상 변경 */
 }
 
-/* 체크박스 스타일 */
-.notToday {
-  margin-left: 5px; /* 체크박스와 텍스트 간격 설정 */
-  font-size: 14px; /* 폰트 사이즈 설정 */
+/* 체크박스와 텍스트를 그리드로 배치 */
+.notToday-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr; /* 첫 번째 열은 체크박스, 두 번째 열은 텍스트 */
+  align-items: right; /* 수직 정렬 */
+  gap: 5px; /* 열 사이 간격 */
+  margin-top: 15px; /* 상단 여백 추가 */
 }
 
+.notToday {
+  font-size: 14px; /* 폰트 사이즈 설정 */
+  color: #666; /* 텍스트 색상 설정 */
+  margin-bottom: 15PX;
+}
+
+input[type="checkbox"] {
+  margin: 0; /* 체크박스 주변 여백 제거 */
+}
+
+
 #timer {
-  font-size: 24px; /* 글자 크기 */
+  font-size: 20px; /* 글자 크기 */
   color: #d9534f; /* 긴박감을 줄 수 있는 빨간색 */
   text-align: center; /* 중앙 정렬 */
   margin-top: 20px; /* 위쪽 여백 */

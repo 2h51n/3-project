@@ -86,14 +86,14 @@
 .footer-links a {
   margin: 0 5px; /* 링크 간격 */
   text-decoration: none; /* 밑줄 제거 */
-  color: #a7a7a7;
+  color: #000;
   transition: color 0.3s; /* 색상 변화 효과 */
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
 }
 
 .footer-links a:hover {
-  color: #000000; /* 호버 시 색상 변화 */
+  color: #7a7a7a; /* 호버 시 색상 변화 */
 }
 
 /* 닫기 버튼 스타일 */
@@ -299,6 +299,22 @@
   padding: 10px; /* 내부 여백 */
 }
 
+/* 회원가입 버튼 스타일 */
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #03c75a; /* 버튼 배경색 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 호버 시 배경색 변화 */
+}
+
+.signup-button:hover {
+  background-color: #02b150; /* 호버 시 색상 변화 */
+}
+
 /* 버튼 그룹 스타일 */
 .terms-submit-button {
   width: 100%; /* 버튼 너비 */
@@ -332,21 +348,89 @@
   color: #fffb00; /* 호버 시 색상 변화 */
 }
 
+#welcomePopup {
+  display: none; /* 숨김 */
+  position: fixed;
+  top: 50%;
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background: #ffffff; /* 배경색 */
+  padding: 30px; /* 여백 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* 그림자 */
+  z-index: 1000;
+  font-family: "Arial", sans-serif; /* 글꼴 */
+  color: #333; /* 글자색 */
+  text-align: center; /* 가운데 정렬 */
+}
+
+#welcomeMessage {
+  margin: 10px 0; /* 하단 여백 */
+  font-size: 14px; /* 글자 크기 */
+}
+
+.logout-button {
+  background-color: #4caf50; /* 버튼 배경색 */
+  color: white; /* 버튼 글자색 */
+  border: none; /* 테두리 없앰 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  padding: 10px 20px; /* 버튼 여백 */
+  font-size: 1em; /* 버튼 글자 크기 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+.logout-button:hover {
+  background-color: #45a049; /* 호버시 배경색 변화 */
+}
+
+.close-popup {
+  font-size: 1.5em; /* 닫기 버튼 크기 */
+  color: #666; /* 닫기 버튼 색상 */
+  position: absolute; /* 위치 절대값으로 설정 */
+  top: 10px; /* 상단 여백 */
+  right: 15px; /* 우측 여백 */
+}
+
+.close-popup:hover {
+  color: #000; /* 호버시 색상 변화 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* 1024px 이상의 해상도 */
 @media screen and (min-width: 1024px) {
 }
 
 /* 768px 이상의 해상도 */
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-
 }
 
 /* 480px 이상의 해상도 */
 @media screen and (max-width: 768px) and (min-width: 480px) {
-
 }
 
 /* 360px 이상의 해상도 */
 @media screen and (max-width: 480px) {
+  /* 모달 콘텐츠 스타일 */
+.modal-content {
+  top: 14%;
+}
 
 }

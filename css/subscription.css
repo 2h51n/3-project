@@ -6,6 +6,21 @@
   text-align: center;
 }
 
+.subscription h1{
+  display: block;
+  position: absolute;
+  font-size: 200%;
+  /* min-width: ; */
+  z-index: 999;
+  top: 3%;
+  left: 43%;
+  left: 3%;
+  font-weight: bold;
+  color: #1f1f1f;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 0 0 10px rgb(168, 168, 168);   /* 중간 번짐 */
+}
+
 .subscription-container {
   /* background-image: url("../images/A/event/1920_event.png") no-repeat; */
   position: relative;
@@ -223,6 +238,10 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+  }
+
+  .subscription h1{
+    font-size: 150%;
   }
 }
 @media (max-width: 400px) {

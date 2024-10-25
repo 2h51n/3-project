@@ -102,11 +102,23 @@
 .swiper-scrollbar.swiper-scrollbar-horizontal {
   position: absolute;
   left: var(--swiper-scrollbar-sides-offset, 4%);
-  bottom: var(--swiper-scrollbar-bottom, -30px);
+  bottom: var(--swiper-scrollbar-bottom, -120px);
+  /* bottom: var(--swiper-scrollbar-bottom, 320px); */
   top: var(--swiper-scrollbar-top, auto);
   z-index: 50;
   height: var(--swiper-scrollbar-size, 4px);
   width: calc(100% - 7%);
+}
+
+.swReview .swiper-slide {
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.5; 
+  transform: scale(0.8); 
+}
+
+.swReview .swiper-slide.swiper-slide-active {
+  opacity: 1; 
+  transform: scale(1); 
 }
 
 /* 1024px 이하에서 3열 레이아웃 */

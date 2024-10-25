@@ -11,10 +11,10 @@ window.onload = function () {
 
   // ===소재별 인기 상품 섹션 스와이퍼 슬라이드 영역 시작===
   const swMaterial = new Swiper(".swMaterial", {
-    slidesPerView: 5, 
-    // spaceBetween: 2, 
+    slidesPerView: 5,
+    // spaceBetween: 2,
     // breakpoints: {
-      
+
     //   320: { slidesPerView: 1.5 },
     //   480: { slidesPerView: 2 },
     //   768: { slidesPerView: 3 },
@@ -37,107 +37,117 @@ window.onload = function () {
     },
   });
   // ===리뷰 섹션 끝===
-  
 
   // 카테고리 텍스트메뉴 클릭 시 소재별 미니카테고리 나옴
-const cateTitle = document.querySelectorAll(".category-title")
-const naviCate = document.querySelector(".navi-cate")
-// cateIcon.addEventListener("click", function(e){
+  const cateTitle = document.querySelectorAll(".category-title");
+  const naviCate = document.querySelector(".navi-cate");
+  // cateIcon.addEventListener("click", function(e){
   //   e.preventDefault()
-//   naviCate.classList.toggle("active")
-// })
-cateTitle.forEach(function(item){
-  item.addEventListener("click", function(e){
-    e.preventDefault()
-    naviCate.classList.toggle("active")
-  })
-  
-  
-})
-const cateIcon = document.querySelector("#category-icon")
-const sideMenu = document.querySelector(".sidemenu-area")
-const headLogo = document.querySelector(".head-logo")
-const cateClose = document.querySelector(".cate-close")
-const cateClose2 = document.querySelector(".cate-close2")
+  //   naviCate.classList.toggle("active")
+  // })
+  cateTitle.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+      naviCate.classList.toggle("active");
+    });
+  });
+  const cateIcon = document.querySelector("#category-icon");
+  const sideMenu = document.querySelector(".sidemenu-area");
+  const headLogo = document.querySelector(".head-logo");
+  const cateClose = document.querySelector(".cate-close");
+  const cateClose2 = document.querySelector(".cate-close2");
+
+  // 카테고리 아이콘 클릭 시
+  cateIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    cateClose.classList.add("active");
+    cateClose2.classList.add("active");
+    cateIcon.classList.add("hidden");
+    sideMenu.classList.add("active");
+    headLogo.classList.add("hidden");
+  });
+
+  // 카테고리 닫기 버튼 클릭 시
+  cateClose.addEventListener("click", function (e) {
+    e.preventDefault();
+    cateClose.classList.remove("active");
+    cateIcon.classList.remove("hidden");
+    sideMenu.classList.remove("active");
+    headLogo.classList.remove("hidden");
+  });
+  // 카테고리 닫기 버튼 클릭 시
+  cateClose2.addEventListener("click", function (e) {
+    e.preventDefault();
+    cateClose2.classList.remove("active");
+    cateClose.classList.remove("active");
+    cateIcon.classList.remove("hidden");
+    sideMenu.classList.remove("active");
+    headLogo.classList.remove("hidden");
+  });
+
+  const sideInput = document.querySelector(".side-top-icons input");
+  const sideInputBT = document.querySelector(".side-iconsBT > .searchMB > a .search_icon");
+
+  sideInputBT.addEventListener("click", function () {
+    sideInput.classList.toggle("active");
+  });
+
+  const search830 = document.querySelector(".header-icons > .searchMB > a .search_icon");
+  const searchInput = document.querySelector(".searchMB input");
+  const loginBThidden = document.querySelector(".header-right .loginBt");
+  const closeInput = document.querySelector(".inputClose");
 
 
-// 카테고리 아이콘 클릭 시
-cateIcon.addEventListener("click", function (e) {
-  e.preventDefault();
-  cateClose.classList.add("active");
-  cateClose2.classList.add("active");
-  cateIcon.classList.add("hidden");
-  sideMenu.classList.add("active");
-  headLogo.classList.add("hidden");
-});
+  search830.addEventListener("click", function () {
+    searchInput.classList.toggle("active");
+    loginBThidden.classList.toggle("hidden");
+    headLogo.classList.toggle("hidden");
+    // search830.style.display = "none";
+    // closeInput.style.display = "block";
+  });
 
-// 카테고리 닫기 버튼 클릭 시
-cateClose.addEventListener("click", function (e) {
-  e.preventDefault();
-  cateClose.classList.remove("active");
-  cateIcon.classList.remove("hidden");
-  sideMenu.classList.remove("active");
-  headLogo.classList.remove("hidden");
-});
-// 카테고리 닫기 버튼 클릭 시
-cateClose2.addEventListener("click", function (e) {
-  e.preventDefault();
-  cateClose2.classList.remove("active");
-  cateClose.classList.remove("active");
-  cateIcon.classList.remove("hidden");
-  sideMenu.classList.remove("active");
-  headLogo.classList.remove("hidden");
-});
+  closeInput.addEventListener("click", function () {
+    searchInput.classList.remove("active");
+    loginBThidden.classList.remove("hidden");
+    headLogo.classList.remove("hidden");
+    // search830.style.display = "block";
+    // closeInput.style.display = "none";
+  });
 
-const sideInput = document.querySelector(".side-top-icons input")
-const sideInputBT = document.querySelector(".side-iconsBT > .searchMB > a .search_icon")
+  // 사이드 메뉴 내부 클릭 시 이벤트 버블링 방지
+  sideMenu.addEventListener("click", function (e) {
+    e.stopPropagation(); // 부모로 이벤트가 전달되지 않도록 함
+  });
 
+  // 브라우저 창 크기 조절 시 로고 상태 초기화
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      // 임의로 768px로 설정 (필요 시 조정)
+      headLogo.classList.remove("hidden"); // 큰 화면에서는 로고를 항상 표시
+      sideMenu.classList.remove("active"); // 메뉴도 닫힘
+      naviCate.classList.remove("active");
+      // cateClose2.classList.remove("active");
+    }
+    const icon = document.querySelector("#category-icon");
+    if (window.innerWidth > 768) {
+      icon.style.display = "none"; // 창이 작아져도 아이콘 표시
+    } else {
+      icon.style.display = "inline-block"; // 항상 표시
+    }
 
-sideInputBT.addEventListener("click", function(){
-  sideInput.classList.toggle("active")
-})
+    if (window.innerWidth > 400) {
+      cateClose2.style.display = "none";
+    }
+    // if (window.innerWidth > 400){
+    //   cateClose.classList.remove("active");
+    //   cateClose2.classList.add("active");
+    // }
+  });
 
-const search830 = document.querySelector(".header-icons > .searchMB > a .search_icon")
-const searchInput = document.querySelector(".searchMB input")
-
-search830.addEventListener("click", function(){
-  searchInput.classList.toggle("active")
-})
-
-
-// 사이드 메뉴 내부 클릭 시 이벤트 버블링 방지
-sideMenu.addEventListener("click", function (e) {
-  e.stopPropagation();  // 부모로 이벤트가 전달되지 않도록 함
-});
-
-// 브라우저 창 크기 조절 시 로고 상태 초기화
-window.addEventListener("resize", function () {
-  if (window.innerWidth > 768) {  // 임의로 768px로 설정 (필요 시 조정)
-    headLogo.classList.remove("hidden");  // 큰 화면에서는 로고를 항상 표시
-    sideMenu.classList.remove("active");  // 메뉴도 닫힘
-    naviCate.classList.remove("active")
-    // cateClose2.classList.remove("active");
-  }
-  const icon = document.querySelector("#category-icon");
-  if (window.innerWidth > 768) {
-    icon.style.display = "none"; // 창이 작아져도 아이콘 표시
-  } else {
-    icon.style.display = "inline-block"; // 항상 표시
-  }
-
-  if (window.innerWidth > 400){
-    cateClose2.style.display = "none";
-  }
-  // if (window.innerWidth > 400){
-  //   cateClose.classList.remove("active");
-  //   cateClose2.classList.add("active");
-  // }
-});
-
-// 비디오 항목 체크 (video태그로 파악)
+  // 비디오 항목 체크 (video태그로 파악)
   // 모든비디오 태그를 변수에 저장
   let videos = this.document.querySelectorAll(".swVideo video");
-      // 페이지가 로드되면 자동으로 2배속 설정
+  // 페이지가 로드되면 자동으로 2배속 설정
 
   console.log(videos);
   // 비디오 재생시간 체크
@@ -195,8 +205,4 @@ window.addEventListener("resize", function () {
   }
 
   videoReset();
- 
-
-
-  
 };

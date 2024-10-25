@@ -62,9 +62,6 @@ function showCartPopup() {
   const cartPopup = document.getElementById("cartPopup");
   cartPopup.style.display = "flex"; // 팝업 표시
   updateCartPopup(); // 장바구니 팝업 내용 업데이트
-
-  // 3초 후에 장바구니 팝업 닫기
-  setTimeout(closeCartPopup, 3000); // 3000ms = 3초
 }
 
 // 장바구니 내용을 업데이트하는 함수

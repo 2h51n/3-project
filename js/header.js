@@ -106,13 +106,12 @@ window.onload = function () {
     // closeInput.style.display = "block";
   });
 
-  closeInput.addEventListener("click", function () {
-    searchInput.classList.remove("active");
-    loginBThidden.classList.remove("hidden");
-    headLogo.classList.remove("hidden");
-    // search830.style.display = "block";
-    // closeInput.style.display = "none";
-  });
+  // closeInput.addEventListener("click", function () {
+  //   searchInput.classList.remove("active");
+  //   loginBThidden.classList.remove("hidden");
+  //   headLogo.classList.remove("hidden");
+
+  // });
 
   // 사이드 메뉴 내부 클릭 시 이벤트 버블링 방지
   sideMenu.addEventListener("click", function (e) {

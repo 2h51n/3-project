@@ -67,3 +67,12 @@
 
 }
 
+@media (max-width: 650px){
+  .swVideo video{
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    object-fit: cover;
+  }
+
+}

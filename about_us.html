@@ -43,7 +43,14 @@
     <script src="js/modal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/material.js"></script>
+    <script src="js/popular_item.js"></script>
+    <script src="js/subscription.js"></script>
+    <script src="js/rookie_brand.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/fix-btn.js"></script>
+    <script src="js/login.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/aboutus.css" />
@@ -57,12 +64,130 @@
   </head>
   <body>
     <div class="wrap">
-      <!-- 헤더 영역 -->
-      <header class="header">
-        <div class="container">
-          <div class="header-top">
-            <ul class="head-navi">
-              <div class="navi-cate">
+    <!-- 헤더 영역 -->
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <ul class="head-navi">
+            <!-- <div class="navi-cate">
+              <div class="cate-right">
+                <ul class="depth-top">
+                  <li>
+                    <a href="index.html#event" style="background-color: aqua" class="aaaa">
+                      <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                      <span>플라스틱</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                      <span>천</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                      <span>목재</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                      <span>유리</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                      <span>기타</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <li>
+              <button class="cate-close">X</button>
+              <a href="#" id="category-icon">
+                <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
+                <div class="sidemenu-area">
+                  <button class="cate-close2">X</button>
+                  <div class="side-top">
+                    <a href="#" class="side-top-logo">
+                      <img src="images/A/main_logo.png" alt="로고" />
+                    </a>
+                    <div class="side-top-icons">
+                      <div class="side-iconsBT">
+                        <div class="searchMB">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                          </a>
+                        </div>
+                        <div class="loginBt">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                            <!-- <span>로그인</span> -->
+                          </a>
+                        </div>
+                        <div class="cartBt">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                            <!-- <span>카트</span> -->
+                          </a>
+                        </div>
+                      </div>
+                      <input type="text" placeholder="입력 후 엔터" />
+                    </div>
+                    <ul class="side-top-menu">
+                      <li><a href="index.html#material-area" class="category-title1">카테고리</a></li>
+                      <li><a href="index.html#event">이벤트</a></li>
+                      <li><a href="index.html#popular">인기</a></li>
+                      <li><a href="index.html#brands">브랜드</a></li>
+                      <li><a href="index.html#review">리뷰</a></li>
+                      <li><a href="notice.html">공지사항</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <!-- <div class="side-bottom">
+                    <h3 class="side-bottom-title">카테고리</h3>
+                    <ul class="side-bottom-menu">
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
+                          <span>플라스틱</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
+                          <span>천</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
+                          <span>목재</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
+                          <span>유리</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
+                          <span>기타</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li> -->
+            <li>
+              <li><a href="index.html#material-area" class="category-title1">카테고리</a></li>
+              <!-- <div class="navi-cate">
                 <div class="cate-right">
                   <ul class="depth-top">
                     <li>
@@ -97,179 +222,62 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-              <li>
-                <button class="cate-close">X</button>
-                <a href="#" id="category-icon">
-                  <img src="images/A/icon/popup-icon/h_bar.svg" alt="메뉴바 아이콘" />
-                  <div class="sidemenu-area">
-                    <button class="cate-close2">X</button>
-                    <div class="side-top">
-                      <a href="#" class="side-top-logo">
-                        <img src="images/A/main_logo.png" alt="로고" />
-                      </a>
-                      <div class="side-top-icons">
-                        <div class="side-iconsBT">
-                          <div class="searchMB">
-                            <a href="#">
-                              <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
-                            </a>
-                          </div>
-                          <div class="loginBt">
-                            <a href="#">
-                              <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                              <!-- <span>로그인</span> -->
-                            </a>
-                          </div>
-                          <div class="cartBt">
-                            <a href="#">
-                              <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                              <!-- <span>카트</span> -->
-                            </a>
-                          </div>
-                        </div>
-                        <input type="text" placeholder="입력 후 엔터" />
-                      </div>
-                      <ul class="side-top-menu">
-                        <li><a href="index.html#event">이벤트</a></li>
-                        <li><a href="index.html#popular">인기</a></li>
-                        <li><a href="index.html#brands">브랜드</a></li>
-                        <li><a href="index.html#review">리뷰</a></li>
-                        <li><a href="notice.html">공지사항</a></li>
-                      </ul>
-                    </div>
-                    <hr />
-                    <div class="side-bottom">
-                      <h3 class="side-bottom-title">카테고리</h3>
-                      <ul class="side-bottom-menu">
-                        <li>
-                          <a href="#">
-                            <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
-                            <span>플라스틱</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
-                            <span>천</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
-                            <span>목재</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
-                            <span>유리</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
-                            <span>기타</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="category-title">카테고리</a>
-                <div class="navi-cate">
-                  <div class="cate-right">
-                    <ul class="depth-top">
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
-                          <span>플라스틱</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
-                          <span>천</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
-                          <span>목재</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
-                          <span>유리</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
-                          <span>기타</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li><a href="index.html#event">이벤트</a></li>
-              <li><a href="index.html#popular">인기</a></li>
-              <li><a href="index.html#brands">브랜드</a></li>
-              <li><a href="index.html#review">리뷰</a></li>
-              <li><a href="#">소개</a></li>
-              <li><a href="notice.html">공지사항</a></li>
-            </ul>
-            <div class="head-logo">
-              <a href="index.html">
-                <img src="images/A/main_logo.png" alt="메인 헤더 로고" />
+              </div> -->
+            </li>
+            <li><a href="index.html#event">이벤트</a></li>
+            <li><a href="index.html#popular">인기</a></li>
+            <li><a href="index.html#brands">브랜드</a></li>
+            <li><a href="index.html#review">리뷰</a></li>
+            <li><a href="about_us.html">소개</a></li>
+            <!-- <li><a href="notice.html">공지사항</a></li> -->
+          </ul>
+          <div class="head-logo">
+            <a href="index.html">
+              <img src="images/A/main_logo.png" alt="메인 헤더 로고" />
+            </a>
+          </div>
+          <div class="header-right">
+            <div class="head-search">
+              <input type="text" placeholder="검색어를 입력해주세요" />
+              <a href="#">
+                <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
               </a>
             </div>
-            <div class="header-right">
-              <div class="head-search">
-                <input type="text" placeholder="검색어를 입력해주세요" />
+            <div class="header-icons">
+              <div class="searchMB">
                 <a href="#">
                   <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
+                  <input type="text" />
                 </a>
               </div>
-              <div class="header-icons">
-                <div class="searchMB">
-                  <a href="#">
-                    <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
-                    <input type="text" />
-                  </a>
-                </div>
-                <div class="loginBt">
-                  <a href="#">
-                    <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                    <!-- <span>로그인</span> -->
-                  </a>
-                </div>
-                <div class="cartBt">
-                  <a href="#">
-                    <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                    <!-- <span>카트</span> -->
-                  </a>
-                </div>
+              <div class="loginBt">
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                  <!-- <span>로그인</span> -->
+                </a>
+              </div>
+              <div class="cartBt">
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                  <!-- <span>카트</span> -->
+                </a>
               </div>
             </div>
           </div>
-          <div class="header-bottom">
-            <ul class="navi-bottom">
-              <li><a href="#" class="category-title">카테고리</a></li>
-              <li><a href="index.html#event">이벤트</a></li>
-              <li><a href="index.html#popular">인기</a></li>
-              <li><a href="index.html#brands">브랜드</a></li>
-              <li><a href="index.html#review">리뷰</a></li>
-              <li><a href="#">소개</a></li>
-              <li><a href="notice.html">공지사항</a></li>
-            </ul>
-          </div>
         </div>
-      </header>
+        <div class="header-bottom">
+          <ul class="navi-bottom">
+            <li><a href="index.html#material-area" class="category-title1">카테고리</a></li>
+            <li><a href="index.html#event">이벤트</a></li>
+            <li><a href="index.html#popular">인기</a></li>
+            <li><a href="index.html#brands">브랜드</a></li>
+            <li><a href="index.html#review">리뷰</a></li>
+            <li><a href="about_us.html">소개</a></li>
+            <!-- <li><a href="notice.html">공지사항</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </header>
 
       <!-- 메인 -->
       <section class="main">

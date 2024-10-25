@@ -50,21 +50,23 @@
     <script src="js/review.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/fix-btn.js"></script>
+    <script src="js/login.js"></script>
+
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
     <style>
-      html{
+      html {
         scroll-behavior: smooth;
       }
-      .main{
+      .main {
         width: 100%;
         /* max-width: 1300px; */
         margin-top: 200px;
         display: block;
         /* background-color: antiquewhite; */
       }
-      .inner{
+      .inner {
         /* width: 100%; */
         max-width: 1300px;
         margin: 0 auto;
@@ -77,7 +79,7 @@
         width: 100%;
         font-family: "Noto Sans KR";
       }
-      hr{
+      hr {
         width: 70%;
         margin: 0 auto;
         margin-top: 40px;
@@ -95,7 +97,7 @@
         border: 1px solid #ddd;
       }
 
-      .notice-board td:first-child{
+      .notice-board td:first-child {
         text-align: center;
       }
       .pagination {
@@ -122,11 +124,11 @@
       <div class="container">
         <div class="header-top">
           <ul class="head-navi">
-            <div class="navi-cate">
+            <!-- <div class="navi-cate">
               <div class="cate-right">
                 <ul class="depth-top">
                   <li>
-                    <a href="#">
+                    <a href="index.html#event" style="background-color: aqua" class="aaaa">
                       <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                       <span>플라스틱</span>
                     </a>
@@ -157,7 +159,7 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
             <li>
               <button class="cate-close">X</button>
               <a href="#" id="category-icon">
@@ -191,15 +193,16 @@
                       <input type="text" placeholder="입력 후 엔터" />
                     </div>
                     <ul class="side-top-menu">
+                      <li><a href="index.html#material-area" class="category-title1">카테고리</a></li>
                       <li><a href="index.html#event">이벤트</a></li>
                       <li><a href="index.html#popular">인기</a></li>
                       <li><a href="index.html#brands">브랜드</a></li>
                       <li><a href="index.html#review">리뷰</a></li>
-                      <!-- <li><a href="notice.html">공지사항</a></li> -->
+                      <li><a href="notice.html">공지사항</a></li>
                     </ul>
                   </div>
                   <hr />
-                  <div class="side-bottom">
+                  <!-- <div class="side-bottom">
                     <h3 class="side-bottom-title">카테고리</h3>
                     <ul class="side-bottom-menu">
                       <li>
@@ -236,10 +239,10 @@
                   </div>
                 </div>
               </a>
-            </li>
+            </li> -->
             <li>
-              <a href="#" class="category-title">카테고리</a>
-              <div class="navi-cate">
+              <li><a href="index.html#material-area" class="category-title1">카테고리</a></li>
+              <!-- <div class="navi-cate">
                 <div class="cate-right">
                   <ul class="depth-top">
                     <li>
@@ -274,7 +277,7 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
             </li>
             <li><a href="index.html#event">이벤트</a></li>
             <li><a href="index.html#popular">인기</a></li>
@@ -299,7 +302,7 @@
               <div class="searchMB">
                 <a href="#">
                   <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
-                  <input type="text">
+                  <input type="text" />
                 </a>
               </div>
               <div class="loginBt">
@@ -319,7 +322,7 @@
         </div>
         <div class="header-bottom">
           <ul class="navi-bottom">
-            <li><a href="#" class="category-title">카테고리</a></li>
+            <li><a href="index.html#material-area" class="category-title1">카테고리</a></li>
             <li><a href="index.html#event">이벤트</a></li>
             <li><a href="index.html#popular">인기</a></li>
             <li><a href="index.html#brands">브랜드</a></li>
@@ -333,7 +336,7 @@
     <section class="main">
       <div class="inner">
         <h1>NOTICE</h1>
-        <hr>
+        <hr />
         <!-- 공지사항 게시판 -->
         <table class="notice-board">
           <!-- thead: 타이틀헤드, tr : 테이블 가로, td: 테이블 데이터 -->
@@ -352,9 +355,8 @@
         <ul class="pagination" id="pagination">
           <!-- js 출력 -->
         </ul>
-      </section>
-
       </div>
+    </section>
 
     <script>
       // 예시 공지사항 데이터

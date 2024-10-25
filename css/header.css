@@ -149,6 +149,11 @@
   margin: 0 auto;
 }
 
+.highlight {
+  border: 2px dashed rgb(233, 1, 1); /* 검색된 텍스트의 배경색 */
+  transition: background-color 0.5s ease; /* 부드러운 전환 효과 */
+}
+
 .header-icons {
   display: flex;
   margin-right: 8px;

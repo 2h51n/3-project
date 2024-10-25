@@ -51,6 +51,7 @@
     <script src="js/modal.js"></script>
     <script src="js/fix-btn.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/search.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
@@ -61,7 +62,7 @@
       <div class="modal-content">
         <h2 style="font-size: 30px; text-align: center">로그인</h2>
         <form id="loginForm">
-          <input type="email" id="email" placeholder="이메일" required class="input-field" />
+          <input type="text" id="userId" placeholder="아이디" required class="input-field" />
           <input type="password" id="password" placeholder="비밀번호" required class="input-field" />
           <div class="remember-me">
             <input type="checkbox" id="rememberMe" />
@@ -141,23 +142,46 @@
         </form>
       </div>
     </div>
-<!-- 모달 구조 -->
-<div id="myModal" class="modal" style="display:none;"> <!-- 처음에는 모달이 숨겨져 있어야 함 -->
-  <div class="modal-content">
-    <!-- 첫 번째 이미지 -->
-    <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
-    <!-- 타이머 표시 -->
-    <div id="timer"></div>
-    <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
-    <div class="close-wrap">
-      <span class="close-btn">&times;</span>
+    <!-- ID/PW 회원가입 폼 -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <h2 style="font-size: 30px; text-align: center">회원가입</h2>
+        <form id="signupForm">
+          <input type="text" name="userId" id="signupId" placeholder="아이디" required class="input-field" />
+          <input type="email" name="userEmail" id="signupEmail" placeholder="이메일" required class="input-field" />
+          <input type="password" name="passWord" id="signupPassword" placeholder="비밀번호" required class="input-field" />
+          <input type="tel" name="userPhone" id="signupPhone" placeholder="휴대폰 번호" required class="input-field" />
+          <button type="submit" class="signup-button">회원가입</button>
+          <button type="button" class="close-btn">&times;</button>
+        </form>
+      </div>
     </div>
-    <div class="notToday-wrap">
-      <input type="checkbox" id="notTodayCheck" /> <!-- 여기 id="notTodayCheck"로 수정 -->
-      <span class="notToday">오늘 하루 열지 않음</span>
+    <!-- 로그인 환영 팝업 -->
+    <div id="welcomePopup" style="display: none; position: fixed; top: 50%; right: 2%; background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000">
+      <div id="welcomeMessage"></div>
+      <button class="logout-button">로그아웃</button>
+      <span class="close-popup" style="cursor: pointer; float: right; font-size: 20px">×</span>
+      <!-- X 버튼 추가 -->
     </div>
-  </div>
-</div>
+    <!-- 모달 구조 -->
+    <div id="myModal" class="modal" style="display: none">
+      <!-- 처음에는 모달이 숨겨져 있어야 함 -->
+      <div class="modal-content">
+        <!-- 첫 번째 이미지 -->
+        <img src="images/modal/modal_main.png" alt="이벤트 팝업 이미지" id="modalImage" />
+        <!-- 타이머 표시 -->
+        <div id="timer"></div>
+        <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
+        <div class="close-wrap">
+          <span class="close-btn">&times;</span>
+        </div>
+        <div class="notToday-wrap">
+          <input type="checkbox" id="notTodayCheck" />
+          <!-- 여기 id="notTodayCheck"로 수정 -->
+          <span class="notToday">오늘 하루 열지 않음</span>
+        </div>
+      </div>
+    </div>
     <!-- 알림 메시지 -->
     <div id="notification" style="display: none">상품이 장바구니에 추가되었습니다!</div>
     <!-- 장바구니 고정 버튼 -->
@@ -356,8 +380,8 @@
             </div>
             <div class="header-right">
               <div class="head-search">
-                <input type="text" placeholder="검색어를 입력해주세요" />
-                <a href="#">
+                <input type="text" placeholder="검색어를 입력해주세요" id="searchInput" />
+                <a href="#" id="searchBtn">
                   <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
                 </a>
               </div>
@@ -365,20 +389,20 @@
                 <div class="searchMB">
                   <a href="#">
                     <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
-                    <input type="text" />
+                    <input type="text" id="searchMBInput" placeholder="모바일 검색어를 입력하세요" />
                   </a>
                 </div>
                 <div class="loginBt">
                   <a href="#">
                     <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                    <!-- <span>로그인</span> -->
                   </a>
                 </div>
                 <!-- <div class="cartBt">
                   <a href="#">
                     <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                    
-                  </a> -->
+
+                  </a>
+
                 </div>
               </div>
             </div>
@@ -403,12 +427,12 @@
           <div class="swiper swVideo">
             <div class="swiper-wrapper">
               <div class="swiper-slide black">
-                <video loop muted>
+                <video playsinline loop muted>
                   <source src="/video/video2.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="swiper-slide mosgreen">
-                <video loop muted>
+                <video playsinline loop muted>
                   <source src="/video/video1.mp4" type="video/mp4" />
                 </video>
               </div>
@@ -470,7 +494,9 @@
         </div>
       </div>
       <!-- 소재별 카테고리 영역 -->
-      <div class="material-area" id="material">
+
+      <div class="material-area searchable">
+
         <h2 class="section-title">소재별 카테고리</h2>
         <!-- 소재목록 슬라이드 -->
         <div class="material-slide-area">
@@ -601,8 +627,8 @@
                   <a href="#">
                     <img src="images/material images/clothe03.png" alt="소재별 굿즈 03" />
                     <div class="materal-textbox">
-                      <p>OWNU</p>
-                      <p class="m_title">소방방화복 파우치</p>
+                      <p class="m_title">OWNU</p>
+                      <p>소방방화복 파우치</p>
                       <p><span class="price_bold">22,000원</span></p>
                       <div class="materal-rating">
                         <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" />
@@ -821,7 +847,7 @@
         </div>
       </div>
       <!-- 인기 아이템 -->
-      <section class="popular-items-section" id="popular">
+      <section class="popular-items-section searchable" id="popular">
         <div class="container">
           <h2 class="section-title">인기 아이템</h2>
           <a href="#" class="more-link">더 보기</a>
@@ -939,11 +965,12 @@
         <div class="popup-content">
           <h2>장바구니 내용</h2>
           <ul id="cartItemsList"></ul>
-          <!-- <button onclick="closeCartPopup()">닫기</button> -->
+          <button onclick="closeCartPopup()" class="popclose">닫기</button>
+          <!-- 클로즈 버튼 추가 -->
         </div>
       </div>
       <!-- 루키 브랜드 -->
-      <section class="rookie-brands" id="brands">
+      <section class="rookie-brands searchable" id="brands">
         <div class="rookie_container">
           <h2 class="section-title">지금 주목받는 루키 브랜드</h2>
           <a href="#" class="more-link">더 보기</a>
@@ -1002,7 +1029,7 @@
         </div>
       </section>
       <!-- 리뷰 영역 -->
-      <section class="review-section" id="review">
+      <section class="review-section searchable" id="review">
         <div class="review-container">
           <h2 class="section-title">정키펑키 유저 리뷰</h2>
           <!-- 스와이퍼 슬라이더 -->
@@ -1133,7 +1160,7 @@
         </div>
       </section>
       <!-- 뉴스레터/구독영역 -->
-      <section class="subscription">
+      <section class="subscription searchable">
         <div class="subscription-container">
           <h1>NEWS LETTER</h1>
           <img src="../images/A/event/1920_event.png" alt="구독" class="subscription-bg" />
@@ -1157,7 +1184,7 @@
         </div>
       </section>
       <!-- 푸터 영역-->
-      <footer class="footer">
+      <footer class="footer searchable">
         <div class="footer-container">
           <div class="footer-left">
             <p>&copy; inter JUNKYFUNKY System B.V 1999 - 2024</p>

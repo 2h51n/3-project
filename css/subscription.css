@@ -80,6 +80,12 @@
   background-color: #ffa500;
 }
 
+.error {
+  border-color: red; /* 에러 발생 시 테두리 색상 변경 */
+  background-color: #ffe6e6; /* 약간의 배경색으로 더 강조 */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* 테두리 그림자로 강조 */
+}
+
 @media (max-width: 1345px) {
   .form-group input {
     width: 20vw;
@@ -90,6 +96,10 @@
     border-radius: 15px;
     font-size: 13px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    #notification {
+      max-width: 500px; /* 더 넓은 화면에서는 최대 500px */
+      font-size: 18px; /* 폰트 크기를 조금 더 크게 */
+    }
   }
 
   .submit-btn {
@@ -128,6 +138,12 @@
     border-radius: 10px;
     cursor: pointer;
   }
+  .error {
+    border-color: red;
+    background-color: #ffe6e6;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    font-size: 15px; /* 작은 화면에서 폰트 크기 조정 */
+  }
 }
 @media (max-width: 1000px) {
   .form-group input {
@@ -140,6 +156,7 @@
     font-size: 13px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
+  
 
   .submit-btn {
     /* width: 70%; */
@@ -152,6 +169,7 @@
     border-radius: 10px;
     cursor: pointer;
   }
+  
 }
 @media (max-width: 848px) {
   .subscription-container img {
@@ -189,6 +207,10 @@
     border-radius: 10px;
     cursor: pointer;
   }
+  #notification {
+    max-width: 400px;
+    font-size: 16px; /* 중간 크기 화면에서는 기본 폰트 크기 */
+  }
 }
 
 @media (max-width: 683px) {
@@ -213,6 +235,10 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+  }
+  .error {
+    font-size: 14px; /* 더 작은 화면에서 폰트 크기 조정 */
+    padding: 8px;
   }
 }
 
@@ -240,8 +266,19 @@
     cursor: pointer;
   }
 
+  .error {
+    font-size: 12px; /* 모바일 크기에 맞게 폰트 크기 조정 */
+    padding: 6px;
+  }
+  #notification {
+    max-width: 300px; /* 더 작은 화면에서는 최대 너비 축소 */
+    font-size: 14px; /* 폰트 크기도 축소 */
+    padding: 8px; /* padding 축소 */
+    
+
   .subscription h1{
     font-size: 150%;
+
   }
 }
 @media (max-width: 400px) {
@@ -271,8 +308,13 @@
     border-radius: 10px;
     cursor: pointer;
   }
-  /* 에러 메시지 스타일 */
   .error {
-    border-color: red; /* 에러 발생 시 테두리 색상 변경 */
+    font-size: 10px; /* 가장 작은 화면에서 폰트 크기 조정 */
+    padding: 5px;
+  }
+  #notification {
+    max-width: 300px; /* 더 작은 화면에서는 최대 너비 축소 */
+    font-size: 14px; /* 폰트 크기도 축소 */
+    padding: 8px; /* padding 축소 */
   }
 }

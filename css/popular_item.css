@@ -41,60 +41,66 @@
 .product-item {
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 3%;
+  padding: 10px;
   text-align: center;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.product-item p{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px 0 8px 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 19px;
+  text-align: left;
 
+}
 .product-image {
   width: 100%;
   object-fit: cover;
 }
 
-.product-name {
-  font-size: 16px;
-  margin: 2% 0;
-}
+.product-item >.product-brand {
+  font-size: 15px;
+  padding-top: 10px;
 
-.product-brand {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 2% 0;
 }
-
-.product-price {
-  font-size: 17px;
+.product-price{
   font-weight: bold;
-  margin-bottom: 10px;
-  margin: 2% 0;
 }
 
 /* 별점 아이콘 */
+.popular-rating{
+  display: flex;
+  padding-left: 5px;
+  text-align: left;
+  margin-bottom: 10px;
+}
 .rating-icon {
-  width: 80px;
-  height: 15px;
-  margin: 2% 0;
+  width: 40%;
+  margin-bottom: 3%;
 }
 
-/* 리뷰 개수 */
-.review-count {
+.popular-rating > span{
   font-size: 14px;
-  color: #666;
+  font-weight: 500;
 }
+
 
 /* 순위 배지 */
 .ranking-badge {
   position: absolute;
-  top: -10px;
-  left: -10px;
+  top: 0px;
+  left: 15px;
   background-color: #fdd835;
   color: #000;
-  padding: 10px 13px;
-  font-size: 18px;
+  padding: 5px ;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 0 0 3px 3px;
   line-height: 1.2;
 }
 
@@ -105,14 +111,14 @@
 /* 장바구니 아이콘 부분 */
 .add-to-cart {
   position: absolute;
-  bottom: 20px; /* 필요에 따라 조정 */
-  right: 20px; /* 필요에 따라 조정 */
+  bottom: 35%; /* 필요에 따라 조정 */
+  right: 5%; /* 필요에 따라 조정 */
   z-index: 10; /* 이미지 위에 표시되도록 */
 }
 
 .add-icon {
-  width: 40px; /* 아이콘 크기 조정 */
-  height: 40px;
+  width: 30px; /* 아이콘 크기 조정 */
+  height: 30px;
   cursor: pointer; /* 마우스 커서가 포인터로 변경 */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -150,6 +156,30 @@
   text-decoration-thickness: 1px; /* 취소선 두께 */
   text-decoration-color: rgb(65, 65, 65); /* 취소선 색상 */
   text-underline-offset: 8px; /* 선과 텍스트 간격 */
+/* 구매 버튼 기본 스타일 */
+.add-to-buy{
+  position: absolute;
+  bottom: 34%; /* 필요에 따라 조정 */
+  left: 5%; /* 필요에 따라 조정 */
+  z-index: 10; /* 이미지 위에 표시되도록 */
+}
+.buy-icon{
+  /* background-color: #fff; */
+  opacity: 0.8;
+  width: 40px; /* 아이콘 크기 조정 */
+  height: 35px;
+  cursor: pointer; /* 마우스 커서가 포인터로 변경 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.add-to-buy a {
+  display: inline-block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* 구매 버튼 호버 효과 */
+.add-to-buy a:hover .buy-icon {
+  transform: scale(1.1); /* 살짝 확대 효과 */
+  opacity: 0.8; /* 투명도 조절 */
 }
 
 
@@ -164,6 +194,20 @@
 
   .product-image {
     height: 250px; /* 이미지 높이 조정 */
+  }
+  .add-to-cart {
+    bottom: 37%; /* 상대적으로 위치 조정 */
+    right: 5%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 35px; /* 아이콘 크기 조정 */
+    height: 35px;
+  }
+
+  .add-to-buy{
+    bottom: 36%; /* 필요에 따라 조정 */
+    left: 5%; /* 필요에 따라 조정 */
   }
 }
 
@@ -181,27 +225,25 @@
     font-size: 16px;
     margin: 2% 0;
   }
-
+  
   .product-brand {
     font-size: 13px;
     font-weight: bold;
     margin: 2% 0;
   }
-
+  
   .product-price {
     font-size: 17px;
     font-weight: bold;
-    margin-bottom: 10px;
-    margin: 2% 0;
   }
-
+  
   /* 별점 아이콘 */
   .rating-icon {
     width: 80px;
     height: 14px;
     margin: 2% 0;
   }
-
+  
   /* 리뷰 개수 */
   .review-count {
     font-size: 12px;
@@ -216,6 +258,7 @@
 
 /* 480px 이하 */
 @media (max-width: 480px) {
+
   .product-image {
     height: 152px; /* 이미지 높이 조정 */
   }
@@ -223,18 +266,17 @@
   .section-title {
     font-size: 20px; /* 섹션 타이틀 크기 조정 */
   }
-
   .product-name {
     font-size: 13px;
     margin: 2% 0;
   }
-
+  
   .product-brand {
     font-size: 12px;
     font-weight: bold;
     margin: 2% 0;
   }
-
+  
   .product-price {
     font-size: 15px;
     font-weight: bold;
@@ -244,6 +286,20 @@
 
   .more-link {
     font-size: 14px;
+  }
+
+  .add-to-cart {
+    bottom: 55%; /* 상대적으로 위치 조정 */
+    right: 10%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 35px; /* 아이콘 크기 조정 */
+    height: 35px;
+  }
+  .add-to-buy{
+    bottom: 55%; /* 필요에 따라 조정 */
+    left: 7%; /* 필요에 따라 조정 */
   }
 }
 
@@ -263,5 +319,18 @@
 
   .more-link {
     font-size: 13px;
+  }
+  .add-to-cart {
+    bottom: 41%; /* 상대적으로 위치 조정 */
+    right: 7%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 35px; /* 아이콘 크기 조정 */
+    height: 35px;
+  }
+  .add-to-buy{
+    bottom: 41%; /* 필요에 따라 조정 */
+    left: 7%; /* 필요에 따라 조정 */
   }
 }

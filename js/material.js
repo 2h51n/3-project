@@ -11,6 +11,7 @@ $(document).ready(function () {
   const materialGoodsSections = $(".material-goods");
   const sideBottomButtons = $(".side-bottom-menu li a");
   const showMoreButton = $("#showMoreButton");
+  const addToCartButtons = $(".add-to-cart, .add-to-cart1"); // 장바구니 추가 버튼 선택 (add-to-cart1 추가)
   const sectionTitleHeight = $(".section-title").outerHeight(); // 섹션 타이틀의 높이
 
   // 모든 카테고리 상품 숨기기
@@ -71,28 +72,35 @@ $(document).ready(function () {
 
   // 이벤트 리스너 등록
   depthCategoryButtons.on("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // 기본 동작 방지
     const category = $(this).data("category");
     displayCategory(category); // 카테고리 클릭 시 displayCategory 호출
   });
 
   depthBottomCategoryButtons.on("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // 기본 동작 방지
     const category = $(this).data("category");
     displayCategory(category); // 카테고리 클릭 시 displayCategory 호출
   });
 
   swiperCategoryButtons.on("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // 기본 동작 방지
     const category = $(this).find("img").attr("alt").toLowerCase();
     displayCategory(category); // 카테고리 클릭 시 displayCategory 호출
   });
 
   sideBottomButtons.on("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // 기본 동작 방지
     const category = $(this).data("category");
     displayCategory(category); // 카테고리 클릭 시 displayCategory 호출
     scrollToMaterialArea(); // 사이드 바텀 클릭 시에도 material-area로 스크롤
+  });
+
+  // 장바구니 추가 버튼 클릭 이벤트
+  addToCartButtons.on("click", function (e) {
+    e.preventDefault(); // 기본 동작 방지
+    // 여기에 장바구니에 추가하는 코드 추가
+    console.log("장바구니에 추가되었습니다."); // 예시로 콘솔에 출력
   });
 
   // 페이지 로드 시 기본으로 무작위 카테고리 및 해당 아이콘 표시
@@ -107,7 +115,8 @@ $(document).ready(function () {
   }
 
   // 더 보기 버튼 클릭 시 히든 클래스 토글 및 텍스트 변경
-  showMoreButton.on("click", function () {
+  showMoreButton.on("click", function (e) {
+    e.preventDefault(); // 기본 동작 방지
     if ($(window).width() <= 480) {
       $(".hidden").toggle(); // .hidden 클래스를 가진 요소 보이기/숨기기
       

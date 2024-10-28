@@ -71,6 +71,61 @@
   margin-top: 5%;
 }
 
+/* 인스타 링크 추가 */
+.insta-link{
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  padding: 0 2px;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 0 6px #ccc ;
+  position: absolute;
+  bottom: 30%;
+  left: 12%;
+}
+
+.insta-link img{
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .insta-link{
+    bottom: 28%;
+    left: 8%;
+  }
+}
+@media (max-width: 573px) {
+  .insta-link span{
+    font-size: 13px;
+  }
+  .insta-link img{
+    width: 15px;
+    height: 15px;
+  }
+
+  .insta-link{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    padding: 0 2px;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 0 6px #ccc ;
+    position: inherit;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+  }
+
+
+}
+
+
+
 /* 텍스트 말줄임 처리 */
 .description {
   font-size: 14px;

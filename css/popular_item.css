@@ -132,6 +132,28 @@
   content: url("images/like/cart_plus_like.png"); /* 아이콘 이미지 교체 */
 }
 
+
+.sale-scratch{
+  position: absolute;
+  width: 100%;
+  max-width: 80px;
+  min-width: 60px;
+  top: 2%;
+  right: 2%;
+}
+
+.sale-item{
+  color: #666;
+  font-size: 13px;
+  padding-right: 5px;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px; /* 취소선 두께 */
+  text-decoration-color: rgb(65, 65, 65); /* 취소선 색상 */
+  text-underline-offset: 8px; /* 선과 텍스트 간격 */
+}
+
+
+
 /* 반응형 디자인 */
 
 /* 1024px 이하 */

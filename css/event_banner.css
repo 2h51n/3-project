@@ -2,21 +2,113 @@
 
 
 .event_banner{
+  position: relative;
     width: 100%;
+    height: 100%;
     margin-top: 25px;
-    cursor: pointer;
-  margin-top: 25px;
+    /* cursor: pointer; */
+}
+
+.event_banner_container{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 .event_banner img {
+  position: relative;
+  height: 100%;
   width: 100%;
 }
 
 .respon_768 {
+  position: relative;
   display: none;
 }
 .respon_360 {
+  position: relative;
   display: none;
 }
+
+.event-containers{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  width: calc(100% / 2);
+  height: 100%;
+  top: 0;
+  /* background-color: aqua; */
+}
+.left-event{
+  left: 0;
+  cursor: pointer;
+  /* background-color: red; */
+}
+.right-event{
+  left: 50%;
+  cursor: pointer;
+  /* background-color: rgb(22, 94, 156); */
+}
+
+
+.event_banner button{
+  position: absolute;
+  /* width: 100px;
+  height: 80px; */
+  width: 8%;
+  height: 12%;
+  max-width: 120px;
+  /* background-color: gold; */
+  border: none;
+  border-radius: 25px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 19px;
+  /* font-size: 120%; */
+  word-break: keep-all;
+  cursor: pointer;
+  line-height: 1.4;
+  font-family: "Noto Sans KR";
+  /* z-index: 9 !important; */
+} 
+
+.event-left-BT{
+  position: absolute;
+  left: 10%;
+  bottom: 18%;
+  background-color: rgb(209, 55, 55);
+  cursor: pointer;
+  /* border: 1px solid rgb(209, 55, 55); */
+
+}
+.event-right-BT{
+  position: absolute;
+  left: 59%;
+  bottom: 18%;
+  cursor: pointer;
+  background-color: rgb(83, 150, 252);
+}
+
+/* .leftBT, .rightBT{
+  position: absolute;
+  width: 100%;
+  max-width: 120px;
+}
+
+.leftBT{
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  cursor: pointer;
+}
+.rightBT{
+  position: absolute;
+  left: 59%;
+  bottom: 0;
+  cursor: pointer;
+} */
+
+
 
 @media (max-width: 768px) {
   .event_banner img:first-child {
@@ -24,6 +116,22 @@
   }
   .respon_768 {
     display: block;
+  }
+  .event-containers{
+    flex-direction: column;
+    height: calc(100% / 2);
+    width: 100%;
+  }
+  .left-event{
+    left: 0;
+    cursor: pointer;
+    /* background-color: red; */
+  }
+  .right-event{
+    left: 0;
+    cursor: pointer;
+    top: 50%;
+    /* background-color: rgb(22, 94, 156); */
   }
 }
 @media (max-width: 480px) {

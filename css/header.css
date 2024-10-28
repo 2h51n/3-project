@@ -725,7 +725,7 @@
     gap: 8px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .sidemenu-area {
     /* display: none; */
     display: flex;
@@ -794,4 +794,12 @@
     font-weight: bold;
     margin: 9%;
   }
+
+  /* .searchMB input.active {
+    visibility: visible;
+    width: 387px;
+  } */
+  /* #category-icon{
+    display: none;
+  } */
 }

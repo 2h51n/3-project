@@ -7,10 +7,19 @@ $(document).ready(function () {
     event.preventDefault(); // 기본 링크 동작 방지
     const loginStatus = localStorage.getItem("loginStatus");
 
+    if (!loginStatus) {
+      $("#loginModal").fadeIn(300); // 로그인 모달을 부드럽게 표시
+    }
+  });
+
+  // '마이 아이콘' 클릭 이벤트
+  $(".loginBt_my a").on("click", function (event) {
+    event.preventDefault(); // 기본 링크 동작 방지
+    const loginStatus = localStorage.getItem("loginStatus");
     if (loginStatus) {
       showWelcomePopup(); // 로그인된 경우 환영 팝업 표시
     } else {
-      $("#loginModal").fadeIn(300); // 로그인 모달을 부드럽게 표시
+      showNotification("로그인 상태가 아닙니다."); // 로그인되지 않은 경우 알림 표시
     }
   });
 
@@ -106,8 +115,12 @@ $(document).ready(function () {
   function checkLoginStatus() {
     const loginStatus = localStorage.getItem("loginStatus");
     if (loginStatus) {
+      $(".loginBt").hide(); // 로그인 아이콘 숨기기
+      $(".loginBt_my").show(); // 마이 아이콘 표시
       showNotification("로그인 상태: " + loginStatus); // 로그인 상태 알림
     } else {
+      $(".loginBt").show(); // 로그인 아이콘 표시
+      $(".loginBt_my").hide(); // 마이 아이콘 숨기기
       showNotification("로그인 상태가 아닙니다.");
     }
   }
@@ -136,8 +149,8 @@ $(document).ready(function () {
     if (userId === storedUserId && userPassword === storedUserPassword) {
       showNotification("로그인 성공!");
       saveLoginStatus("local"); // 로컬 로그인 상태 저장
+      checkLoginStatus(); // 로그인 상태 확인 후 UI 업데이트
       $("#loginModal").fadeOut(300); // 로그인 모달 닫기
-      showWelcomePopup(); // 사용자 환영 팝업 표시
     } else {
       showNotification("아이디 또는 비밀번호가 올바르지 않습니다."); // 로그인 실패 메시지
     }
@@ -164,7 +177,8 @@ $(document).ready(function () {
   $(document).on("click", ".logout-button", function () {
     localStorage.removeItem("loginStatus"); // 로그인 상태 제거
     showNotification("로그아웃 되었습니다.");
-    $("#welcomePopup").fadeOut(300); // 환영 팝업 숨김
+    $("#welcomePopup").fadeOut(300); // 환영 팝업 숨기기
+    checkLoginStatus(); // UI 업데이트
   });
 
   // 알림 표시 함수

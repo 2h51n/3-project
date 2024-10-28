@@ -156,6 +156,7 @@
   text-decoration-thickness: 1px; /* 취소선 두께 */
   text-decoration-color: rgb(65, 65, 65); /* 취소선 색상 */
   text-underline-offset: 8px; /* 선과 텍스트 간격 */
+}
 /* 구매 버튼 기본 스타일 */
 .add-to-buy{
   position: absolute;

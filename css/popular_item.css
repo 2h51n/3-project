@@ -102,6 +102,7 @@
   text-align: center;
   border-radius: 0 0 3px 3px;
   line-height: 1.2;
+  z-index: 1;
 }
 
 .product-item {
@@ -111,9 +112,9 @@
 /* 장바구니 아이콘 부분 */
 .add-to-cart {
   position: absolute;
-  bottom: 35%; /* 필요에 따라 조정 */
-  right: 5%; /* 필요에 따라 조정 */
-  z-index: 10; /* 이미지 위에 표시되도록 */
+  bottom: 3%;
+  right: 5%;
+  z-index: 10; 
 }
 
 .add-icon {
@@ -139,13 +140,12 @@
 }
 
 .img-container{
+  width: 100%;
+  height: auto;
   display: block;
   position: relative;
+  /* background-color: aquamarine; */
 }
-.add-to-cart, .add-to-buy{
-  bottom: 0;
-}
-
 
 .sale-scratch{
   position: absolute;
@@ -168,7 +168,7 @@
 /* 구매 버튼 기본 스타일 */
 .add-to-buy{
   position: absolute;
-  bottom: 34%; /* 필요에 따라 조정 */
+  bottom: 0; 
   left: 5%; /* 필요에 따라 조정 */
   z-index: 10; /* 이미지 위에 표시되도록 */
 }
@@ -205,8 +205,8 @@
     height: 250px; /* 이미지 높이 조정 */
   }
   .add-to-cart {
-    bottom: 37%; /* 상대적으로 위치 조정 */
-    right: 5%; /* 오른쪽 여백 조정 */
+    /* bottom: 37%;  */
+    right: 5%; 
   }
 
   .add-icon {
@@ -215,7 +215,7 @@
   }
 
   .add-to-buy{
-    bottom: 36%; /* 필요에 따라 조정 */
+    /* bottom: 36%;  */
     left: 5%; /* 필요에 따라 조정 */
   }
 }
@@ -298,7 +298,7 @@
   }
 
   .add-to-cart {
-    bottom: 55%; /* 상대적으로 위치 조정 */
+    /* bottom: 55%;  */
     right: 10%; /* 오른쪽 여백 조정 */
   }
 
@@ -307,7 +307,7 @@
     height: 35px;
   }
   .add-to-buy{
-    bottom: 55%; /* 필요에 따라 조정 */
+    /* bottom: 55%;  */
     left: 7%; /* 필요에 따라 조정 */
   }
 }
@@ -330,7 +330,7 @@
     font-size: 13px;
   }
   .add-to-cart {
-    bottom: 41%; /* 상대적으로 위치 조정 */
+    /* bottom: 41%;  */
     right: 7%; /* 오른쪽 여백 조정 */
   }
 
@@ -339,7 +339,7 @@
     height: 35px;
   }
   .add-to-buy{
-    bottom: 41%; /* 필요에 따라 조정 */
+    /* bottom: 41%;  */
     left: 7%; /* 필요에 따라 조정 */
   }
 }

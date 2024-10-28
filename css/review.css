@@ -81,9 +81,9 @@
   text-decoration: none;
   color: #333;
   text-shadow: 0 0 6px #ccc ;
-  position: absolute;
+  /* position: absolute;
   bottom: 30%;
-  left: 12%;
+  left: 12%; */
 }
 
 .insta-link img{

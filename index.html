@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV1FV87C9P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-QV1FV87C9P");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- End Google Tag Manager -->
@@ -55,8 +66,25 @@
     <!-- css -->
     <link rel="stylesheet" href="css/header.css" />
     <title>환경을 살리는 소비 'JUNKY FUNKY!'</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-54VTF2MD");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54VTF2MD" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- 로그인 폼 -->
     <div id="loginModal" class="modal">
       <div class="modal-content">
@@ -183,7 +211,9 @@
       </div>
     </div>
     <!-- 알림 메시지 -->
-    <div id="notification" style="display: none">상품이 장바구니에 추가되었습니다!</div>
+    <div id="notification" style="display: none" color="black">상품이 장바구니에 추가되었습니다!</div>
+    <!-- 구독알림메시지 -->
+    <div id="subscriptionNotification"></div>
     <!-- 장바구니 고정 버튼 -->
     <div class="cart-btn fixBtn">
       <a href="#">
@@ -944,7 +974,7 @@
                   <img src="images/buy/buy_btn.png" alt="구매버튼" class="buy-icon" />
                 </a>
               </div>
-              <img src="images/A/icon/sale_scratch.png" alt="스크래치 할인" class="sale-scratch">
+              <img src="images/A/icon/sale_scratch.png" alt="스크래치 할인" class="sale-scratch" />
             </div>
             <!-- 2번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="100">
@@ -1005,7 +1035,7 @@
                   <img src="images/buy/buy_btn.png" alt="구매버튼" class="buy-icon" />
                 </a>
               </div>
-              <img src="images/A/icon/sale_scratch.png" alt="스크래치 할인" class="sale-scratch">
+              <img src="images/A/icon/sale_scratch.png" alt="스크래치 할인" class="sale-scratch" />
             </div>
             <!-- 5번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="400">
@@ -1066,7 +1096,7 @@
                   <img src="images/buy/buy_btn.png" alt="구매버튼" class="buy-icon" />
                 </a>
               </div>
-              <img src="images/A/icon/sale_scratch.png" alt="스크래치 할인" class="sale-scratch">
+              <img src="images/A/icon/sale_scratch.png" alt="스크래치 할인" class="sale-scratch" />
             </div>
             <!-- 8번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="700">
@@ -1171,7 +1201,7 @@
               <!-- 리뷰 아이템 1 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@cozy_vibes12</span>
                 </a>
                 <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
@@ -1185,7 +1215,7 @@
               <!-- 리뷰 아이템 2 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@urban.nomad_7</span>
                 </a>
                 <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
@@ -1199,7 +1229,7 @@
               <!-- 리뷰 아이템 3 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@choco_bunny88</span>
                 </a>
                 <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
@@ -1213,7 +1243,7 @@
               <!-- 리뷰 아이템 4 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@skywalker_in_blue</span>
                 </a>
                 <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
@@ -1227,7 +1257,7 @@
               <!-- 리뷰 아이템 1 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@cozy_vibes12</span>
                 </a>
                 <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
@@ -1241,7 +1271,7 @@
               <!-- 리뷰 아이템 2 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@urban.nomad_7</span>
                 </a>
                 <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
@@ -1255,7 +1285,7 @@
               <!-- 리뷰 아이템 3 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@choco_bunny88</span>
                 </a>
                 <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
@@ -1269,7 +1299,7 @@
               <!-- 리뷰 아이템 4 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@skywalker_in_blue</span>
                 </a>
                 <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
@@ -1283,7 +1313,7 @@
               <!-- 리뷰 아이템 1 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@cozy_vibes12</span>
                 </a>
                 <img src="images/review/review1.png" alt="리뷰1" class="review-image" />
@@ -1297,7 +1327,7 @@
               <!-- 리뷰 아이템 2 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@urban.nomad_7</span>
                 </a>
                 <img src="images/review/review2.png" alt="리뷰2" class="review-image" />
@@ -1311,7 +1341,7 @@
               <!-- 리뷰 아이템 3 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@choco_bunny88</span>
                 </a>
                 <img src="images/review/review3.png" alt="리뷰3" class="review-image" />
@@ -1325,7 +1355,7 @@
               <!-- 리뷰 아이템 4 -->
               <div class="swiper-slide review-item">
                 <a href="#" class="insta-link">
-                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고">
+                  <img src="images/A/icon/insta_logo.png" alt="인스타 로고" />
                   <span>@skywalker_in_blue</span>
                 </a>
                 <img src="images/review/review4.png" alt="리뷰4" class="review-image" />
@@ -1336,7 +1366,6 @@
                   <p class="description">고민하다가 구매했는데, 정말 만족하고 있어요. 계속 사용하는 중입니다.</p>
                 </div>
               </div>
-              
             </div>
             <!-- 스크롤라인 추가 -->
             <!-- <div class="scroll-line swiper-scrollbar"></div> -->

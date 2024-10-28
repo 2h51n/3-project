@@ -318,5 +318,6 @@
     max-width: 300px; /* 더 작은 화면에서는 최대 너비 축소 */
     font-size: 14px; /* 폰트 크기도 축소 */
     padding: 8px; /* padding 축소 */
+    color: #1f1f1f;
   }
 }

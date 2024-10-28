@@ -239,6 +239,10 @@
   width: 35px;
   margin: 0 auto;
 }
+.loginBt_my a img {
+  width: 35px;
+  margin: 0 auto;
+}
 
 .cartBt a {
   width: auto;

@@ -138,6 +138,14 @@
   content: url("images/like/cart_plus_like.png"); /* 아이콘 이미지 교체 */
 }
 
+.img-container{
+  display: block;
+  position: relative;
+}
+.add-to-cart, .add-to-buy{
+  bottom: 0;
+}
+
 
 .sale-scratch{
   position: absolute;

@@ -57,6 +57,22 @@ function initializeEventListeners() {
   });
 }
 
+// 장바구니에 아이템을 추가하는 함수
+function addToCart(productName, productPrice) {
+  const newItem = { name: productName, price: productPrice };
+  cartItems.push(newItem); // 새로운 아이템 추가
+  updateCartCount(); // 카운터 업데이트
+  updateCartPopup(); // 장바구니 팝업 업데이트
+  showNotification(`${productName}이(가) 장바구니에 추가되었습니다!`);
+  
+  // 장바구니 아이콘 애니메이션 효과 적용
+  const cartIcon = document.querySelector(".cart-icon");
+  cartIcon.classList.add("shake-animation"); // 애니메이션 클래스 추가
+  setTimeout(() => {
+    cartIcon.classList.remove("shake-animation"); // 일정 시간 후 애니메이션 클래스 제거
+  }, 600);
+}
+
 // 장바구니 팝업을 여는 함수
 function showCartPopup() {
   const cartPopup = document.getElementById("cartPopup");

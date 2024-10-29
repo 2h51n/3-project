@@ -8,11 +8,13 @@
   z-index: 1000;
   cursor: pointer;
   transition: transform 0.3s, filter 0.3s;
+  /* opacity: 0.5; */
 }
 
 .fixBtn:hover {
   transform: scale(1.1);
   filter: brightness(80%);
+  /* opacity: 1; */
 }
 
 /* 고정 버튼 이미지 공통 스타일 */
@@ -22,8 +24,8 @@
 .kakao-btn-img,
 .naver-btn-img,
 .top-btn-img {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
 }
 
@@ -205,8 +207,8 @@
   .kakao-btn-img,
   .naver-btn-img,
   .top-btn-img {
-    width: 50px; /* 기존: 45px + 5px */
-    height: 50px; /* 기존: 45px + 5px */
+    width: 38px; /* 기존: 45px + 5px */
+    height: 38px; /* 기존: 45px + 5px */
   }
   .cart-btn {
     bottom: 70px;
@@ -250,8 +252,8 @@
   .kakao-btn-img,
   .naver-btn-img,
   .top-btn-img {
-    width: 45px; /* 기존: 40px + 5px */
-    height: 45px; /* 기존: 40px + 5px */
+    width: 36px; /* 기존: 40px + 5px */
+    height: 36px; /* 기존: 40px + 5px */
   }
   .cart-btn {
     bottom: 75px;
@@ -302,8 +304,8 @@
   .kakao-btn-img,
   .naver-btn-img,
   .top-btn-img {
-    width: 45px; /* 기존: 40px + 5px */
-    height: 45px; /* 기존: 40px + 5px */
+    width: 38px; /* 기존: 40px + 5px */
+    height: 38px; /* 기존: 40px + 5px */
   }
   .top-btn {
     display: none !important; /* 중요한 경우 강제로 숨김 처리 */
@@ -345,8 +347,8 @@
   .kakao-btn-img,
   .naver-btn-img,
   .top-btn-img {
-    width: 45px; /* 기존: 40px + 5px */
-    height: 45px; /* 기존: 40px + 5px */
+    width: 36px; /* 기존: 40px + 5px */
+    height: 36px; /* 기존: 40px + 5px */
   }
 
   .cart-btn {

@@ -47,8 +47,11 @@
 }
 
 .brand-item {
-  padding-left: 3%;
+  padding-left: 20px;
   flex: 1 1 calc(33.333% - 20px); /* 기본적으로 3개의 아이템을 표시 */
+}
+.brand-item:first-child{
+  padding-left: 0px;
 }
 
 /* 메인 이미지 스타일 */

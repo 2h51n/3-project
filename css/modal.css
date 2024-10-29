@@ -17,7 +17,7 @@
 .modal-content {
   margin: 15% auto; /* 위쪽 여백 및 가운데 정렬 */
   padding: 10px; /* 내부 여백 */
-  border: 1px solid #c8ff00; /* 테두리 */
+  border: 1px solid #fffb00; /* 테두리 */
   background-color: aliceblue;
   width: 100%; /* 너비 설정 */
   max-width: 600px; /* 최대 너비 설정 */
@@ -57,19 +57,21 @@
 }
 
 .notToday {
-  font-size: 14px; /* 폰트 사이즈 설정 */
+  font-size: 15px; /* 폰트 사이즈 설정 */
   color: #666; /* 텍스트 색상 설정 */
   margin-bottom: 15PX;
+  text-align: center;
 }
 
 input[type="checkbox"] {
-  margin: 0; /* 체크박스 주변 여백 제거 */
+  margin: 0 auto; /* 체크박스 주변 여백 제거 */
+
 }
 
 
 #timer {
-  font-size: 20px; /* 글자 크기 */
-  color: #d9534f; /* 긴박감을 줄 수 있는 빨간색 */
+  font-size: 15px; /* 글자 크기 */
+  color: #666; /* 긴박감을 줄 수 있는 빨간색 */
   text-align: center; /* 중앙 정렬 */
   margin-top: 20px; /* 위쪽 여백 */
 }

@@ -518,6 +518,12 @@
   gap: 9%;
   /* background-color: lightpink; */
 }
+.side-top-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  justify-items: center;
+  gap: 8px;
+}
 
 .side-top-icons {
   /* display: flex; */
@@ -761,6 +767,11 @@
     /* grid-template-columns: repeat(2, 2fr); */
     justify-items: center;
     gap: 9%;
+  }
+  .side-top-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    justify-items: center;
   }
 
   .sidemenu-area hr {

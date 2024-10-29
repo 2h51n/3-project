@@ -160,31 +160,31 @@
               <div class="cate-right">
                 <ul class="depth-top">
                   <li>
-                    <a href="#">
+                    <a href="#material" data-category="plastic">
                       <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                       <span>플라스틱</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#material" data-category="clothes">
                       <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                       <span>천</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#material" data-category="wood">
                       <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                       <span>목재</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#material" data-category="glass">
                       <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                       <span>유리</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#material" data-category="etc">
                       <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                       <span>기타</span>
                     </a>
@@ -212,62 +212,66 @@
                         <div class="loginBt">
                           <a href="#">
                             <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                            <!-- <span>로그인</span> -->
                           </a>
                         </div>
-                        <div class="cartBt">
+                        <div class="loginBt_my">
+                          <a href="#">
+                            <img src="images/A/icon/popup-icon/user_icon_my.png" alt="유저 아이콘" />
+                          </a>
+                        </div>
+
+                        <!-- <div class="cartBt">
                           <a href="#">
                             <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                            <!-- <span>카트</span> -->
                           </a>
-                        </div>
+                        </div> -->
                       </div>
                       <input type="text" placeholder="입력 후 엔터" />
                     </div>
                     <ul class="side-top-menu">
-                      <li><a href="index.html#event">이벤트</a></li>
-                      <li><a href="index.html#popular">인기</a></li>
-                      <li><a href="index.html#brands">브랜드</a></li>
-                      <li><a href="index.html#review">리뷰</a></li>
-                      <li><a href="notice copy.html">공지사항</a></li>
+                      <li><a href="#event">이벤트</a></li>
+                      <li><a href="#popular">인기</a></li>
+                      <li><a href="#brands">브랜드</a></li>
+                      <li><a href="#review">리뷰</a></li>
+                      <li><a href="about_us.html">소개</a></li>
+                      <li><a href="notice.html">공지사항</a></li>
                     </ul>
                   </div>
-                  <hr />
-                  <div class="side-bottom">
+                  <!-- <div class="side-bottom">
                     <h3 class="side-bottom-title">카테고리</h3>
                     <ul class="side-bottom-menu">
                       <li>
-                        <a href="#">
+                        <a href="#" data-category="plastic">
                           <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                           <span>플라스틱</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#" data-category="clothes">
                           <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                           <span>천</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#" data-category="wood">
                           <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                           <span>목재</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#" data-category="glass">
                           <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                           <span>유리</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="#" data-category="etc">
                           <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                           <span>기타</span>
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  </div> -->
                 </div>
               </a>
             </li>
@@ -310,10 +314,11 @@
                 </div>
               </div>
             </li>
-            <li><a href="index.html#event">이벤트</a></li>
-            <li><a href="index.html#popular">인기</a></li>
-            <li><a href="index.html#brands">브랜드</a></li>
-            <li><a href="index.html#review">리뷰</a></li>
+            <li><a href="#event">이벤트</a></li>
+            <li><a href="#popular">인기</a></li>
+            <!-- <li><a href="#">구독</a></li> -->
+            <li><a href="#brands">브랜드</a></li>
+            <li><a href="#review">리뷰</a></li>
             <li><a href="about_us.html">소개</a></li>
             <li><a href="notice copy.html">공지사항</a></li>
           </ul>
@@ -324,8 +329,8 @@
           </div>
           <div class="header-right">
             <div class="head-search">
-              <input type="text" placeholder="검색어를 입력해주세요" />
-              <a href="#">
+              <input type="text" placeholder="검색어를 입력해주세요" id="searchInput" />
+              <a href="#" id="searchBtn">
                 <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
               </a>
             </div>
@@ -333,31 +338,36 @@
               <div class="searchMB">
                 <a href="#">
                   <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
-                  <input type="text" />
+                  <input type="text" id="searchMBInput" placeholder="모바일 검색어를 입력하세요" />
                 </a>
               </div>
               <div class="loginBt">
                 <a href="#">
                   <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                  <!-- <span>로그인</span> -->
                 </a>
               </div>
-              <div class="cartBt">
+              <div class="loginBt_my" style="display: none;"> <!-- 초기에는 감춰져야 함 -->
+                <a href="#">
+                  <img src="images/A/icon/popup-icon/user_icon_my.svg" alt="유저 아이콘" />
+                </a>
+              </div>
+
+              <!-- <div class="cartBt">
                 <a href="#">
                   <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                  <!-- <span>카트</span> -->
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div class="header-bottom">
           <ul class="navi-bottom">
             <li><a href="#" class="category-title">카테고리</a></li>
-            <li><a href="index.html#event">이벤트</a></li>
-            <li><a href="index.html#popular">인기</a></li>
-            <li><a href="index.html#brands">브랜드</a></li>
-            <li><a href="index.html#review">리뷰</a></li>
+            <li><a href="#event">이벤트</a></li>
+            <li><a href="#popular">인기</a></li>
+            <!-- <li><a href="#">구독</a></li> -->
+            <li><a href="#brands">브랜드</a></li>
+            <li><a href="#review">리뷰</a></li>
             <li><a href="about_us.html">소개</a></li>
             <li><a href="notice copy.html">공지사항</a></li>
           </ul>

@@ -1,9 +1,11 @@
 window.onload = function () {
   // ===메인 배너 스와이퍼 슬라이드 영역 시작===
   const swBanner = new Swiper(".swBanner", {
+    effect: "fade",
     loop: true, // 무한 루프
     autoplay: {
-      delay: 3500,
+      // delay: 3500,
+      delay: 800, 
       disableOnInteraction: false, // 상호작용 후에도 자동 재생
     },
   });

@@ -2,13 +2,13 @@
 /* 섹션 타이틀과 더 보기 링크 */
 .popular-items-section {
   width: 100%;
-  padding: 20px;
+
 }
 
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
 }
 
 .section-title {

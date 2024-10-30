@@ -71,6 +71,10 @@
   font-weight: bold;
 }
 
+.scratch-price{
+  color: rgb(184, 0, 0) !important;
+}
+
 /* 별점 아이콘 */
 .popular-rating{
   display: flex;

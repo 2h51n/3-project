@@ -82,11 +82,14 @@
 /* 팝업 공통 스타일 */
 #cartPopup {
   position: fixed;
+  flex-direction: column;
+  align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  max-width: 400px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 400px;
   padding: var(--popup-padding);
   background-color: rgba(255, 255, 255, 0.9);
   display: none;
@@ -99,40 +102,86 @@
 .popup-content {
   display: flex;
   flex-direction: column;
-  position: relative; /* X 버튼을 위한 상대적 위치 지정 */
+  align-items: center;
+  position: relative;
+  width: 100%;
+  scale: 1.2;
+  /* background-color: aquamarine; */
 }
 
 .close-button {
   position: absolute;
-  top: -20px;
-  right: 5px;
+  /* top: -30px;
+  right: -10px; */
+  top: -4%;
+  right: 2%;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 14px;
   color: #000; /* 아이콘 색상 */
+  --button-padding: 7px 10px;
 }
 
-#cartPopup > .popup-content > h2 {
+#cartPopup > h2 {
   font-size: 18px;
+  margin-bottom: 4%;
   font-weight: 600;
   text-align: center;
 }
 
 #cartItemsList {
-  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  /* min-width: 360px; */
   padding: 20px;
+  padding-top: 0;
   border-radius: 8px;
+  overflow-y: auto;
+  /* background-color: aquamarine; */
+}
+
+#cartItemsList::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+#cartItemsList::-webkit-scrollbar {
+  width: 3px;
+  background-color: #f5f5f5;
+}
+
+#cartItemsList::-webkit-scrollbar-thumb {
+  background-color: #f90;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
 }
 
 #cartItemsList > li {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
-  text-overflow:clip
+  /* text-overflow: clip; */
+}
+
+#cartItemsList > li > p {
+  width: 85%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.3;
+  /* background-color: lightcoral; */
 }
 
 #cartItemsList > li > button {
+  /* position: absolute; */
+  width: 45px;
+  max-height: 35px;
+  /* float: right; */
+  /* width: 20%; */
   padding: 5px;
   margin-top: 0px;
   font-size: 12px;
@@ -199,7 +248,6 @@
   font-size: var(--count-font-size);
 }
 
-
 /* CSS 변수 */
 :root {
   --popup-width: 90%;
@@ -253,7 +301,6 @@
     display: none;
     right: 30px;
   }
-
 }
 
 /* 768px 이하 */
@@ -288,15 +335,99 @@
   }
 
   .social-icons {
-    left: -90px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
-
+    left: -90px;
   }
   .top-btn {
-    bottom: 160px; /* 로그인 버튼과 위치 변경 */
+    bottom: 160px;
     opacity: 0;
     transition: opacity 0.5s ease;
     display: none;
     right: 30px;
+  }
+}
+
+/* 600px 이하 */
+
+@media (max-width: 600px) {
+  #cartPopup {
+    display: flex;
+    flex-direction: column;
+
+    width: 57%;
+    /* background-color: beige; */
+  }
+  .popup-content {
+    width: 100%;
+    /* background-color: aquamarine; */
+  }
+
+  #cartItemsList {
+    width: auto;
+    width: 100%;
+    min-width: none;
+    padding: 4%;
+    padding-top: 0;
+    /* min-width: 360px; */
+  }
+  #cartItemsList > li {
+    display: flex;
+    align-items: center;
+    /* background-color: azure; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 8%;
+  }
+
+  #cartItemsList > li > p {
+    /* background-color: azure; */
+    font-size: 14px;
+    /* width: 55%; */
+  }
+  .close-button {
+    top: -6px;
+    scale: 0.8;
+    /* right: -2%; */
+  }
+
+  #cartItemsList > li > p {
+    width: 85%;
+    word-break: keep-all;
+    white-space: wrap;
+    text-overflow: none;
+    overflow: none;
+    /* background-color: lightcoral; */
+  }
+
+  #cartPopup {
+    max-height: 350px;
+  }
+  #cartItemsList {
+    overflow-y: auto;
+  }
+  /* #cartItemsList::-webkit-scrollbar {
+    width: 3px;
+
+  }
+  #cartItemsList::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+  } */
+
+}
+
+@media (max-width: 400px) {
+  .close-button {
+    top: -6px;
+    scale: 0.6;
+  }
+
+  #cartItemsList::-webkit-scrollbar {
+    width: 2px;
+    background-color: #f5f5f5;
+  }
+
+  #cartPopup > h2 {
+    font-size: 16px;
   }
 
 }

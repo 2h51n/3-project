@@ -99,15 +99,14 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.popup-content {
+/* .popup-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   width: 100%;
   scale: 1.2;
-  /* background-color: aquamarine; */
-}
+} */
 
 .close-button {
   position: absolute;
@@ -122,6 +121,7 @@
   color: #000; /* 아이콘 색상 */
   --button-padding: 7px 10px;
 }
+
 
 #cartPopup > h2 {
   font-size: 18px;
@@ -356,10 +356,9 @@
     width: 57%;
     /* background-color: beige; */
   }
-  .popup-content {
+  /* .popup-content {
     width: 100%;
-    /* background-color: aquamarine; */
-  }
+  } */
 
   #cartItemsList {
     width: auto;
@@ -387,6 +386,10 @@
     top: -6px;
     scale: 0.8;
     /* right: -2%; */
+  }
+
+  .close-button i{
+    scale: 1.2;
   }
 
   #cartItemsList > li > p {
@@ -419,6 +422,11 @@
   .close-button {
     top: -6px;
     scale: 0.6;
+  }
+
+  .close-button i{
+    scale: 1.5;
+    line-height: 1.6;
   }
 
   #cartItemsList::-webkit-scrollbar {

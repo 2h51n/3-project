@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.header_pay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.order-summary,
+.shipping-address,
+.payment-method,
+.coupon {
+  margin-bottom: 20px;
+}
+
+.order-summary h2,
+.shipping-address h2,
+.payment-method h2,
+.coupon h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+.product {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.product img{
+  width: 100px;
+}
+
+
+.product-info {
+  font-size: 14px;
+}
+
+.highlight {
+  color: green;
+}
+
+.shipping-address form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-group {
+  grid-column: span 2;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}

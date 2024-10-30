@@ -90,7 +90,14 @@ function updateCartPopup() {
   } else {
     cartItems.forEach((item) => {
       const listItem = document.createElement("li");
-      listItem.textContent = `${item.name} - ${item.price}원`;
+      const listItemP = document.createElement("p");
+      
+      // p 태그에 텍스트 추가
+      listItemP.textContent = `${item.name} - ${item.price}원`;
+    
+      // 리스트 아이템에 p 태그 추가
+      listItem.appendChild(listItemP);
+    
       // 제거 버튼 추가
       const removeBtn = document.createElement("button");
       removeBtn.textContent = "제거";
@@ -98,8 +105,9 @@ function updateCartPopup() {
         event.stopPropagation(); // 클릭 이벤트 전파 방지
         removeFromCart(item.name); // 제거 함수 호출
       });
+      
       listItem.appendChild(removeBtn); // 리스트 아이템에 제거 버튼 추가
-      cartItemsList.appendChild(listItem);
+      cartItemsList.appendChild(listItem); // 최종적으로 리스트에 추가
     });
   }
 }

@@ -8,13 +8,11 @@
   z-index: 1000;
   cursor: pointer;
   transition: transform 0.3s, filter 0.3s;
-  /* opacity: 0.5; */
 }
 
 .fixBtn:hover {
   transform: scale(1.1);
   filter: brightness(80%);
-  /* opacity: 1; */
 }
 
 /* 고정 버튼 이미지 공통 스타일 */
@@ -23,9 +21,10 @@
 .cs-btn-img,
 .kakao-btn-img,
 .naver-btn-img,
-.top-btn-img {
-  width: 45px;
-  height: 45px;
+.top-btn-img,
+.login-btn {
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -41,7 +40,7 @@
 
 .cs-btn {
   position: fixed; /* 화면 고정 */
-  bottom: 150px; /* 화면 하단에서의 거리 */
+  bottom: 140px; /* 화면 하단에서의 거리 */
   right: 30px; /* 화면 오른쪽에서의 거리 */
   z-index: 1000; /* 다른 요소 위에 나타나도록 설정 */
 }
@@ -69,7 +68,7 @@
 }
 
 .top-btn {
-  bottom: 220px;
+  bottom: 200px; /* 로그인 버튼과 위치를 맞바꿈 */
   opacity: 0;
   transition: opacity 0.5s ease;
   display: none;
@@ -80,73 +79,94 @@
 .modal-open {
   display: block;
 }
-
 /* 팝업 공통 스타일 */
 #cartPopup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: var(--popup-width);
-  max-width: var(--popup-max-width);
+  width: 400px;
+  max-width: 400px;
   padding: var(--popup-padding);
   background-color: rgba(255, 255, 255, 0.9);
   display: none;
   z-index: 99;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* X 버튼을 위한 상대적 위치 지정 */
+}
+
+.close-button {
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000; /* 아이콘 색상 */
+}
+
+#cartPopup > .popup-content > h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
 #cartItemsList {
-  background-color: white;
+  min-width: 360px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#cartItemsList > li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  text-overflow:clip
+}
+
+#cartItemsList > li > button {
+  padding: 5px;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+#cartItemsList > ul > li {
+  min-width: 340px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #cartPopup button {
   margin-top: 5%;
   padding: var(--button-padding);
-  background-color: #fdd835;
-  color: white;
+  background-color: #ffd000;
+  color: #000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+}
+
+.popclose {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 95%;
 }
 
 #cartPopup button:hover {
-  background-color: #0056b3;
+  background-color: #ad8e02;
   transform: scale(1.05);
 }
-
-/* 팝업 우상단에 위치한 X 버튼 스타일 */
-.popup-close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* 구매하기 버튼 스타일 */
-.purchase-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #fdd835; /* 원하는 색상 */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-.purchase-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
 
 /* 알림 스타일 */
 #notification {
@@ -154,8 +174,8 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fdd835;
-  color: white;
+  background-color: #ffd000;
+  color: #000 !important;
   padding: 10px 20px;
   border-radius: 5px;
   transition: opacity 0.3s, visibility 0.3s;
@@ -178,6 +198,7 @@
   font-weight: bold;
   font-size: var(--count-font-size);
 }
+
 
 /* CSS 변수 */
 :root {
@@ -206,9 +227,10 @@
   .cs-btn-img,
   .kakao-btn-img,
   .naver-btn-img,
-  .top-btn-img {
-    width: 38px; /* 기존: 45px + 5px */
-    height: 38px; /* 기존: 45px + 5px */
+  .top-btn-img,
+  .fixed-buttons a img {
+    width: 45px;
+    height: 45px;
   }
   .cart-btn {
     bottom: 70px;
@@ -220,19 +242,18 @@
     right: 30px;
   }
 
+  .social-icons {
+    left: -110px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+  }
+
   .top-btn {
-    bottom: 190px;
+    bottom: 190px; /* 로그인 버튼과 위치 변경 */
     opacity: 0;
     transition: opacity 0.5s ease;
     display: none;
     right: 30px;
   }
 
-  /* 소셜 아이콘 크기 조정 */
-  .social-icon {
-    width: 35px; /* 기존: 30px + 5px */
-    height: auto; 
-  }
 }
 
 /* 768px 이하 */
@@ -251,121 +272,31 @@
   .cs-btn-img,
   .kakao-btn-img,
   .naver-btn-img,
-  .top-btn-img {
-    width: 36px; /* 기존: 40px + 5px */
-    height: 36px; /* 기존: 40px + 5px */
+  .top-btn-img,
+  .fixed-buttons a img {
+    width: 40px;
+    height: 40px;
   }
   .cart-btn {
-    bottom: 75px;
+    bottom: 70px;
     right: 30px;
   }
 
   .cs-btn {
-    bottom: 130px;
+    bottom: 120px;
     right: 30px;
   }
 
+  .social-icons {
+    left: -90px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+
+  }
   .top-btn {
-    bottom: 180px;
+    bottom: 160px; /* 로그인 버튼과 위치 변경 */
     opacity: 0;
     transition: opacity 0.5s ease;
     display: none;
     right: 30px;
   }
 
-  /* 소셜 아이콘 크기 조정 */
-  .social-icon {
-    width: 35px; /* 기존: 30px + 5px */
-    height: auto; 
-  }
-}
-
-/* 480px 이하 */
-@media (max-width: 480px) {
-  :root {
-    --popup-width: 95%;
-    --popup-max-width: 340px;
-    --popup-padding: 16px;
-    --popup-font-size: 12px;
-    --button-padding: 8px 12px;
-    --count-size: 17px;
-    --count-font-size: 13px;
-  }
-
-  #notification {
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-  }
-  .fix-btn-img,
-  .fix-btn-img-hover,
-  .cs-btn-img,
-  .kakao-btn-img,
-  .naver-btn-img,
-  .top-btn-img {
-    width: 38px; /* 기존: 40px + 5px */
-    height: 38px; /* 기존: 40px + 5px */
-  }
-  .top-btn {
-    display: none !important; /* 중요한 경우 강제로 숨김 처리 */
-  }
-  .cart-btn {
-    bottom: 80px;
-    right: 30px;
-  }
-  
-  .cs-btn {
-    position: fixed; /* 화면 고정 */
-    bottom: 140px; /* 화면 하단에서의 거리 */
-    right: 30px; /* 화면 오른쪽에서의 거리 */
-    z-index: 1000; /* 다른 요소 위에 나타나도록 설정 */
-  }
-
-
-  /* 소셜 아이콘 크기 조정 */
-  .social-icon {
-    width: 35px; /* 기존: 30px + 5px */
-    height: auto; 
-  }
-}
-
-/* 360px 이하 */
-@media (max-width: 360px) {
-  :root {
-    --popup-width: 98%;
-    --popup-max-width: 320px;
-    --popup-padding: 16px;
-    --popup-font-size: 12px;
-    --button-padding: 8px 12px;
-    --count-size: 20px;
-    --count-font-size: 12px;
-  }
-  .fix-btn-img,
-  .fix-btn-img-hover,
-  .cs-btn-img,
-  .kakao-btn-img,
-  .naver-btn-img,
-  .top-btn-img {
-    width: 36px; /* 기존: 40px + 5px */
-    height: 36px; /* 기존: 40px + 5px */
-  }
-
-  .cart-btn {
-    bottom: 80px;
-    right: 30px;
-  }
-  
-  .cs-btn {
-    position: fixed; /* 화면 고정 */
-    bottom: 140px; /* 화면 하단에서의 거리 */
-    right: 30px; /* 화면 오른쪽에서의 거리 */
-    z-index: 1000; /* 다른 요소 위에 나타나도록 설정 */
-  }
-
-  /* 소셜 아이콘 크기 조정 */
-  .social-icon {
-    width: 30px; /* 기존: 30px + 5px */
-    height: auto; 
-  }
 }

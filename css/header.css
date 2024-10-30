@@ -25,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* max-width: 1300px; */
+  max-width: 1300px;
   padding: 0 20px;
   height: 100px;
   margin: 0 auto;
@@ -522,7 +522,7 @@
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   justify-items: center;
-  gap: 8px;
+  gap: 13px 0;
 }
 
 .side-top-icons {
@@ -732,7 +732,7 @@
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     justify-items: center;
-    gap: 8px;
+    gap: 13px 0;
   }
 }
 @media (max-width: 450px) {
@@ -762,16 +762,17 @@
     display: flex;
   }
 
-  .side-top-menu {
+  /* .side-top-menu {
     display: flex;
-    /* grid-template-columns: repeat(2, 2fr); */
+    grid-template-columns: repeat(2, 2fr);
     justify-items: center;
     gap: 9%;
-  }
+  } */
   .side-top-menu {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
     justify-items: center;
+    gap: 13px 0;
   }
 
   .sidemenu-area hr {

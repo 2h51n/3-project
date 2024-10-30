@@ -318,7 +318,7 @@
                         <li><a href="#brands">브랜드</a></li>
                         <li><a href="#review">리뷰</a></li>
                         <li><a href="about_us.html">소개</a></li>
-                        <li><a href="notice.html">공지사항</a></li>
+                        <li><a href="notice copy.html">공지사항</a></li>
                       </ul>
                     </div>
                     <div class="side-bottom">
@@ -430,7 +430,8 @@
                     <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
                   </a>
                 </div>
-                <div class="loginBt_my" style="display: none;"> <!-- 초기에는 감춰져야 함 -->
+                <div class="loginBt_my" style="display: none">
+                  <!-- 초기에는 감춰져야 함 -->
                   <a href="#">
                     <img src="images/A/icon/popup-icon/user_icon_my.svg" alt="유저 아이콘" />
                   </a>
@@ -473,11 +474,11 @@
                   <source src="/video/video1.mp4" type="video/mp4" />
                 </video>
               </div>
-              <!-- <div class="swiper-slide white">
-                <video loop muted>
+              <div class="swiper-slide white">
+                <video playsinline loop muted>
                   <source src="/video/video3.mp4" type="video/mp4" />
                 </video>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -532,7 +533,7 @@
         </div>
       </div>
       <!-- 소재별 카테고리 영역 -->
-      <div class="material-area searchable">
+      <div class="material-area searchable" id="material">
         <h2 class="section-title">소재별 카테고리</h2>
         <!-- 소재목록 슬라이드 -->
         <div class="material-slide-area">
@@ -1013,7 +1014,6 @@
                 <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
                 <span>리뷰 (8,856)</span>
               </div>
-
             </div>
             <!-- 3번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="200">
@@ -1036,7 +1036,6 @@
                 <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
                 <span>리뷰 (7,724)</span>
               </div>
-
             </div>
             <!-- 4번 상품 -->
             <div class="product-item" data-aos="fade-up" data-aos-delay="300">
@@ -1084,7 +1083,6 @@
                 <img src="images/A/icon/section-icon/rating-icon.svg" alt="별점" class="rating-icon" />
                 <span>리뷰 (5,237)</span>
               </div>
-
             </div>
 
             <!-- 6번 상품 -->
@@ -1160,19 +1158,21 @@
       <!-- 장바구니 팝업 -->
       <div id="cartPopup" class="cart-popup" style="display: none">
         <div class="popup-content">
-          <button class="popup-close-btn" onclick="closeCartPopup()">X</button>
-          <!-- 클로즈 버튼 추가 -->
+          <button onclick="closeCartPopup()" class="close-button">
+            <i class="fas fa-times"></i>
+            <!-- X 아이콘 -->
+          </button>
           <h2>장바구니 내용</h2>
           <ul id="cartItemsList"></ul>
-          <a href="#" class="purchase-btn">구매하기</a>
-          <!-- 구매하기 버튼으로 변경 -->
+          <button onclick="purchaseItems()" class="popclose">구매하기</button>
+          <!-- 구매 버튼 -->
         </div>
       </div>
-      <!-- 루키 브랜드 -->
+      <!-- 신규 브랜드 -->
       <section class="rookie-brands searchable" id="brands">
         <div class="rookie_container">
-          <h2 class="section-title">지금 주목받는 루키 브랜드</h2>
-          <a href="#" class="more-link">더 보기</a>
+          <h2 class="section-title">떠오르는 신규 브랜드</h2>
+          <a href="#" class="more-link">더 보기 </a>
           <div class="brand-grid">
             <div class="swiper-wrapper">
               <!-- 브랜드 아이템 1: 바다 한 조각 -->
@@ -1182,7 +1182,7 @@
                   <div class="overlay">
                     <h3>바다 한 조각</h3>
                     <p>해변에서 주운 유리 조각을 <br />재료로 사용한 유리공예 상품</p>
-                    <li><a href="#">자세히 보기</a></li>
+                    <li><a href="detail-page.html">자세히 보기</a></li>
                   </div>
                 </div>
                 <div class="sub-images">

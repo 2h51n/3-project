@@ -1,0 +1,130 @@
+@charset "utf-8";
+.detile-page {
+  width: 100%;
+}
+.detile_container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.detile-product-main {
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.detile-product-main-left {
+  width: 60%;
+}
+.detile-product-main-left img {
+  width: 100%;
+}
+.detile-breadcrumb {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+  padding-top: 100px;
+}
+
+.detile-product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detile-product-brand {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.detile-product-info {
+  width: 30%;
+  text-align: left;
+  margin-top: 20px;
+  line-height: 20px;
+}
+
+.detile-product-info > h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.detile-product-price {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.detile-product-old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+  font-weight: 300;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.detile-product-new-price {
+  color: #e60000;
+}
+
+.detile-product-shipping-info,
+.detile-product-shipping-cost {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.detile-shipping-cost {
+  font-weight: bold;
+  padding-left: 2%;
+}
+.detile-shipping-cost-info {
+  padding-left: 73px;
+}
+
+/* 상품소개/브랜드 */
+.detile-card {
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px;
+}
+.detile-tab-content {
+  display: none;
+}
+.detile-tab-container{
+  display: flex;
+  justify-content: space-around;
+}
+.detile-tab-container.active {
+  display: flex;
+
+}
+
+.detile-tab-button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #c74c4c00;
+
+}
+/* 라인 */
+.detile-tab-content {
+  border-top: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+.detile-tab-content.active {
+  border-top: 2px solid #000;
+  width: 50%;
+}
+.detile-tab-content img {
+width: 100%;
+}
+.detile-image-container img{
+  padding-top: 100px;
+}
+.detile-image-brand{
+  width: 75%;
+}
+
+/* 더 보기 */

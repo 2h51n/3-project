@@ -14,6 +14,7 @@
 @import url(fix-btn.css);
 @import url(intro.css);
 @import url(login.css);
+@import url(detail-page.css);
 /* 폰트 */
 @font-face {
   font-family: "Noto Sans KR";

@@ -32,7 +32,7 @@
 .close-wrap {
   display: flex;
   justify-content: space-between; /* 공간 분배 */
-  align-items: center; /* 수직 정렬 */
+  align-items: left; /* 수직 정렬 */
   margin-top: 15px; /* 여백 설정 */
 }
 
@@ -40,34 +40,34 @@
   cursor: pointer; /* 포인터 커서로 변경 */
   font-size: 24px; /* 폰트 사이즈 */
   color: #aaa; /* 색상 */
-
 }
 
 .close-btn:hover {
   color: #000; /* 마우스 오버 시 색상 변경 */
 }
 
-/* 체크박스와 텍스트를 그리드로 배치 */
 .notToday-wrap {
-  display: grid;
-  grid-template-columns: auto 1fr; /* 첫 번째 열은 체크박스, 두 번째 열은 텍스트 */
-  align-items: right; /* 수직 정렬 */
-  gap: 5px; /* 열 사이 간격 */
-  margin-top: 15px; /* 상단 여백 추가 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  margin-top: 15px;
 }
 
-.notToday {
+.notToday-wrap span {
+  margin-bottom: 15px;
+}
+
+.notToday-wrap input[type="checkbox"] {
+  flex: 0; /* 체크박스와 텍스트의 너비를 동일하게 설정 */
+}
+
+.notToday-wrap .notToday {
+  flex: 1; /* 체크박스와 텍스트의 너비를 동일하게 설정 */
   font-size: 15px; /* 폰트 사이즈 설정 */
   color: #666; /* 텍스트 색상 설정 */
-  margin-bottom: 15PX;
-  text-align: center;
+  text-align: left; /* 텍스트 정렬 */
 }
-
-input[type="checkbox"] {
-  margin: 0 auto; /* 체크박스 주변 여백 제거 */
-
-}
-
 
 #timer {
   font-size: 15px; /* 글자 크기 */

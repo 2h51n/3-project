@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-/* style.css */
+/* 기본 설정 */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Noto Sans KR", Arial, sans-serif;
   background-color: #fff;
   margin: 0;
   padding: 0;
@@ -13,7 +13,8 @@ body {
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .header_pay {
@@ -21,58 +22,60 @@ body {
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .logo {
   width: 80px;
+  animation: slideDown 0.6s ease;
+}
+
+#title {
+  font-weight: 800;
+  font-size: 30px;
 }
 
 .order-summary,
 .shipping-address,
 .payment-method,
 .coupon {
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* 각 섹션 간의 여백을 더 넉넉하게 설정 */
 }
 
-.order-summary h2,
-.shipping-address h2,
-.payment-method h2,
-.coupon h2 {
+h2 {
+  font-weight: bold;
   font-size: 18px;
   color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .product {
   display: flex;
-  gap: 10px;
-  width: 100%;
+  align-items: center;
+  gap: 15px;
 }
 
-.product img{
+.product img {
   width: 100px;
+  margin-top: 10px;
+  border-radius: 2px;
 }
-
 
 .product-info {
-  font-size: 14px;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
 }
-
-.highlight {
-  color: green;
+.str{
+  font-weight: 700;
+  color: coral;
 }
 
 .shipping-address form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.form-group {
-  grid-column: span 2;
-}
-
-.name-fields {
-  display: flex;
   gap: 10px;
 }
 
@@ -83,25 +86,63 @@ select {
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #fdd835;
 }
 
 button {
-  background-color: #0073e6;
+  display: block; /* 버튼을 블록 요소로 설정 */
+  margin: 20px auto; /* 상하 여백을 주고 좌우 중앙 정렬 */
+  width: 150px;
+  background-color: #fdd835;
   color: #fff;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #005bb5;
+  background-color: #ffe788;
 }
 
-footer {
-  text-align: center;
+.ft_p {
   font-size: 12px;
-  color: #777;
+  text-align: center;
+  color: #a5a5a5;
+}
+
+/* 쿠폰 메시지 */
+.coupon-message {
+  font-size: 14px;
+  color: green;
+  margin-top: 10px;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

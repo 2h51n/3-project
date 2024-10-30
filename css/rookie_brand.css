@@ -69,6 +69,7 @@
 }
 
 /* 오버레이 텍스트 기본 숨김 */
+
 .overlay {
   position: absolute;
   top: 0;
@@ -86,6 +87,24 @@
   text-align: center;
 }
 
+.overlay-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+
+.overlay-more {
+  text-decoration: underline;
+  color: #fff;
+  line-height: 1.7;
+}
+
 .overlay h3 {
   font-weight: bold;
   font-size: 18px;
@@ -97,10 +116,7 @@
   line-height: 1.7;
 }
 
-.overlay li a {
-  color: #fff;
-  line-height: 1.7;
-}
+
 
 /* 호버 시 오버레이 텍스트 표시 */
 .main-image:hover .overlay {

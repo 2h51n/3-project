@@ -109,6 +109,16 @@ sideMenu.addEventListener("click", function (e) {
   e.stopPropagation(); // 부모로 이벤트가 전달되지 않도록 함
 });
 
+// 모든 .side-bottom-menu li 요소에 클릭 이벤트 추가
+document.querySelectorAll('.side-bottom-menu li').forEach(item => {
+  item.addEventListener('click', () => {
+    // .sidemenu-area의 .active 클래스 제거
+    document.querySelector('.sidemenu-area').classList.remove('active');
+    headLogo.classList.remove("hidden");
+    cateIcon.classList.remove("hidden");
+  });
+});
+
 // 검색 버튼 클릭 시
 search830.addEventListener("click", function () {
   if (searchInput.classList.contains("active")) {

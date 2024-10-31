@@ -71,16 +71,16 @@
   font-weight: bold;
 }
 
-.product-item p{
+.product-item {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 5px 0 8px 5px;
   text-decoration: none;
   color: #333;
-  font-size: 19px;
+  font-size: 16px;
   text-align: left;
-
+  line-height: 1.5;
 }
 .product-image {
   width: 100%;
@@ -90,6 +90,7 @@
 .product-item >.product-brand {
   font-size: 15px;
   padding-top: 10px;
+  font-weight: bold;
 
 }
 
@@ -217,7 +218,9 @@
   transform: scale(1.1); /* 살짝 확대 효과 */
   opacity: 0.8; /* 투명도 조절 */
 }
-
+.popular-rating{
+  padding-left: 0;
+}
 
 
 /* 반응형 디자인 */
@@ -252,20 +255,20 @@
   .product-grid {
     grid-template-columns: repeat(2, 1fr); /* 768px 이하에서는 2열 */
   }
-
   .product-image {
     height: 296px;
   }
 
   .product-name {
     font-size: 16px;
-    margin: 2% 0;
+    margin: 1% 0;
   }
   
   .product-brand {
     font-size: 13px;
     font-weight: bold;
-    margin: 2% 0;
+    margin: 1% 0;
+    padding-top: 0;
   }
   
   .product-price {
@@ -277,7 +280,7 @@
   .rating-icon {
     width: 80px;
     height: 14px;
-    margin: 2% 0;
+    margin: 1% 0;
   }
   
   /* 리뷰 개수 */
@@ -303,21 +306,21 @@
     font-size: 20px; /* 섹션 타이틀 크기 조정 */
   }
   .product-name {
-    font-size: 13px;
-    margin: 2% 0;
+    font-size: 15px;
+    margin: 1% 0;
   }
   
   .product-brand {
     font-size: 12px;
     font-weight: bold;
-    margin: 2% 0;
+    margin: 1% 0;
   }
   
   .product-price {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
-    margin: 2% 0;
+    margin: 1% 0;
   }
 
   .more-link {

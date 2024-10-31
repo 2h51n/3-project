@@ -100,7 +100,8 @@ button {
   margin: 20px auto; /* 상하 여백을 주고 좌우 중앙 정렬 */
   width: 150px;
   background-color: #fdd835;
-  color: #fff;
+  color: #333;
+  font-weight: 500;
   padding: 12px;
   border: none;
   border-radius: 5px;
@@ -110,7 +111,8 @@ button {
 }
 
 button:hover {
-  background-color: #ffe788;
+  background-color: #ffcc00;
+  color: #fff;
 }
 
 .ft_p {

@@ -76,6 +76,8 @@
   margin-top: 20px; /* 위쪽 여백 */
 }
 
+
+
 /* 1024px 이하 */
 @media (max-width: 1024px) {
   .modal-content {

@@ -132,6 +132,11 @@ function removeFromCart(productName) {
     });
   }
 }
+// 구매하기 버튼 클릭 시 호출되는 함수
+function purchaseItems() {
+  // payment.html 페이지로 이동
+  location.href = "payment.html";
+}
 
 // 카운터 업데이트 함수
 function updateCartCount() {

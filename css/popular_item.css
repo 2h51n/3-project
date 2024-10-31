@@ -24,6 +24,7 @@
   margin-bottom: 20px;
   color: #000;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .more-link:hover {

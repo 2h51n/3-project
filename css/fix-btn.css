@@ -39,34 +39,34 @@
 }
 
 .cs-btn {
-  position: fixed; /* 화면 고정 */
-  bottom: 140px; /* 화면 하단에서의 거리 */
-  right: 30px; /* 화면 오른쪽에서의 거리 */
+  position: fixed;
+  bottom: 140px;
+  right: 30px;
 }
 
 .social-icons {
-  position: absolute; /* 소셜 아이콘은 CS 버튼을 기준으로 위치 */
-  top: calc(100% + -50px); /* CS 버튼 아래에 표시 */
-  left: -80px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
-  display: none; /* 기본 상태는 숨김 */
-  flex-direction: row; /* 세로로 나열 */
-  gap: 10px; /* 아이콘 간 간격 설정 */
+  position: absolute;
+  top: calc(100% + -50px);
+  left: -80px;
+  display: none;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .social-icon {
   width: 30px;
   height: auto;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s; /* opacity에 대한 transition 추가 */
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 .social-icon:hover {
   transform: scale(1.1);
-  opacity: 0.8; /* 마우스 오버 시 투명도 감소 */
+  opacity: 0.8;
 }
 
 .top-btn {
-  bottom: 210px; /* 로그인 버튼과 위치를 맞바꿈 */
+  bottom: 210px;
   opacity: 0;
   transition: opacity 0.5s ease;
   display: block;
@@ -77,6 +77,7 @@
 .modal-open {
   display: block;
 }
+
 /* 팝업 공통 스타일 */
 #cartPopup {
   position: fixed;
@@ -97,29 +98,17 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* .popup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  scale: 1.2;
-} */
-
 .close-button {
   position: absolute;
-  /* top: -30px;
-  right: -10px; */
   top: -4%;
   right: 2%;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 14px;
-  color: #000; /* 아이콘 색상 */
+  color: #000;
   --button-padding: 7px 10px;
 }
-
 
 #cartPopup > h2 {
   font-size: 18px;
@@ -131,14 +120,11 @@
 #cartItemsList {
   display: flex;
   flex-direction: column;
-
   width: 100%;
-  /* min-width: 360px; */
   padding: 20px;
   padding-top: 0;
   border-radius: 8px;
   overflow-y: auto;
-  /* background-color: aquamarine; */
 }
 
 #cartItemsList::-webkit-scrollbar-track {
@@ -162,7 +148,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-  /* text-overflow: clip; */
 }
 
 #cartItemsList > li > p {
@@ -171,24 +156,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
   line-height: 1.3;
-  /* background-color: lightcoral; */
 }
 
 #cartItemsList > li > button {
-  /* position: absolute; */
   width: 45px;
   max-height: 35px;
-  /* float: right; */
-  /* width: 20%; */
   padding: 5px;
-  margin-top: 0px;
   font-size: 12px;
-}
-
-#cartItemsList > ul > li {
-  min-width: 340px;
-  display: flex;
-  justify-content: space-between;
 }
 
 #cartPopup button {
@@ -215,7 +189,7 @@
   transform: scale(1.05);
 }
 
-/* 알림 스타일 */
+/* 알람 스타일 */
 #notification {
   position: fixed;
   bottom: 20px;
@@ -227,6 +201,10 @@
   border-radius: 5px;
   transition: opacity 0.3s, visibility 0.3s;
   z-index: 1000;
+  text-align: center;
+  max-width: 90%; /* 최대 너비 설정 */
+  white-space: pre-wrap; /* 자동 줄바꿈 설정 */
+  word-break: break-word; /* 긴 단어 줄바꿈 */
 }
 
 /* 장바구니 카운트 스타일 */
@@ -289,11 +267,11 @@
   }
 
   .social-icons {
-    left: -110px; /* 왼쪽으로 정렬 조정 (값은 필요에 따라 조정) */
+    left: -110px;
   }
 
   .top-btn {
-    bottom: 190px; /* 로그인 버튼과 위치 변경 */
+    bottom: 190px;
     opacity: 0;
     transition: opacity 0.5s ease;
     display: block;
@@ -345,99 +323,40 @@
 }
 
 /* 600px 이하 */
-
 @media (max-width: 600px) {
   #cartPopup {
     display: flex;
     flex-direction: column;
-
     width: 57%;
-    /* background-color: beige; */
   }
-  /* .popup-content {
-    width: 100%;
-  } */
-
   #cartItemsList {
-    width: auto;
     width: 100%;
-    min-width: none;
     padding: 4%;
-    padding-top: 0;
-    /* min-width: 360px; */
+    overflow: hidden;
   }
-  #cartItemsList > li {
-    display: flex;
-    align-items: center;
-    /* background-color: azure; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    gap: 8%;
+  .fix-btn-img,
+  .fix-btn-img-hover,
+  .cs-btn-img,
+  .kakao-btn-img,
+  .naver-btn-img,
+  .top-btn-img,
+  .fixed-buttons a img {
+    width: 40px;
+    height: 40px;
   }
-
-  #cartItemsList > li > p {
-    /* background-color: azure; */
-    font-size: 14px;
-    /* width: 55%; */
+  .cart-btn {
+    bottom: 60px;
+    right: 10px;
   }
-  .close-button {
-    top: -6px;
-    scale: 0.8;
-    /* right: -2%; */
-  }
-
-  .close-button i{
-    scale: 1.2;
-  }
-
-  #cartItemsList > li > p {
-    width: 85%;
-    word-break: keep-all;
-    white-space: wrap;
-    text-overflow: none;
-    overflow: none;
-    /* background-color: lightcoral; */
-  }
-
-  #cartPopup {
-    max-height: 350px;
-  }
-  #cartItemsList {
-    overflow-y: auto;
-  }
-  /* #cartItemsList::-webkit-scrollbar {
-    width: 3px;
-
-  }
-  #cartItemsList::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 10px; 
-  } */
-  .top-btn {
-    bottom: 170px;
-  }
-}
-
-@media (max-width: 400px) {
-  .close-button {
-    top: -6px;
-    scale: 0.6;
-  }
-
-  .close-button i{
-    scale: 1.5;
-    line-height: 1.6;
-  }
-
-  #cartItemsList::-webkit-scrollbar {
-    width: 2px;
-    background-color: #f5f5f5;
-  }
-
-  #cartPopup > h2 {
-    font-size: 16px;
+  .cs-btn {
+    bottom: 110px;
+    right: 10px;
   }
   .top-btn {
-    bottom: 170px;
+    bottom: 160px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: block;
+    right: 10px;
   }
 }

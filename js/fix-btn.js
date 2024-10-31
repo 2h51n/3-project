@@ -161,7 +161,8 @@ function closeCartPopup() {
 
 // Top 버튼의 표시 여부를 토글하는 함수
 function toggleTopButtonVisibility(topBtn) {
-  if (window.scrollY > 100) { // 스크롤 위치가 500 이상일 때
+  if (window.scrollY > 100) {
+    // 스크롤 위치가 500 이상일 때
     topBtn.style.display = "block";
     topBtn.style.opacity = 1;
   } else {

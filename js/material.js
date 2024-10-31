@@ -119,7 +119,7 @@ $(document).ready(function () {
     e.preventDefault(); // 기본 동작 방지
     if ($(window).width() <= 480) {
       $(".hidden").toggle(); // .hidden 클래스를 가진 요소 보이기/숨기기
-      
+
       // 버튼 텍스트 변경
       const isHidden = $(".hidden").is(":visible");
       $(this).text(isHidden ? "닫기" : "더 보기"); // 숨겨진 상태인지 확인하고 텍스트 변경

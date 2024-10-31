@@ -132,11 +132,6 @@ function removeFromCart(productName) {
     });
   }
 }
-// 구매하기 버튼 클릭 시 호출되는 함수
-function purchaseItems() {
-  // payment.html 페이지로 이동
-  location.href = "payment.html";
-}
 
 // 카운터 업데이트 함수
 function updateCartCount() {
@@ -166,18 +161,14 @@ function closeCartPopup() {
 
 // Top 버튼의 표시 여부를 토글하는 함수
 function toggleTopButtonVisibility(topBtn) {
-  if (window.innerWidth > 480) {
-    if (window.scrollY > 100) {
-      topBtn.style.display = "block";
-      topBtn.style.opacity = 1;
-    } else {
-      topBtn.style.opacity = 0;
-      setTimeout(() => {
-        topBtn.style.display = "none";
-      }, 500);
-    }
+  if (window.scrollY > 100) { // 스크롤 위치가 500 이상일 때
+    topBtn.style.display = "block";
+    topBtn.style.opacity = 1;
   } else {
-    topBtn.style.display = "none";
+    topBtn.style.opacity = 0;
+    setTimeout(() => {
+      topBtn.style.display = "none";
+    }, 500);
   }
 }
 

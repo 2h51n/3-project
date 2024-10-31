@@ -396,6 +396,22 @@
 
 }
 
+@media (min-width: 361px) and (max-width: 479px) {
+  .add-to-cart1 {
+    bottom: 33%; /* 상대적으로 위치 조정 */
+    right: 5%; /* 오른쪽 여백 조정 */
+  }
+
+  .add-icon {
+    width: 30px; /* 아이콘 크기 조정 */
+    height: 30px;
+  }
+
+  .slide-area {
+    max-width: 400px; /* 슬라이드 영역 최대 너비 조정 */
+  }
+}
+
 
 @media (max-width: 360px) {
   .add-to-cart1 {

@@ -110,6 +110,14 @@ sideMenu.addEventListener("click", function (e) {
 });
 
 // 모든 .side-bottom-menu li 요소에 클릭 이벤트 추가
+const sideMenuLi = document.querySelectorAll(".side-top-menu li")
+sideMenuLi.forEach(function(items){
+  items.addEventListener("click", function(){
+    document.querySelector('.sidemenu-area').classList.remove('active');
+    headLogo.classList.remove("hidden");
+    cateIcon.classList.remove("hidden");
+  })
+})
 document.querySelectorAll('.side-bottom-menu li').forEach(item => {
   item.addEventListener('click', () => {
     // .sidemenu-area의 .active 클래스 제거

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 파비콘 -->
@@ -11,10 +10,11 @@
     <!-- <link rel="manifest" href="images/favicon//site.webmanifest" /> -->
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <script src="js/detail.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header_aboutus.css" />
+
     <!-- js -->
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -37,42 +37,42 @@
         <div class="container">
           <div class="header-top">
             <ul class="head-navi">
-              <div class="navi-cate">
+              <!-- <div class="navi-cate">
                 <div class="cate-right">
                   <ul class="depth-top">
                     <li>
-                      <a href="#" data-category="plastic">
+                      <a href="#material" data-category="plastic">
                         <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
                         <span>플라스틱</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" data-category="clothes">
+                      <a href="#material" data-category="clothes">
                         <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
                         <span>천</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" data-category="wood">
+                      <a href="#material" data-category="wood">
                         <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
                         <span>목재</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" data-category="glass">
+                      <a href="#material" data-category="glass">
                         <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
                         <span>유리</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" data-category="etc">
+                      <a href="#material" data-category="etc">
                         <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
                         <span>기타</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               <li>
                 <button class="cate-close">X</button>
                 <a href="#" id="category-icon">
@@ -90,30 +90,35 @@
                               <img src="images/A/icon/popup-icon/serach_bar.svg" alt="서치 아이콘" class="search_icon" />
                             </a>
                           </div>
-                          <!-- <div class="loginBt">
-                          <a href="#">
-                            <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                            
-                          </a>
-                        </div> -->
+                          <div class="loginBt">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                            </a>
+                          </div>
+                          <div class="loginBt_my">
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/user_icon_my.png" alt="유저 아이콘" />
+                            </a>
+                          </div>
+
                           <!-- <div class="cartBt">
-                          <a href="#">
-                            <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                          </a>
-                        </div> -->
+                            <a href="#">
+                              <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                            </a>
+                          </div> -->
                         </div>
                         <input type="text" placeholder="입력 후 엔터" />
                       </div>
                       <ul class="side-top-menu">
-                        <li><a href="#event">이벤트</a></li>
-                        <li><a href="#popular">인기</a></li>
-                        <li><a href="#brands">브랜드</a></li>
-                        <li><a href="#review">리뷰</a></li>
-                        <!-- <li><a href="notice.html">공지사항</a></li> -->
+                        <li><a href="index.html#eventbanner">이벤트</a></li>
+                        <li><a href="index.html#popular">인기</a></li>
+                        <li><a href="index.html#brands">브랜드</a></li>
+                        <li><a href="index.html#review">리뷰</a></li>
+                        <li><a href="about_us.html">소개</a></li>
+                        <li><a href="notice.html">공지사항</a></li>
                       </ul>
                     </div>
-                    <!-- <hr /> -->
-                    <div class="side-bottom">
+                    <!-- <div class="side-bottom">
                       <h3 class="side-bottom-title">카테고리</h3>
                       <ul class="side-bottom-menu">
                         <li>
@@ -147,54 +152,18 @@
                           </a>
                         </li>
                       </ul>
-                    </div>
+                    </div> -->
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#" class="category-title">카테고리</a>
-                <div class="navi-cate">
-                  <div class="cate-right">
-                    <ul class="depth-top">
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/plastic.png" alt="소재_플라스틱 아이콘" />
-                          <span>플라스틱</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/clothes.png" alt="소재_천 아이콘" />
-                          <span>천</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/wood.png" alt="소재_목재 아이콘" />
-                          <span>목재</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/glass.png" alt="소재_유리 아이콘" />
-                          <span>유리</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="images/A/icon/submenu-icon/etc.png" alt="소재_기타 아이콘" />
-                          <span>기타</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <a href="index.html#material">카테고리</a>
               </li>
-              <li><a href="#event">이벤트</a></li>
-              <li><a href="#popular">인기</a></li>
+              <li><a href="index.html#event">이벤트</a></li>
+              <li><a href="index.html#popular">인기</a></li>
               <!-- <li><a href="#">구독</a></li> -->
-              <li><a href="#brands">브랜드</a></li>
-              <li><a href="#review">리뷰</a></li>
+              <li><a href="index.html#brands">브랜드</a></li>
+              <li><a href="index.html#review">리뷰</a></li>
               <li><a href="about_us.html">소개</a></li>
               <li><a href="notice copy.html">공지사항</a></li>
             </ul>
@@ -217,79 +186,110 @@
                     <input type="text" id="searchMBInput" placeholder="모바일 검색어를 입력하세요" />
                   </a>
                 </div>
-                <!-- <div class="loginBt">
-                <a href="#">
-                  <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
-                </a>
-              </div>
-              <div class="loginBt_my">
-                <a href="#">
-                  <img src="images/A/icon/popup-icon/user_icon_my.svg" alt="유저 아이콘" />
-                </a>
-              </div> -->
+                <div class="loginBt">
+                  <a href="#">
+                    <img src="images/A/icon/popup-icon/user-icon.svg" alt="유저 아이콘" />
+                  </a>
+                </div>
+                <div class="loginBt_my" style="display: none">
+                  <!-- 초기에는 감춰져야 함 -->
+                  <a href="#">
+                    <img src="images/A/icon/popup-icon/user_icon_my.svg" alt="유저 아이콘" />
+                  </a>
+                </div>
+
                 <!-- <div class="cartBt">
-                <a href="#">
-                  <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
-                </a>
-              </div> -->
+                  <a href="#">
+                    <img src="images/A/icon/popup-icon/cart-icon.svg" alt="카트 아이콘" />
+                  </a>
+                </div> -->
               </div>
             </div>
           </div>
           <div class="header-bottom">
             <ul class="navi-bottom">
-              <li><a href="#" class="category-title">카테고리</a></li>
-              <li><a href="#event">이벤트</a></li>
-              <li><a href="#popular">인기</a></li>
+              <li><a href="index.html#material">카테고리</a></li>
+              <li><a href="index.html#event">이벤트</a></li>
+              <li><a href="index.html#popular">인기</a></li>
               <!-- <li><a href="#">구독</a></li> -->
-              <li><a href="#brands">브랜드</a></li>
-              <li><a href="#review">리뷰</a></li>
+              <li><a href="index.html#brands">브랜드</a></li>
+              <li><a href="index.html#review">리뷰</a></li>
               <li><a href="about_us.html">소개</a></li>
               <li><a href="notice copy.html">공지사항</a></li>
             </ul>
           </div>
         </div>
       </header>
-      <section class="detile-page">
-        <div class="detile_container">
-          <!-- 메인상품이미지역역 -->
-          <div class="detile-breadcrumb">홈 > 카테고리 > 유리</div>
-          <div class="detile-product-container">
-            <div class="detile-product-main">
-              <div class="detile-product-main-left">
-                <img src="images/detail/pd_img (12).png" alt="바다 유리 선캐쳐" />
-                <p class="detile-product-brand">바다 한 조각</p>
+      <section class="detail-page">
+        <div class="detail_container">
+          <div class="detail-top">
+            <!-- 메인상품이미지영역 -->
+            <div class="detail-product-img">
+              <div class="detail-breadcrumb">홈 > 카테고리 > 유리</div>
+              <div class="dp-main-image">
+                <img src="images/product images/pd_img (12).png" alt="바다 한 조각" class="active" id="dpmainimg" />
               </div>
-              <div class="detile-product-info">
-                <h1>바다 유리 선캐쳐</h1>
-                <p class="detile-product-price">
-                  <span class="detile-product-old-price">39,000원</span>
-                  <span class="detile-product-new-price">35,000원</span>
-                </p>
-
-                <p class="detile-product-shipping-info">배송정보 : 영업일 기준으로 2-3일 소요됩니다.</p>
-                <p class="detile-product-shipping-cost">
-                  배송비 : <span class="detile-shipping-cost">3,000원</span> <br />
-                  <span class="detile-shipping-cost-info">5만원 이상 구매 시 무료배송</span>
-                </p>
+              <div class="dp-sub-images">
+                <img src="images/product images/pd_img (12-1).png" alt="바다 한 조각 이미지1" onclick="changeImage('dpmainimg', this)" />
+                <img src="images/product images/pd_img (12-2).png" alt="바다 한 조각 이미지2" onclick="changeImage('dpmainimg', this)" />
+                <img src="images/product images/pd_img (12-3).png" alt="바다 한 조각 이미지3" onclick="changeImage('dpmainimg', this)" />
+                <img src="images/detail/Group 48349.png" alt="바다 한 조각 이미지4" onclick="changeImage('dpmainimg', this)" />
+              </div>
+            </div>
+            <!-- 상품 정보영역 -->
+            <div class="detail-info">
+              <ul class="detail-info-top">
+                <li><p class="detail-info-top-brand">바다 한 조각</p></li>
+                <li><h1>바다 유리 선캐쳐</h1></li>
+                <li class="detail-info-top-star"><img src="images/B/icon/star.png" alt="별점" class="detail-info-top-star" /> <span>(7,347)</span></li>
+                <li>
+                  <p class="detail-info-top-oprice">35,000원 <span>39,000원</span></p>
+                </li>
+                <li>
+                  <p class="detail-info-top-dprice">31,500원 <span>쿠폰적용가</span></p>
+                </li>
+                <li><img src="images/B/coupon/detile_1920_coupon.png" alt="상세페이지쿠폰" class="detail-info-top-coupon" /></li>
+              </ul>
+              <ul class="detail-info-bottom">
+                <li class="detail-info-line">
+                  <p>배송정보</p>
+                  <span>영업일 기준으로 2~3일 소요됩니다. </span>
+                </li>
+                <li class="detail-info-line">
+                  <p>배송비</p>
+                  <span>3000원 <span>(5만원 이상 구매시 무료배송)</span></span>
+                </li>
+                <li class="detail-info-line">
+                  <p>카드추가혜택</p>
+                  <span
+                    >oo카드결제시 15%추가 할인<span><br />(최대 3만원 할인)</span></span
+                  >
+                </li>
+              </ul>
+              <div class="detail-btn">
+                <a href=""><button class="detail-btn-cart">장바구니</button></a>
+                <a href="payment.html"><button class="detail-btn-buy">구매하기</button></a>
               </div>
             </div>
           </div>
           <!-- 상품소개/브랜드 -->
-          <div class="detile-tab-container">
-            <button class="detile-tab-button" id="description-tab">상품 설명</button>
-            <button class="detile-tab-button" id="brand-tab">브랜드 소개</button>
+          <div class="detail-tab-container">
+            <button class="detail-tab-button" id="description-tab">상품 설명</button>
+            <button class="detail-tab-button" id="brand-tab">브랜드 소개</button>
           </div>
 
           <!-- 상품 설명 탭 내용 -->
-          <div class="detile-tab-content" id="detile-description">
-            <div class="detile-image-container detile-card">
+          <div class="detail-tab-content" id="detail-description">
+            <div class="detail-tab-description-bline"></div>
+            <div class="detail-image-container detail-card">
               <img src="images/detail/suncatcher.png" alt="상품설명" id="mainImage" />
             </div>
           </div>
 
           <!-- 브랜드 소개 탭 내용 -->
-          <div class="detile-tab-content" id="detile-brand" style="display: none">
-            <div class="detile-image-brand detile-card">
+          <div class="detail-tab-content" id="detail-brand" style="display: none">
+            <div class="detail-tab-brand-bline"></div>
+            <div class="detail-image-brand detail-card">
               <img src="images/detail/suncatcher-brand.png" alt="브랜드" id="brandImage" />
             </div>
           </div>
@@ -320,5 +320,44 @@
         </div>
       </footer>
     </div>
+    <script>
+      $(document).ready(function () {
+        checkLoginStatus(); // 로그인 상태 확인
+
+        function checkLoginStatus() {
+          const loginStatus = localStorage.getItem("loginStatus");
+          if (loginStatus) {
+            $(".loginBt").hide(); // 로그인 아이콘 숨기기
+            $(".loginBt_my").show(); // 마이 아이콘 표시
+            showNotification("로그인 상태: " + loginStatus); // 로그인 상태 알림
+          } else {
+            $(".loginBt").show(); // 로그인 아이콘 표시
+            $(".loginBt_my").hide(); // 마이 아이콘 숨기기
+            showNotification("로그인 상태가 아닙니다.");
+          }
+        }
+
+        function showNotification(message) {
+          $("#notification").text(message).fadeIn(300); // 알림 표시
+          setTimeout(function () {
+            $("#notification").fadeOut(300); // 3초 후 알림 사라짐
+          }, 3000);
+        }
+
+        // 기존 알림 div 요소에 스타일 적용
+        $("#notification").css({
+          position: "fixed",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          backgroundColor: "#fdd835",
+          color: "black !important",
+          padding: "10px 20px",
+          borderRadius: "5px",
+          zIndex: 1000,
+          display: "none",
+        });
+      });
+    </script>
   </body>
 </html>

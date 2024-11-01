@@ -1,130 +1,382 @@
 @charset "utf-8";
-.detile-page {
+.detail-page {
   width: 100%;
 }
-.detile_container {
+.detail_container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
 }
-.detile-product-main {
+.detail-top {
+  margin-top: 10%;
+  display: flex;
   margin-bottom: 10%;
+}
+/* 상품이미지 영역 */
+.detail-breadcrumb {
+  font-size: 15px;
+  color: #736e6e;
+  margin-bottom: 10px;
+}
+.detail-product-img {
+  width: 50%;
+}
+.dp-main-image {
+  position: relative;
+  width: 100%;
+}
+
+.dp-main-image img {
+  width: 100%;
+}
+.dp-sub-images {
+  display: flex;
+  padding: 10px 0;
+}
+.dp-sub-images > img {
+  width: calc(25%);
+  cursor: pointer;
+  padding: 0 5px;
+}
+/* 상품정보 top */
+.detail-info {
+  width: 50%;
+  margin-left: 20px;
+}
+.detail-info-top {
+  display: block;
+  position: relative;
+}
+.detail-info-top li {
+  margin-top: 10px;
+}
+.detail-info-top-brand {
+  font-size: 15px;
+  color: #666;
+}
+.detail-info-top h1 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+.detail-info-top-star span {
+  font-size: 15px;
+  color: #666;
+}
+.detail-info-top-star img {
+  width: 150px;
+}
+.detail-info-top-oprice {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+.detail-info-top-oprice > span {
+  font-size: 23px;
+  font-weight: 0;
+  color: #666;
+  padding-right: 5px;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px; /* 취소선 두께 */
+  text-decoration-color: #666; /* 취소선 색상 */
+  text-underline-offset: 8px; /* 선과 텍스트 간격 */
+}
+.detail-info-top-dprice {
+  font-size: 30px;
+  color: #ff2121;
+  font-weight: 700;
+}
+.detail-info-top-dprice > span {
+  font-size: 25px;
+  font-weight: 0;
+}
+.detail-info-top-coupon {
+  width: 100%;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+/* 상품정보 bottom */
+.detail-info-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.detail-info-line {
+  border-top: 2px solid #ddd;
+  display: flex;
+  padding: 25px;
+  justify-content: space-between;
+  color: #333;
+}
+.detail-info-line > p {
+  font-size: 20px;
+  width: 30%;
+}
+.detail-info-line > span {
+  /* font-size: 25px; */
+  width: 60%;
+  line-height: 1.2;
+  font-size: 18px;
+}
+.detail-btn {
+  margin-top: 50px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.detile-product-main-left {
-  width: 60%;
-}
-.detile-product-main-left img {
+.detail-btn > a {
   width: 100%;
+  text-decoration: none;
 }
-.detile-breadcrumb {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: 20px;
-  padding-top: 100px;
-}
-
-.detile-product-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.detile-product-brand {
-  font-size: 14px;
-  color: #666;
-  text-align: left;
-  margin-top: 10px;
-}
-
-.detile-product-info {
-  width: 30%;
-  text-align: left;
-  margin-top: 20px;
-  line-height: 20px;
-}
-
-.detile-product-info > h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.detile-product-price {
+.detail-btn > a > button {
+  width: 98%;
   font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.detile-product-old-price {
-  text-decoration: line-through;
-  color: #999;
-  margin-right: 10px;
-  font-weight: 300;
-  font-size: 18px;
-  padding-top: 10px;
-}
-
-.detile-product-new-price {
-  color: #e60000;
-}
-
-.detile-product-shipping-info,
-.detile-product-shipping-cost {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.detile-shipping-cost {
-  font-weight: bold;
-  padding-left: 2%;
-}
-.detile-shipping-cost-info {
-  padding-left: 73px;
-}
-
-/* 상품소개/브랜드 */
-.detile-card {
-  width: 100%;
+  padding: 15px;
+  font-weight: 600;
   margin: 0 auto;
-  padding: 80px;
+  text-decoration: none;
 }
-.detile-tab-content {
-  display: none;
+.detail-btn-cart {
+  background-color: #d9d9d9;
+  border: 1px solid #333;
 }
-.detile-tab-container{
+.detail-btn-buy {
+  background-color: #ffd233;
+  border: 1px solid #8c6d00;
+}
+/* 하단부분 */
+/* 라인 */
+.detail-tab-content {
+  border-top: 2px solid #ddd;
   display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.detail-tab-description-bline {
+  position: absolute;
+  top: -2px;
+  border-top: 2px solid #000;
+  width: 50%;
+}
+.detail-tab-brand-bline {
+  position: absolute;
+  top: -2px;
+  border-top: 2px solid #000;
+  width: 50%;
+  right: 0;
+}
+.detail-tab-container {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
-.detile-tab-container.active {
+
+.detail-tab-container.active {
   display: flex;
-
 }
-
-.detile-tab-button {
+.detail-tab-button {
+  font-size: 15px;
   padding: 10px;
   cursor: pointer;
   border: none;
   background-color: #c74c4c00;
+}
 
+/* 상품소개/브랜드 */
+
+.detail-card {
+  width: 100%;
+  margin: 0 auto;
 }
-/* 라인 */
-.detile-tab-content {
-  border-top: 2px solid #ddd;
-  display: flex;
-  align-items: center;
+.detail-tab-content {
+  display: block;
 }
-.detile-tab-content.active {
+
+/* 상품소개/브랜드 */
+.detail-tab-content.active {
   border-top: 2px solid #000;
   width: 50%;
 }
-.detile-tab-content img {
-width: 100%;
+.detail-image-container img {
+  width: 100%;
 }
-.detile-image-container img{
+.detail-image-container img {
   padding-top: 100px;
 }
-.detile-image-brand{
-  width: 75%;
+.detail-image-brand {
+  padding-top: 7%;
+  padding-left: 15%;
 }
+.detail-image-brand img {
+  width: 80%;
+}
+#description-tab {
+  font-weight: 800;
+}
+/* 반응형 */
+@media (max-width: 1100px) {
+  .detail-info-line {
+    padding: 15px;
+  }
+}
+@media (max-width: 1170px) {
+  .detail-top {
+    margin-top: 15%;
+  }
+}
+@media (max-width: 1014px) {
+  .detail-info-top-coupon {
+    width: 100%;
+    margin: 15px 0;
+  }
+  .detail-info-top h1 {
+    font-size: 35px;
+    margin: 15px 0;
+  }
+  .detail-info-top-dprice {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .detail-info-top-oprice {
+    font-size: 25px;
+    font-weight: 400;
+  }
+  .detail-info-top-dprice > span {
+    font-size: 20px;
+  }
+  .detail-info-top-oprice > span {
+    font-size: 20px;
+  }
+  .detail-info-top-star img {
+    width: 100px;
+  }
+  .detail-info-top-star span {
+    font-size: 13px;
+  }
+  .detail-info-line > p {
+    width: 30%;
+  }
+  .detail-info-line > span {
+    width: 70%;
+  }
+}
+@media (max-width: 960px) {
+  .detail-btn > a > button {
+    width: 98%;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 860px) {
+  .detail-info-line > p {
+    font-size: 16px;
+    width: 30%;
+  }
+  .detail-info-line > span {
+    line-height: 1.2;
+    font-size: 14px;
+  }
+}
+@media (max-width: 760px) {
+  .detail-info-top-coupon {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .detail-info-top h1 {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+  .detail-info-top-dprice {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .detail-info-top-oprice {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .detail-info-top-oprice > span {
+    font-size: 16px;
+  }
+  .detail-info-top-dprice > span {
+    font-size: 16px;
+  }
+  .detail-info-top-star img {
+    width: 100px;
+  }
+  .detail-info-line > p {
+    width: 30%;
+  }
+  .detail-info-line > span {
+    width: 70%;
+  }
+  .detail-info-line > p {
+    font-size: 15px;
+  }
+  .detail-info-line {
+    padding: 10px;
+  }
 
-/* 더 보기 */
+  .detail-btn > a > button {
+    width: 98%;
+    font-size: 15px;
+    padding: 5px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 690px) {
+  .detail-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .detail-info {
+    width: 100%;
+    margin: 0px;
+  }
+  .detail-product-img {
+    width: 100%;
+  }
+  .detail-info-top-coupon {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 690px) {
+  .detail-top {
+    margin-top: 20%;
+  }
+  .detail-tab-button {
+    font-size: 14px;
+    padding: 5px;
+  }
+  .detail-image-brand {
+    padding-top: 9%;
+    padding-left: 9%;
+  }
+  .detail-image-brand img {
+    width: 90%;
+    padding: 0px;
+  }
+  .detail-image-container img {
+    padding-top: 10%;
+  }
+}
+@media (max-width: 470px) {
+  .detail-top {
+    margin-top: 25%;
+  }
+}
+@media (max-width: 380px) {
+  .detail-top {
+    margin-top: 30%;
+  }
+}
+@media (max-width: 350px) {
+  .detail-info-line > p {
+    font-size: 14px;
+  }
+  .detail-info-line > span {
+    font-size: 13px;
+  }
+}

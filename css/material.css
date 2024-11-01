@@ -198,6 +198,7 @@
   font-size: 16px;
   cursor: pointer;
   display: none;
+  border-radius: 10px;
 }
 
 .m_title {
@@ -250,8 +251,6 @@
     max-height: 250px;
   }
 
-  .material-goods {
-  }
   .materal-textbox p {
     font-size: 15px;
     margin-bottom: 10px;
@@ -389,13 +388,8 @@
 
 @media (min-width: 361px) and (max-width: 479px) {
   .add-to-cart1 {
-    bottom: 33%; /* 상대적으로 위치 조정 */
+    bottom: 39%; /* 상대적으로 위치 조정 */
     right: 5%; /* 오른쪽 여백 조정 */
-  }
-
-  .add-icon {
-    width: 30px; /* 아이콘 크기 조정 */
-    height: 30px;
   }
 
   .slide-area {

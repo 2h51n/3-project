@@ -19,7 +19,7 @@ $(document).ready(function () {
     if (loginStatus) {
       showWelcomePopup(); // 로그인된 경우 환영 팝업 표시
     } else {
-      showNotification("로그인 \n상태가 아닙니다."); // 로그인되지 않은 경우 알림 표시
+      showNotification("로그인 상태가 <br>아닙니다."); // 로그인되지 않은 경우 알림 표시
     }
   });
 
@@ -85,7 +85,7 @@ $(document).ready(function () {
         $("#signupModal").fadeIn(300); // ID/PW 회원가입 모달 열기
       });
     } else {
-      showNotification("약관에 동의해야 \n회원가입이 가능합니다.");
+      showNotification("약관에 동의해야 <br>회원가입이 가능합니다.");
     }
   });
 
@@ -103,7 +103,7 @@ $(document).ready(function () {
     localStorage.setItem("userPassword", userPassword);
     localStorage.setItem("userPhone", userPhone);
 
-    showNotification("회원가입이 \n완료되었습니다!");
+    showNotification("회원가입이 <br>완료되었습니다!");
 
     // 회원가입 완료 후 로그인 모달로 자동 전환
     $("#signupModal").fadeOut(300, function () {
@@ -117,17 +117,17 @@ $(document).ready(function () {
     if (loginStatus) {
       $(".loginBt").hide(); // 로그인 아이콘 숨기기
       $(".loginBt_my").show(); // 마이 아이콘 표시
-      showNotification("로그인 상태: " + loginStatus); // 로그인 상태 알림
+      showNotification("로그인 <br>상태: " + loginStatus); // 로그인 상태 알림
     } else {
       $(".loginBt").show(); // 로그인 아이콘 표시
       $(".loginBt_my").hide(); // 마이 아이콘 숨기기
-      showNotification("로그인 \n상태가 아닙니다.");
+      showNotification("로그인 <br>상태가 아닙니다.");
     }
   }
 
   // 소셜 로그인 처리 함수
   function handleSocialLogin(provider) {
-    showNotification(`${provider} 로그인 버튼 클릭!`);
+    showNotification(`${provider} 로그인 <br>버튼 클릭!`);
     saveLoginStatus(provider); // 로그인 후 상태 유지
   }
 
@@ -152,14 +152,14 @@ $(document).ready(function () {
       checkLoginStatus(); // 로그인 상태 확인 후 UI 업데이트
       $("#loginModal").fadeOut(300); // 로그인 모달 닫기
     } else {
-      showNotification("아이디 또는 비밀번호가 \n올바르지 않습니다."); // 로그인 실패 메시지
+      showNotification("아이디 또는 비밀번호가 <br>올바르지 않습니다."); // 로그인 실패 메시지
     }
   });
 
   // 환영 팝업 표시 함수
   function showWelcomePopup() {
     const userId = localStorage.getItem("userId");
-    $("#welcomeMessage").html(`${userId}님 환영합니다!`); // 사용자 아이디 표시
+    $("#welcomeMessage").html(`${userId}님 <br>환영합니다!`); // 사용자 아이디 표시
     $("#welcomePopup").fadeIn(300); // 팝업 표시
 
     // 5초 후 팝업 숨기기
@@ -176,14 +176,16 @@ $(document).ready(function () {
   // 로그아웃 버튼 클릭 이벤트
   $(document).on("click", ".logout-button", function () {
     localStorage.removeItem("loginStatus"); // 로그인 상태 제거
-    showNotification("로그아웃 되었습니다.");
+    showNotification("로그아웃 <br>되었습니다.");
     $("#welcomePopup").fadeOut(300); // 환영 팝업 숨기기
     checkLoginStatus(); // UI 업데이트
   });
 
   // 알림 표시 함수
   function showNotification(message) {
-    $("#notification").text(message).fadeIn(300); // 알림 표시
+    const isMobile = window.innerWidth <= 480;
+    const formattedMessage = isMobile ? message.replace(/\n/g, "<br>") : message; // 모바일에서 줄바꿈 변환
+    $("#notification").html(formattedMessage).fadeIn(300); // 알림 표시
     setTimeout(function () {
       $("#notification").fadeOut(300); // 3초 후 알림 사라짐
     }, 3000);
@@ -196,7 +198,7 @@ $(document).ready(function () {
     left: "50%",
     transform: "translateX(-50%)",
     backgroundColor: "#fdd835",
-    color: "black",
+    color: "black !important",
     padding: "10px 20px",
     borderRadius: "5px",
     zIndex: 1000,

@@ -282,7 +282,6 @@
   }
 }
 
-
 /* 360px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 385px) {
   .material-goods {

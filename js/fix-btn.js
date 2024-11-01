@@ -186,7 +186,7 @@ function showNotification(message) {
   const notification = document.getElementById("notification");
 
   // 화면 너비가 360px 이상 480px 이하일 때 두 줄로 나누어 표시
-  if (window.innerWidth >= 360 && window.innerWidth <= 480) {
+  if (window.innerWidth >= 310 && window.innerWidth <= 480) {
     if (message.includes("추가되었습니다")) {
       notification.innerHTML = "장바구니에<br>추가되었습니다.";
     } else if (message.includes("제거되었습니다")) {

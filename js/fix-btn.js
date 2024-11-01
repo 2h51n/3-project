@@ -180,3 +180,32 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+// 알림 메시지를 표시하는 함수
+function showNotification(message) {
+  const notification = document.getElementById("notification");
+
+  // 화면 너비가 360px 이상 480px 이하일 때 두 줄로 나누어 표시
+  if (window.innerWidth >= 360 && window.innerWidth <= 480) {
+    if (message.includes("추가되었습니다")) {
+      notification.innerHTML = "장바구니에<br>추가되었습니다.";
+    } else if (message.includes("제거되었습니다")) {
+      notification.innerHTML = "장바구니에<br>제거되었습니다.";
+    }
+  } else {
+    // 다른 해상도에서는 기존 메시지 사용
+    notification.textContent = message;
+  }
+
+  // 알림 스타일 설정
+  notification.style.display = "block"; // 알림 보이기
+  notification.style.opacity = 1; // 불투명도 설정
+
+  // 3초 후 알림이 서서히 사라짐
+  setTimeout(() => {
+    notification.style.opacity = 0; // 불투명도 감소
+    setTimeout(() => {
+      notification.style.display = "none"; // 알림 숨김
+    }, 100); // 0.1초 후 완전히 숨김
+  }, 3000); // 3초 동안 표시 후 사라지기 시작
+}

@@ -270,7 +270,9 @@
   .hidden {
     display: none;
   }
-
+  .materal-rating > span {
+    font-size: 15px;
+  }
   #showMoreButton {
     margin: 0 auto;
     display: block;

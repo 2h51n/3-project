@@ -63,7 +63,7 @@
 }
 
 .material-goods {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   gap: 10px;
   width: 100%;
@@ -285,7 +285,7 @@
 /* 360px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 385px) {
   .material-goods {
-    display: grid; /* 그리드 레이아웃으로 전환 */
+    /* display: grid;  */
     grid-template-columns: repeat(1, 1fr); /* 1열 배치 */
     gap: 10px; /* 그리드 아이템 간의 간격 */
   }

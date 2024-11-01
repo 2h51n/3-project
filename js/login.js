@@ -19,7 +19,7 @@ $(document).ready(function () {
     if (loginStatus) {
       showWelcomePopup(); // 로그인된 경우 환영 팝업 표시
     } else {
-      showNotification("로그인 상태가 아닙니다."); // 로그인되지 않은 경우 알림 표시
+      showNotification("로그인 \n상태가 아닙니다."); // 로그인되지 않은 경우 알림 표시
     }
   });
 
@@ -85,7 +85,7 @@ $(document).ready(function () {
         $("#signupModal").fadeIn(300); // ID/PW 회원가입 모달 열기
       });
     } else {
-      showNotification("약관에 동의해야 회원가입이 가능합니다.");
+      showNotification("약관에 동의해야 \n회원가입이 가능합니다.");
     }
   });
 
@@ -103,7 +103,7 @@ $(document).ready(function () {
     localStorage.setItem("userPassword", userPassword);
     localStorage.setItem("userPhone", userPhone);
 
-    showNotification("회원가입이 완료되었습니다!");
+    showNotification("회원가입이 \n완료되었습니다!");
 
     // 회원가입 완료 후 로그인 모달로 자동 전환
     $("#signupModal").fadeOut(300, function () {
@@ -121,7 +121,7 @@ $(document).ready(function () {
     } else {
       $(".loginBt").show(); // 로그인 아이콘 표시
       $(".loginBt_my").hide(); // 마이 아이콘 숨기기
-      showNotification("로그인 상태가 아닙니다.");
+      showNotification("로그인 \n상태가 아닙니다.");
     }
   }
 
@@ -152,7 +152,7 @@ $(document).ready(function () {
       checkLoginStatus(); // 로그인 상태 확인 후 UI 업데이트
       $("#loginModal").fadeOut(300); // 로그인 모달 닫기
     } else {
-      showNotification("아이디 또는 비밀번호가 올바르지 않습니다."); // 로그인 실패 메시지
+      showNotification("아이디 또는 비밀번호가 \n올바르지 않습니다."); // 로그인 실패 메시지
     }
   });
 

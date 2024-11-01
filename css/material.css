@@ -51,7 +51,6 @@
 .swMaterial .swiper-slide .scale {
   scale: 1.2;
   overflow: hidden;
-  
 }
 
 /* 소재별 굿즈 영역 */
@@ -105,7 +104,6 @@
   font-size: 16px;
   text-align: left;
 }
-
 
 .materal-textbox * {
   margin: 8px 0;
@@ -215,8 +213,6 @@
   z-index: 10; /* 이미지 위에 표시되도록 */
 }
 
-
-
 /* 1024px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 1024px) {
   .material-goods-card {
@@ -242,9 +238,6 @@
   .material-goods-card a > img {
     max-height: 328.61px;
   }
-
-
-
 }
 
 /* 480px 이하 화면을 위한 미디어 쿼리 */
@@ -254,14 +247,13 @@
   }
 
   .material-goods-card a > img {
-    max-height: 350px;
+    max-height: 250px;
   }
 
   .material-goods {
-    padding: 0 10%;
   }
   .materal-textbox p {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 10px;
   }
 
@@ -279,8 +271,11 @@
     border: none;
     color: #333;
     background-color: #fdd835;
+    font-size: 11px;
+    margin-top: 0px;
   }
 }
+
 
 /* 360px 이하 화면을 위한 미디어 쿼리 */
 @media (max-width: 385px) {
@@ -365,7 +360,6 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .b1920px {
     display: none;
@@ -384,16 +378,13 @@
     bottom: 31%; /* 상대적으로 위치 조정 */
     right: 4%; /* 오른쪽 여백 조정 */
   }
-
 }
-
 
 @media (max-width: 480px) {
   .add-to-cart1 {
     bottom: 30%; /* 상대적으로 위치 조정 */
     right: 5%; /* 오른쪽 여백 조정 */
   }
-
 }
 
 @media (min-width: 361px) and (max-width: 479px) {
@@ -412,11 +403,12 @@
   }
 }
 
-
 @media (max-width: 360px) {
   .add-to-cart1 {
     bottom: 37%; /* 상대적으로 위치 조정 */
     right: 5%; /* 오른쪽 여백 조정 */
   }
-
+  .material-goods-card a > img {
+    max-height: 250px;
+  }
 }

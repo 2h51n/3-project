@@ -19,12 +19,12 @@ function toggleCartIcon(imgElement, productName, price) {
     // 장바구니에 아이템이 있으면 제거
     imgElement.src = "images/like/cart_plus.png"; // 원래 이미지로 변경
     cartItems.splice(existingItemIndex, 1); // 장바구니에서 상품 제거
-    showNotification(`${productName}이(가) 장바구니에서 제거되었습니다!`); // 알림 표시
+    showNotification(`${productName}이(가) \n장바구니에서 제거되었습니다!`); // 알림 표시
   } else {
     // 장바구니에 아이템이 없으면 추가
     imgElement.src = "images/like/cart_plus_like.png"; // 좋아요 상태 이미지로 변경
     cartItems.push({ name: productName, price: formatPrice(price) }); // 장바구니에 상품 추가
-    showNotification(`${productName}이(가) 장바구니에 추가되었습니다!`); // 알림 표시
+    showNotification(`${productName}이(가) \n장바구니에 추가되었습니다!`); // 알림 표시
   }
 
   updateCartCount(); // 카운터 업데이트

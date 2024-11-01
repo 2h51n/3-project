@@ -269,7 +269,7 @@
     width: 100%;
 } */
 #category-icon {
-  display: block;
+  display: none;
 }
 
 #category-icon.hidden {

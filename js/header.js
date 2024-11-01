@@ -128,25 +128,28 @@ window.onload = function () {
 
   search830.addEventListener("click", function () {
     if (searchInput.classList.contains("active")) {
-      // 인풋이 이미 활성화된 상태면 비활성화 처리
+      // 인풋이 활성화된 상태라면 비활성화
       searchInput.classList.remove("active");
       loginBThidden.classList.remove("hidden");
       headLogo.classList.remove("hidden");
-      cateIcon.classList.remove("hidden"); // cateIcon을 다시 보이게
+      
+      // cateIcon은 화면 너비에 관계없이 표시
+      cateIcon.classList.remove("hidden");
     } else {
-      // 인풋이 비활성화된 상태면 활성화 처리
+      // 인풋이 비활성화된 상태라면 활성화
       searchInput.classList.add("active");
       loginBThidden.classList.add("hidden");
       headLogo.classList.add("hidden");
-
+  
       // 화면 너비가 358px 이하인 경우에만 cateIcon 숨기기
-      if (window.innerWidth <= 358) {
+      if (window.innerWidth < 358) {
         cateIcon.classList.add("hidden");
+      } else {
+        cateIcon.classList.remove("hidden");
       }
-
     }
   });
-
+  
   // 브라우저 창 크기 조절 시 로고 상태 초기화
   window.addEventListener("resize", function () {
     if (window.innerWidth > 768) {
@@ -165,6 +168,7 @@ window.onload = function () {
     if (window.innerWidth > 400) {
       cateClose2.style.display = "none";
     }
+
 
   });
 

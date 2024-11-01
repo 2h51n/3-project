@@ -11,7 +11,7 @@
   position: absolute;
   font-size: 200%;
   /* min-width: ; */
-  z-index: 999;
+  z-index: 9;
   top: 3%;
   left: 43%;
   left: 3%;
@@ -90,7 +90,7 @@ padding-left: 12px;
 @media (max-width: 1345px) {
   .form-group input {
     width: 20vw;
-    height: 0.5vh;
+    height: 4.5vh;
     min-height: 30px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -105,8 +105,8 @@ padding-left: 12px;
 
   .submit-btn {
     /* width: 70%; */
-    width: 7vw;
-    height: 3vh;
+    width: 6vw;
+    height: 4vh;
     /* padding: 12px; */
     background-color: #f2b705;
     font-size: 15px;
@@ -162,7 +162,7 @@ padding-left: 12px;
   .submit-btn {
     /* width: 70%; */
     width: 7vw;
-    height: 3vh;
+    height: 4vh;
     /* padding: 12px; */
     background-color: #f2b705;
     font-size: 15px;
@@ -190,7 +190,7 @@ padding-left: 12px;
     /* width: 20vw; */
     height: 10%;
     min-height: 30px;
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #ddd;
     border-radius: 15px;
     font-size: 16px;
@@ -216,13 +216,13 @@ padding-left: 12px;
 
 @media (max-width: 683px) {
   .form-group input {
-    width: 28vw;
-    height: 3vh;
+    width: 33vw;
+    height: 4.5vh;
     min-height: 30px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 13px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
@@ -232,7 +232,7 @@ padding-left: 12px;
     height: 4vh;
     padding: 3px;
     background-color: #f2b705;
-    font-size: 13px;
+    font-size: 14px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -251,17 +251,19 @@ padding-left: 12px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 15px;
-    font-size: 13px;
+    font-size: 11px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   .submit-btn {
     /* width: 70%; */
-    width: 12vw;
-    height: 4vh;
+    /* width: 11vw;
+    height: 3.5vh; */
+    width: 38px;
+    height: 24px;
     /* margin: 10px; */
     background-color: #f2b705;
-    font-size: 15px;
+    font-size: 12px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -296,17 +298,17 @@ padding-left: 12px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 15px;
-    font-size: 13px;
+    font-size: 11px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   .submit-btn {
     /* width: 70%; */
-    width: 14vw;
-    height: 3vh;
+    /* width: 13vw;
+    height: 3vh; */
     /* margin: 10px; */
     background-color: #f2b705;
-    font-size: 15px;
+    font-size: 11px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -321,4 +323,11 @@ padding-left: 12px;
     padding: 8px; /* padding 축소 */
     color: #1f1f1f;
   }
+}
+
+@media (max-width: 370px) {
+  .subscription h1 {
+    font-size: 122%;
+  }
+
 }

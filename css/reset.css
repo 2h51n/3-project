@@ -46,3 +46,8 @@ table {
    border-collapse: collapse;
    border-spacing: 0;
 }
+button {
+   -webkit-appearance: none; /* 기본 버튼 스타일 제거 (iOS 전용) */
+   appearance: none; /* 기본 버튼 스타일 제거 */
+ }
+ 

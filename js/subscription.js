@@ -10,7 +10,7 @@ $(document).ready(function () {
     const nameInput = $("#name");
     const namePattern = /^[가-힣]{2,}$/;
     if (!namePattern.test(nameInput.val())) {
-      errorMessages.push("유효한 이름을 입력하세요.");
+      errorMessages.push("유효한 이름을 <br>입력하세요.");
       nameInput.addClass("error");
       isValid = false;
     } else {
@@ -20,7 +20,7 @@ $(document).ready(function () {
     const phoneInput = $("#phone");
     const phonePattern = /^\d{3}-\d{4}-\d{4}$/;
     if (!phonePattern.test(phoneInput.val())) {
-      errorMessages.push("전화번호 형식이 올바르지 않습니다.");
+      errorMessages.push("전화번호 형식이 <br>올바르지 않습니다.");
       phoneInput.addClass("error");
       isValid = false;
     } else {
@@ -30,7 +30,7 @@ $(document).ready(function () {
     const emailInput = $("#email");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.val())) {
-      errorMessages.push("유효한 이메일을 입력하세요.");
+      errorMessages.push("유효한 이메일을 <br>입력하세요.");
       emailInput.addClass("error");
       isValid = false;
     } else {
@@ -42,7 +42,7 @@ $(document).ready(function () {
     }
 
     if (isValid) {
-      displaySubscriptionNotification("구독 신청이 완료되었습니다!");
+      displaySubscriptionNotification("구독 신청이 <br>완료되었습니다!");
       form[0].reset();
     }
   });

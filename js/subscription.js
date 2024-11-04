@@ -20,7 +20,7 @@ $(document).ready(function () {
     const phoneInput = $("#phone");
     const phonePattern = /^\d{3}-\d{4}-\d{4}$/;
     if (!phonePattern.test(phoneInput.val())) {
-      errorMessages.push("전화번호 형식이 <br>올바르지 않습니다.");
+      errorMessages.push("<br>전화번호 형식이 <br>올바르지 않습니다.");
       phoneInput.addClass("error");
       isValid = false;
     } else {
@@ -30,7 +30,7 @@ $(document).ready(function () {
     const emailInput = $("#email");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.val())) {
-      errorMessages.push("유효한 이메일을 <br>입력하세요.");
+      errorMessages.push("<br>유효한 이메일을 <br>입력하세요.");
       emailInput.addClass("error");
       isValid = false;
     } else {
@@ -48,12 +48,14 @@ $(document).ready(function () {
   });
 
   function displaySubscriptionNotification(message) {
-    if (window.innerWidth <= 1024) {
-      let formattedMessage = message.split(".").join(".<br>");
-      subscriptionNotification.html(formattedMessage).fadeIn(300).delay(5000).fadeOut(300);
-    } else {
-      subscriptionNotification.text(message).fadeIn(300).delay(5000).fadeOut(300);
-    }
+    let formattedMessage = message;
+
+    // 화면 너비에 따른 줄바꿈 설정
+    if (window.innerWidth <= 360 || window.innerWidth <= 768) {
+      formattedMessage = message.split(".").join(".<br>");
+    } 
+
+    subscriptionNotification.html(formattedMessage).fadeIn(300).delay(5000).fadeOut(300);
   }
 
   subscriptionNotification.css({

@@ -111,20 +111,21 @@ $(document).ready(function () {
     });
   });
 
-  // 로그인 상태 확인 및 적용
-  function checkLoginStatus() {
-    const loginStatus = localStorage.getItem("loginStatus");
-    if (loginStatus) {
-      $(".loginBt").hide(); // 로그인 아이콘 숨기기
-      $(".loginBt_my").show(); // 마이 아이콘 표시
-      showNotification("로그인 <br>상태: " + loginStatus); // 로그인 상태 알림
-    } else {
-      $(".loginBt").show(); // 로그인 아이콘 표시
-      $(".loginBt_my").hide(); // 마이 아이콘 숨기기
-      showNotification("로그인 <br>상태가 아닙니다.");
-    }
+ // 로그인 상태 확인 함수
+ function checkLoginStatus() {
+  const loginStatus = localStorage.getItem("loginStatus");
+  if (loginStatus) {
+    // 로그인 상태일 경우
+    showNotification(`${loginStatus}로 로그인되어 있습니다.`); // 로그인된 사용자 이름 또는 상태 표시
+    $(".loginBt").hide(); // 로그인 아이콘 숨기기
+    $(".loginBt_my").show(); // 마이 아이콘 표시
+  } else {
+    // 로그인 상태가 아닐 경우
+    showNotification("로그인 상태가 아닙니다."); // 로그인 상태 알림
+    $(".loginBt").show(); // 로그인 아이콘 표시
+    $(".loginBt_my").hide(); // 마이 아이콘 숨기기
   }
-
+}
   // 소셜 로그인 처리 함수
   function handleSocialLogin(provider) {
     showNotification(`${provider} 로그인 <br>버튼 클릭!`);
@@ -191,7 +192,7 @@ $(document).ready(function () {
     }, 3000);
   }
 
-  // 기존 알림 div 요소에 스타일 적용
+  // 알림 div 요소 스타일 적용
   $("#notification").css({
     position: "fixed",
     bottom: "20px",

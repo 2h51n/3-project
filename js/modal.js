@@ -48,6 +48,14 @@ $(document).ready(function () {
     setTimeout(function () {
       $modal.hide(); // 완전히 숨기기
     }, 500); // CSS 애니메이션 시간과 동일한 지연 시간 (0.5초)
+
+    // '오늘 하루 열지 않음'이 체크되어 있으면 쿠키 설정
+    if ($notTodayCheckbox.is(":checked")) {
+      setCookie("notToday", "true", 1); // 1일 동안 유지되는 쿠키 설정
+      console.log("오늘 하루 열지 않기 설정됨"); // 확인 로그
+    } else {
+      console.log("오늘 하루 열지 않기 설정되지 않음"); // 확인 로그
+    }
   }
 
   // 페이지 로드 시 쿠키 확인: '오늘 하루 열지 않음'이 체크되어 있으면 팝업을 띄우지 않음
@@ -59,12 +67,6 @@ $(document).ready(function () {
   // 닫기 버튼 클릭 시 모달 닫기
   $closeButton.click(function () {
     closeModal(); // 모달 숨기기
-    if ($notTodayCheckbox.is(":checked")) {
-      setCookie("notToday", "true", 1); // 1일 동안 유지되는 쿠키 설정
-      console.log("오늘 하루 열지 않기 설정됨"); // 확인 로그
-    } else {
-      console.log("오늘 하루 열지 않기 설정되지 않음"); // 확인 로그
-    }
   });
 
   // 모달 바깥 클릭 시 모달 닫기
